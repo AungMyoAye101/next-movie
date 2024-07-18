@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaUser } from "react-icons/fa";
-import { GoSearch } from "react-icons/go";
+import { FaSearch } from "react-icons/fa";
 import DarkModeSwitch from "./DarkModeSwiitch";
 
 const Header = () => {
@@ -28,11 +28,12 @@ const Header = () => {
       </div>
 
       <div className="flex items-center gap-4">
+        <DarkModeSwitch />
         <div>
           <FaUser className=" icons" />
         </div>
         <div>
-          <GoSearch className="icons font-bold" />
+          <FaSearch className="icons " />
         </div>
       </div>
     </nav>

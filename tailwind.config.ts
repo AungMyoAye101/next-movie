@@ -17,7 +17,7 @@ const config: Config = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["retro", "night"],
+    themes: ["winter", "night"],
   },
   darkMode: ["class", '[data-theme="night"]'],
 };

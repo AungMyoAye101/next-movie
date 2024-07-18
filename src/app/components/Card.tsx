@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = () => {
   return (
-    <div className="px-6">
+    <div className="px-6 py-10">
       <div className="flex my-4 gap-2">
         <h1 className="btn text-lg font-bold">Trending</h1>
         <h1 className="btn text-lg font-bold">Top Rated</h1>

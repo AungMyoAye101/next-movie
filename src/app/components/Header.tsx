@@ -13,18 +13,26 @@ const Header = () => {
         <span className="text-lg ml-1 hidden md:inline">movie</span>
       </div>
       <div>
-        <Link href={"/"}>HOME</Link>
-        <Link href={"/about"} className="mx-3">
+        <Link href={"/"} className="link">
+          HOME
+        </Link>
+        <Link href={"/about"} className="link">
           ABOUT
+        </Link>
+        <Link href={"/"} className="link">
+          CONTACT
+        </Link>
+        <Link href={"/about"} className="link">
+          SERVICE
         </Link>
       </div>
 
       <div className="flex items-center gap-4">
         <div>
-          <FaUser className=" text-xl" />
+          <FaUser className=" icons" />
         </div>
         <div>
-          <GoSearch className="text-xl" />
+          <GoSearch className="icons font-bold" />
         </div>
       </div>
     </nav>

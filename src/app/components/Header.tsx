@@ -46,7 +46,7 @@ const Header = () => {
           Rare
         </Link>
       </div>
-      <div className="navbar-end gap-4 items-center">
+      <div className="flex navbar-end gap-4 items-center">
         <DarkModeSwitch />
         <button className="btn btn-ghost btn-circle">
           <svg

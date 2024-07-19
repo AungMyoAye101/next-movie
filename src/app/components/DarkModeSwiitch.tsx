@@ -9,7 +9,7 @@ const DarkModeSwiitch = () => {
 
       {/* sun icon */}
       <svg
-        className="swap-off h-8 w-8 fill-current"
+        className="swap-off h-6 w-6 fill-current"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >

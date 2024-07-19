@@ -22,7 +22,7 @@ const Hero = () => {
             <input
               type="Text"
               placeholder="Search for a movie or Tv shows..."
-              className="input input-bordered input-info w-full rounded-3xl bg-transparent "
+              className="input input-bordered input-info w-full rounded-3xl bg-transparent outline-none "
             />
             <button className="btn btn-info rounded-3xl px-10 -ml-12">
               Search

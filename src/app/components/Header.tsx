@@ -4,7 +4,7 @@ import DarkModeSwitch from "./DarkModeSwiitch";
 
 const Header = () => {
   return (
-    <div className="navbar bg-base-100 border-b border-gray-600 absolute top-0 left-0 right-0">
+    <div className="navbar bg-base-100 border-b border-gray-600 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">

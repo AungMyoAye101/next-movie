@@ -1,6 +1,7 @@
 import React from "react";
 
-const Card = () => {
+const Card = ({ result }) => {
+  console.log(result);
   return (
     <div className="px-6 py-10">
       <div className="flex my-4 gap-1">

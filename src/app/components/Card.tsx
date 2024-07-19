@@ -1,7 +1,24 @@
 import React from "react";
 
-const Card = ({ result }) => {
-  console.log(result);
+interface CardData {
+  backdrop_path: string;
+  id: number;
+  title: string;
+  original_title: string;
+  overview: string;
+  poster_path: string;
+  media_type: string;
+  release_date: string;
+  first_air_date: string;
+  vote_average: number;
+  vote_count: number;
+}
+interface CardProps {
+  data: CardData[];
+}
+
+const Card: React.FC<CardProps> = ({ data }) => {
+  console.log(data);
   return (
     <div className="px-6 py-10">
       <div className="flex my-4 gap-1">

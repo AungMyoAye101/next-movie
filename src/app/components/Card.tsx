@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+
 interface CardData {
   backdrop_path: string;
   id: number;
@@ -30,7 +32,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
             key={item.id}
             className="card card-compact bg-base-100 shadow-xl rounded-lg max-w-6xl mx-auto "
           >
-            <div className="relative">
+            <Link href={`/${item.media_type}/${item.id}`} className="relative">
               <Image
                 src={`https://image.tmdb.org/t/p/original${
                   item.poster_path || item.backdrop_path
@@ -41,12 +43,12 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 loading="lazy"
               />
               <div className="rounded-badge bg-slate-900 text-slate-200 w-11 h-11 flex items-center justify-center absolute -bottom-2 right-0 border-4 border-r-transparent border-green-500 ">
-                <span className="text-lg">
+                <span className="text-base">
                   {Math.round(item.vote_average * 10)}
                 </span>
                 <span className="text-xs"> %</span>
               </div>
-            </div>
+            </Link>
 
             <div className="card-body p-2">
               <h2 className="card-title">{item.title || item.original_name}</h2>

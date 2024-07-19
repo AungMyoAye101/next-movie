@@ -1,10 +1,10 @@
 import React from "react";
-
+import Image from "next/image";
 interface CardData {
   backdrop_path: string;
   id: number;
   title: string;
-  original_title: string;
+  original_name: string;
   overview: string;
   poster_path: string;
   media_type: string;
@@ -18,138 +18,42 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ data }) => {
-  console.log(data);
   return (
     <div className="px-6 py-10">
       <div className="flex my-4 gap-1">
         <h1 className="btn text-lg font-bold">Trending</h1>
         <h1 className="btn text-lg font-bold">Top Rated</h1>
       </div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4">
-        <div className="card card-compact bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5  gap-4">
+        {data.map((item) => (
+          <div
+            key={item.id}
+            className="card card-compact bg-base-100 shadow-xl rounded-lg max-w-6xl mx-auto "
+          >
+            <div className="relative">
+              <Image
+                src={`https://image.tmdb.org/t/p/original${
+                  item.poster_path || item.backdrop_path
+                }`}
+                width={500}
+                height={200}
+                alt="posters"
+                loading="lazy"
+              />
+              <div className="rounded-badge bg-slate-900 text-slate-200 w-11 h-11 flex items-center justify-center absolute -bottom-2 right-0 border-4 border-r-transparent border-green-500 ">
+                <span className="text-lg">
+                  {Math.round(item.vote_average * 10)}
+                </span>
+                <span className="text-xs"> %</span>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div className="card card-compact bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+            <div className="card-body p-2">
+              <h2 className="card-title">{item.title || item.original_name}</h2>
+              <p>{item.first_air_date || item.release_date}</p>
             </div>
           </div>
-        </div>
-        <div className="card card-compact bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card card-compact bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="card card-compact bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card card-compact bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="card card-compact bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-
-        <div className="card card-compact bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

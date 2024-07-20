@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Hero from "./components/Hero";
-import Card from "./components/Card";
-import Footer from "./components/Footer";
+import Hero from "../components/Hero";
+import Card from "../components/Card";
+import Footer from "../components/Footer";
 
 const API_KEY = process.env.API_KEY;
 
@@ -22,7 +22,9 @@ interface ApiResponse {
   page: number;
   results: CardData[];
 }
-export default async function Home() {
+
+export default async function Home({ searchParams }: { searchParams: string }) {
+  console.log(searchParams);
   const res = await fetch(
     `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}`
   );

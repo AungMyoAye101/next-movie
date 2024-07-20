@@ -4,12 +4,14 @@ import Count from "./Count";
 const Details = () => {
   return (
     <div
-      className="bg-auto bg-center bg-blend-multiply bg-opacity-10 w-full p-2"
+      className="hero place-items-start "
       style={{
-        backgroundImage: `url(https://image.tmdb.org/t/p/original/zCEjjb1NH3LLsWeZx47wOeqkezf.jpg )`,
+        backgroundImage:
+          "url(https://image.tmdb.org/t/p/original/zCEjjb1NH3LLsWeZx47wOeqkezf.jpg )",
       }}
     >
-      <div className="hero-content w-full items-start p-0  bg-slate-400 bg-opacity-80">
+      <div className="hero-overlay bg-opacity-60"></div>
+      <div className="p-4 flex gap-1">
         <Image
           src={`https://image.tmdb.org/t/p/original/zCEjjb1NH3LLsWeZx47wOeqkezf.jpg  `}
           width={300}
@@ -18,7 +20,7 @@ const Details = () => {
           loading="lazy"
           className="rounded"
         />
-        <div className=" px-4">
+        <div className=" px-4 text-slate-200">
           <h1 className="text-4xl font-bold">Monogatari</h1>
           <div className="text-lg py-2">
             <span>Sci-Fi & Fantasy</span>

@@ -1,7 +1,12 @@
+import Details from "@/components/Details";
 import React from "react";
 
 const MoviePage = () => {
-  return <div>MoviePage</div>;
+  return (
+    <div>
+      <Details />
+    </div>
+  );
 };
 
 export default MoviePage;

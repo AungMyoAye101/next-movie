@@ -27,7 +27,10 @@ const Card: React.FC<CardProps> = ({ data }) => {
           key={item.id}
           className="card card-compact bg-base-100 shadow-xl rounded-lg max-w-6xl mx-auto "
         >
-          <Link href={`/${item.media_type}/${item.id}`} className="relative">
+          <Link
+            href={`/${item.media_type || "movie"}/${item.id} `}
+            className="relative"
+          >
             <Image
               src={`https://image.tmdb.org/t/p/original${
                 item.poster_path || item.backdrop_path

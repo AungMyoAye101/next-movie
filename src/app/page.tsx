@@ -38,9 +38,11 @@ export default async function Home({
   );
   const result: ApiResponse = await res.json();
 
+  const randomImage = Math.round(Math.random() * result.results.length);
+
   return (
     <>
-      <Hero />
+      <Hero image={result.results[randomImage].backdrop_path} />
       <NavLinkMenu />
       <Card data={result.results} />
       <Footer />s

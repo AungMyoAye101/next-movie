@@ -1,22 +1,18 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { use } from "react";
+interface SearchProps {
+  title: string;
+  param: string;
+}
 
-const NavItems = () => {
+const NavItems = (props: SearchProps) => {
   const searchParams = useSearchParams();
   const genre = searchParams.get("genre");
   return (
-    <div>
-      <div className="flex my-4 gap-1 ">
-        <Link href={`/?genre=trending`} className="btn text-lg font-bold">
-          Trending
-        </Link>
-        <Link href={`/?genre=top_rated`} className="btn text-lg font-bold">
-          Top Rated
-        </Link>
-      </div>
-    </div>
+    <Link href={`/?genre=${props.param}`} className="btn text-lg font-bold">
+      {props.title}
+    </Link>
   );
 };
 

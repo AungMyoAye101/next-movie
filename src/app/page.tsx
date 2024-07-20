@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Hero from "../components/Hero";
+import NavLinkMenu from "@/components/NavLinkMenu";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 
@@ -40,6 +41,7 @@ export default async function Home({
   return (
     <>
       <Hero />
+      <NavLinkMenu />
       <Card data={result.results} />
       <Footer />s
     </>

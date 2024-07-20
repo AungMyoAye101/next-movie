@@ -6,12 +6,17 @@ interface SearchProps {
   param: string;
 }
 
-const NavItems = (props: SearchProps) => {
+const NavItems = ({ title, param }: SearchProps) => {
   const searchParams = useSearchParams();
   const genre = searchParams.get("genre");
   return (
-    <Link href={`/?genre=${props.param}`} className="btn text-lg font-bold">
-      {props.title}
+    <Link
+      href={`/?genre=${param}`}
+      className={`btn  text-lg font-bold ${
+        genre === param ? "btn-outline btn-success" : ""
+      }`}
+    >
+      {title}
     </Link>
   );
 };

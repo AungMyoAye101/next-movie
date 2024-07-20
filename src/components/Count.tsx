@@ -10,7 +10,7 @@ const Count = ({ rating }: CountAvg) => {
         countAvarage > 80 ? " border-green-500" : "border-yellow-500"
       }`}
     >
-      <div className="rounded-badge bg-slate-900 text-slate-200 w-11 h-11 flex items-center justify-center   ">
+      <div className="rounded-badge bg-slate-900 text-slate-200 w-10 h-10 flex items-center justify-center   ">
         <span className="text-base">{countAvarage}</span>
         <span className="text-xs"> %</span>
       </div>

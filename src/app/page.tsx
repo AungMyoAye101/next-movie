@@ -23,10 +23,17 @@ interface ApiResponse {
   results: CardData[];
 }
 
-export default async function Home({ searchParams }: { searchParams: string }) {
-  console.log(searchParams);
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: { genre: string };
+}) {
+  const genre = searchParams.genre || "trending";
+  console.log(genre);
   const res = await fetch(
-    `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}`
+    `https://api.themoviedb.org/3${
+      genre === "top_rated" ? "/movie/top_rated" : "/trending/all/week"
+    }?api_key=${API_KEY}`
   );
   const result: ApiResponse = await res.json();
 

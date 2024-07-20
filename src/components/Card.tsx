@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import NavItems from "./NavItems";
 
 interface CardData {
   backdrop_path: string;
@@ -22,10 +23,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ data }) => {
   return (
     <div className="px-6 py-10">
-      <div className="flex my-4 gap-1">
-        <h1 className="btn text-lg font-bold">Trending</h1>
-        <h1 className="btn text-lg font-bold">Top Rated</h1>
-      </div>
+      <NavItems />
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5  gap-4">
         {data.map((item) => (
           <div

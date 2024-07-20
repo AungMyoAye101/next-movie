@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import Count from "./Count";
 interface CardData {
   backdrop_path: string;
   id: number;
@@ -21,7 +21,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ data }) => {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5  gap-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5  gap-4 p-4">
       {data.map((item) => (
         <div
           key={item.id}
@@ -40,11 +40,8 @@ const Card: React.FC<CardProps> = ({ data }) => {
               alt="posters"
               loading="lazy"
             />
-            <div className="rounded-badge bg-slate-900 text-slate-200 w-11 h-11 flex items-center justify-center absolute -bottom-2 right-0 border-4 border-r-transparent border-green-500 ">
-              <span className="text-base">
-                {Math.round(item.vote_average * 10)}
-              </span>
-              <span className="text-xs"> %</span>
+            <div className="absolute -bottom-2 right-0">
+              <Count rating={item.vote_average} />
             </div>
           </Link>
 

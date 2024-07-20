@@ -19,6 +19,6 @@ const config: Config = {
   daisyui: {
     themes: ["winter", "night"],
   },
-  darkMode: ["class", '[data-theme="night"]'],
+  darkMode: ["class", '[data-theme="winter"]'],
 };
 export default config;

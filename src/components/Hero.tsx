@@ -5,7 +5,7 @@ interface BgImage {
 const Hero = ({ image }: BgImage) => {
   return (
     <div
-      className="hero min-h-96"
+      className="hero min-h-96 "
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${image})`,
       }}

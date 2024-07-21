@@ -19,14 +19,14 @@ const Details = async ({ media_type, id }: Detail) => {
   return (
     <>
       <div
-        className="hero place-items-start h-full"
+        className="hero place-items-start "
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original${
             data.backdrop_path || data.poster_path
           })`,
         }}
       >
-        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-overlay bg-opacity-80"></div>
         <div className="p-4 flex gap-1">
           <Image
             src={`https://image.tmdb.org/t/p/original${
@@ -49,6 +49,9 @@ const Details = async ({ media_type, id }: Detail) => {
                   {item.name}
                 </span>
               ))}
+              <p>
+                - {Math.round(data.runtime / 60)}h {data.runtime % 60}min
+              </p>
             </div>
             <div className="flex items-center gap-1">
               <span></span>
@@ -65,7 +68,8 @@ const Details = async ({ media_type, id }: Detail) => {
                 <FaBookmark className=" text-lg" />
               </button>
             </div>
-            <div className="">
+            <h3 className="font-serif">{data.tagline}</h3>
+            <div>
               <h2 className="text-xl font-bold">OverView</h2>
               <p>{data.overview}</p>
             </div>

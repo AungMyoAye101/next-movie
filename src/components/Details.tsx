@@ -1,19 +1,30 @@
 import React from "react";
 import Image from "next/image";
 import Count from "./Count";
-const Details = () => {
+
+interface Detail {
+  media_type: string;
+  id: number;
+}
+const Details = async ({ media_type, id }: Detail) => {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/tv/ 76479?api_key=${process.env.API_KEY}`
+  );
+  const data = await res.json();
+
   return (
     <div
       className="hero place-items-start "
       style={{
-        backgroundImage:
-          "url(https://image.tmdb.org/t/p/original/zCEjjb1NH3LLsWeZx47wOeqkezf.jpg )",
+        backgroundImage: `url(https://image.tmdb.org/t/p/original${data.backdrop_path})`,
       }}
     >
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="p-4 flex gap-1">
         <Image
-          src={`https://image.tmdb.org/t/p/original/zCEjjb1NH3LLsWeZx47wOeqkezf.jpg  `}
+          src={`https://image.tmdb.org/t/p/original${
+            data.poster_path || data.backdrop_path
+          }  `}
           width={300}
           height={200}
           alt="posters"
@@ -21,12 +32,16 @@ const Details = () => {
           className="rounded"
         />
         <div className=" px-4 text-slate-200">
-          <h1 className="text-4xl font-bold">Monogatari</h1>
+          <h1 className="text-4xl font-bold">
+            {data.name || data.original_name} (
+            {data.first_air_date || data.release_date} )
+          </h1>
           <div className="text-lg py-2">
-            <span>Sci-Fi & Fantasy</span>
-            <span>Action </span>
+            <span>{data.genres[0].name}</span>
+            <span>{data.genres[1].name} </span>
           </div>
           <div className="flex items-center gap-1">
+            <span></span>
             <span>User Score</span>
           </div>
           <div className="flex gap-1 py-2">
@@ -36,19 +51,11 @@ const Details = () => {
           </div>
           <div className="py-2">
             <h2 className="text-xl font-bold">OverView</h2>
-            <p>
-              Although there are still traces of the brief period he became a
-              vampire, third-year high school student Koyomi Araragi is human
-              again. He happens upon others with their own supernatural problems
-              and finds that he can empathize. Koyomi becomes involved in their
-              lives, seeking to help them and occasionally asking for advice
-              from Meme Oshino, the homeless man who helped him become human
-              again.', poster_path: '/zCEjjb1NH3LLsWeZx47wOeqkezf.jpg
-            </p>
+            <p>{data.overview}</p>
           </div>
           <div>
             <h3 className="text-xl font-semibold">Creator</h3>
-            <p>James Gunn</p>
+            <p>{data.created_by[0].name}</p>
           </div>
         </div>
       </div>

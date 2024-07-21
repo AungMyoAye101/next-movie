@@ -4,7 +4,7 @@ import React from "react";
 const MoviePage = () => {
   return (
     <div>
-      <Details />
+      <Details media_type="tv" id={id} />
     </div>
   );
 };

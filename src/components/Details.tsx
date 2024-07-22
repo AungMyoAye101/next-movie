@@ -50,7 +50,7 @@ const Details = async ({ media_type, id }: Detail) => {
                 </span>
               ))}
               <p>
-                - {Math.round(data.runtime / 60)}h {data.runtime % 60}min
+                - {Math.floor(data.runtime / 60)}h {data.runtime % 60}min
               </p>
             </div>
             <div className="flex items-center gap-1">

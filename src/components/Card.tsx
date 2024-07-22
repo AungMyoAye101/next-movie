@@ -21,7 +21,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ data }) => {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5  gap-4 p-4">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-4 p-4">
       {data.map((item) => (
         <div
           key={item.id}
@@ -35,8 +35,8 @@ const Card: React.FC<CardProps> = ({ data }) => {
               src={`https://image.tmdb.org/t/p/original${
                 item.poster_path || item.backdrop_path
               }`}
-              width={500}
-              height={200}
+              width={300}
+              height={150}
               alt="posters"
               loading="lazy"
             />

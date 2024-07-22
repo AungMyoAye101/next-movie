@@ -1,10 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Count from "./Count";
-import { FaBars } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
-import { FaBookmark } from "react-icons/fa6";
-
+import Info from "./Info";
 interface Detail {
   media_type: string;
   id: number;
@@ -35,90 +31,44 @@ const Details = async ({ media_type, id }: Detail) => {
             width={300}
             height={200}
             alt="posters"
-            loading="lazy"
-            style={{ aspectRatio: 3 / 4 }}
             className="rounded max-w-md"
           />
-          <div className=" px-4 text-slate-200 space-y-4 hidden md:block">
-            <h1 className="text-4xl font-bold">
-              {data.name || data.original_name || data.original_title}
-            </h1>
-            <h2>{data.first_air_date || data.release_date}</h2>
-            <div className="flex gap-2 ">
-              {data.genres.map((item: { id: number; name: string }) => (
-                <span key={item.id} className="text-md hover:text-primary">
-                  {item.name}
-                </span>
-              ))}
-
-              {data.runtime && (
-                <p>
-                  - {Math.floor(data.runtime / 60)}h {data.runtime % 60}min
-                </p>
-              )}
-            </div>
-            <div className="flex items-center gap-1">
-              <Count rating={data.vote_average} />
-              <span>User Score</span>
-            </div>
-            <div className="flex gap-1">
-              <button className="btn btn-circle btn-neutral">
-                <FaBars className=" text-lg" />
-              </button>
-              <button className="btn btn-circle btn-neutral">
-                <FaHeart className=" text-lg" />
-              </button>
-              <button className="btn btn-circle btn-neutral">
-                <FaBookmark className=" text-lg" />
-              </button>
-            </div>
-            <h3 className="font-serif">{data.tagline}</h3>
-            <div>
-              <h2 className="text-xl font-bold">OverView</h2>
-              <p>{data.overview}</p>
-            </div>
-          </div>
+          <Info
+            backdrop_path={data.backdrop_path}
+            id={data.id}
+            title={data.title}
+            name={data.name}
+            original_name={data.original_name}
+            original_title={data.original_title}
+            overview={data.overview}
+            poster_path={data.poster_path}
+            release_date={data.release_date}
+            first_air_date={data.first_air_date}
+            vote_average={data.vote_average}
+            runtime={data.runtime}
+            tagline={data.tagline}
+            genres={data.genres}
+            lg_screen={true}
+          />
         </div>
       </div>
-      <div className=" px-4  space-y-4 block md:hidden mx-auto">
-        <h1 className="text-4xl font-bold">
-          {data.name || data.original_name || data.original_title}
-        </h1>
-        <h2>{data.first_air_date || data.release_date}</h2>
-        <div className="flex gap-2 ">
-          {data.genres.map((item: { id: number; name: string }) => (
-            <span key={item.id} className="text-md hover:text-primary">
-              {item.name}
-            </span>
-          ))}
-
-          {data.runtime && (
-            <p>
-              - {Math.floor(data.runtime / 60)}h {data.runtime % 60}min
-            </p>
-          )}
-        </div>
-        <div className="flex items-center gap-1">
-          <Count rating={data.vote_average} />
-          <span>User Score</span>
-        </div>
-        <div className="flex gap-1">
-          <button className="btn btn-circle btn-neutral">
-            <FaBars className=" text-lg" />
-          </button>
-          <button className="btn btn-circle btn-neutral">
-            <FaHeart className=" text-lg" />
-          </button>
-          <button className="btn btn-circle btn-neutral">
-            <FaBookmark className=" text-lg" />
-          </button>
-        </div>
-        <h3 className="font-serif">{data.tagline}</h3>
-        <div>
-          <h2 className="text-xl font-bold">OverView</h2>
-          <p>{data.overview}</p>
-        </div>
-      </div>
+      <Info
+        backdrop_path={data.backdrop_path}
+        id={data.id}
+        title={data.title}
+        name={data.name}
+        original_name={data.original_name}
+        original_title={data.original_title}
+        overview={data.overview}
+        poster_path={data.poster_path}
+        release_date={data.release_date}
+        first_air_date={data.first_air_date}
+        vote_average={data.vote_average}
+        runtime={data.runtime}
+        tagline={data.tagline}
+        genres={data.genres}
+        lg_screen={false}
+      />
     </>
   );
 };

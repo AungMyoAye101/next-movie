@@ -9,8 +9,8 @@ interface Detail {
   media_type: string;
   id: number;
 }
+
 const Details = async ({ media_type, id }: Detail) => {
-  console.log(media_type, id);
   const res = await fetch(
     `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.API_KEY}`
   );
@@ -57,7 +57,7 @@ const Details = async ({ media_type, id }: Detail) => {
               )}
             </div>
             <div className="flex items-center gap-1">
-              <span></span>
+              <Count rating={data.vote_average} />
               <span>User Score</span>
             </div>
             <div className="flex gap-1">
@@ -75,7 +75,12 @@ const Details = async ({ media_type, id }: Detail) => {
             <div>
               <h2 className="text-xl font-bold">OverView</h2>
               <p>{data.overview}</p>
-              {data.created_by && <p>hello</p>}
+              {data.created_by && (
+                <div>
+                  <h3 className="text-lg">Created By</h3>
+                  <p> {data.created_by[0].name}</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

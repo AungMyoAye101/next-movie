@@ -45,7 +45,7 @@ export default async function Home({
       <Hero image={result.results[randomImage].backdrop_path} />
       <NavLinkMenu />
       <Card data={result.results} />
-      <Footer />s
+      <Footer />
     </>
   );
 }

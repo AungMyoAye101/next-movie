@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Count from "./Count";
-interface CardData {
+export interface CardData {
   backdrop_path: string;
   id: number;
   title: string;

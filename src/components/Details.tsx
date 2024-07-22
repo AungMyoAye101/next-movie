@@ -72,6 +72,7 @@ const Details = async ({ media_type, id }: Detail) => {
             <div>
               <h2 className="text-xl font-bold">OverView</h2>
               <p>{data.overview}</p>
+              {data.created_by && <p>director</p>}
             </div>
           </div>
         </div>

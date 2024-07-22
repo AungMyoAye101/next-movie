@@ -49,9 +49,12 @@ const Details = async ({ media_type, id }: Detail) => {
                   {item.name}
                 </span>
               ))}
-              <p>
-                - {Math.floor(data.runtime / 60)}h {data.runtime % 60}min
-              </p>
+
+              {data.runtime && (
+                <p>
+                  - {Math.floor(data.runtime / 60)}h {data.runtime % 60}min
+                </p>
+              )}
             </div>
             <div className="flex items-center gap-1">
               <span></span>
@@ -72,7 +75,7 @@ const Details = async ({ media_type, id }: Detail) => {
             <div>
               <h2 className="text-xl font-bold">OverView</h2>
               <p>{data.overview}</p>
-              {data.created_by && <p>director</p>}
+              {data.created_by && <p>hello</p>}
             </div>
           </div>
         </div>

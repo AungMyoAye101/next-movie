@@ -13,7 +13,7 @@ const Details = async ({ media_type, id }: Detail) => {
     `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.API_KEY}`
   );
   const data = await res.json();
-
+  console.log(data);
   return (
     <div>
       <div

@@ -91,7 +91,7 @@ const Info = ({
           {created_by.map((item) => (
             <div key={item.id}>
               <h2 className="text-lg">{item.name} </h2>
-              <p className="text-center">Creator</p>
+              <p>Creator</p>
             </div>
           ))}
         </div>

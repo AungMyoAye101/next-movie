@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Info from "./Info";
+import Footer from "./Footer";
 interface Detail {
   media_type: string;
   id: number;
@@ -13,9 +14,9 @@ const Details = async ({ media_type, id }: Detail) => {
   const data = await res.json();
   console.log(data);
   return (
-    <>
+    <div>
       <div
-        className="hero place-items-start "
+        className="hero place-items-start m"
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original${
             data.backdrop_path || data.poster_path
@@ -72,7 +73,38 @@ const Details = async ({ media_type, id }: Detail) => {
         lg_screen={false}
         created_by={data.created_by}
       />
-    </>
+      <div>
+        <div className="overflow-x-auto">
+          <table className="table">
+            {/* head */}
+            <thead className="text-lg">
+              <tr>
+                <th>Status</th>
+                <th>Budget</th>
+                <th>Production</th>
+                <th>Type</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* row 1 */}
+              <tr>
+                <th>{data.status}</th>
+                <td>{data.budget || "-"}</td>
+                <td>{data.production_companies[0].name || "-"}</td>
+                <td>{data.type || "-"}</td>
+                <td>
+                  <a href={data.homepage} target="_blank">
+                    Home page
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <Footer />
+      </div>
+    </div>
   );
 };
 

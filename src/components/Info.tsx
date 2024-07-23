@@ -71,13 +71,13 @@ const Info = ({
         <span>User Score</span>
       </div>
       <div className="space-x-2">
-        <button className="btn btn-circle btn-neutral">
+        <button className="btn btn-circle btn-success">
           <FaBars className=" text-lg" />
         </button>
-        <button className="btn btn-circle btn-neutral">
+        <button className="btn btn-circle btn-success">
           <FaHeart className=" text-lg" />
         </button>
-        <button className="btn btn-circle btn-neutral">
+        <button className="btn btn-circle btn-success">
           <FaBookmark className=" text-lg" />
         </button>
       </div>
@@ -87,10 +87,12 @@ const Info = ({
         <p>{overview}</p>
       </div>
       {created_by && (
-        <div>
-          <h2>Creator</h2>
+        <div className="flex gap-2">
           {created_by.map((item) => (
-            <p key={item.id}>{item.name}</p>
+            <div key={item.id}>
+              <h2 className="text-lg">{item.name} </h2>
+              <p className="text-center">Creator</p>
+            </div>
           ))}
         </div>
       )}

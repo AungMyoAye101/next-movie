@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Info from "./Info";
 import Footer from "./Footer";
+import Series from "./Series";
 interface Detail {
   media_type: string;
   id: number;
@@ -12,7 +13,7 @@ const Details = async ({ media_type, id }: Detail) => {
     `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.API_KEY}`
   );
   const data = await res.json();
-  console.log(data);
+
   return (
     <div>
       <div
@@ -102,6 +103,13 @@ const Details = async ({ media_type, id }: Detail) => {
             </tbody>
           </table>
         </div>
+        {media_type === "tv" && (
+          <Series
+            next_episode_to_air={data.next_episode_to_air}
+            last_episode_to_air={data.last_episode_to_air}
+          />
+        )}
+
         <Footer />
       </div>
     </div>

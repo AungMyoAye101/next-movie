@@ -38,7 +38,6 @@ const Card: React.FC<CardProps> = ({ data }) => {
               width={300}
               height={150}
               alt="posters"
-              loading="lazy"
             />
             <div className="absolute -bottom-2 right-0">
               <Count rating={item.vote_average} />

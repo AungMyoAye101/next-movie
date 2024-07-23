@@ -31,8 +31,9 @@ const Details = async ({ media_type, id }: Detail) => {
             width={300}
             height={200}
             alt="posters"
-            className="rounded max-w-md"
+            className="rounded "
           />
+
           <Info
             backdrop_path={data.backdrop_path}
             id={data.id}
@@ -49,6 +50,7 @@ const Details = async ({ media_type, id }: Detail) => {
             tagline={data.tagline}
             genres={data.genres}
             lg_screen={true}
+            created_by={data.created_by}
           />
         </div>
       </div>
@@ -68,6 +70,7 @@ const Details = async ({ media_type, id }: Detail) => {
         tagline={data.tagline}
         genres={data.genres}
         lg_screen={false}
+        created_by={data.created_by}
       />
     </>
   );

@@ -4,6 +4,7 @@ import Count from "./Count";
 import { FaBars } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaBookmark } from "react-icons/fa6";
+
 interface InfoDetail {
   backdrop_path: string;
   id: number;
@@ -22,6 +23,7 @@ interface InfoDetail {
   tagline: string;
   genres: { id: number; name: string }[];
   lg_screen: Boolean;
+  created_by: { id: number; name: string }[];
 }
 
 const Info = ({
@@ -39,8 +41,8 @@ const Info = ({
   runtime,
   genres,
   lg_screen,
+  created_by,
 }: InfoDetail) => {
-  console.log(runtime);
   return (
     <div
       className={`px-4  space-y-4  mx-auto ${
@@ -84,6 +86,14 @@ const Info = ({
         <h2 className="text-xl font-bold">OverView</h2>
         <p>{overview}</p>
       </div>
+      {created_by && (
+        <div>
+          <h2>Creator</h2>
+          {created_by.map((item) => (
+            <p key={item.id}>{item.name}</p>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

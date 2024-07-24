@@ -25,7 +25,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
       {data.map((item) => (
         <div
           key={item.id}
-          className="card card-compact bg-base-100 shadow-xl rounded-lg max-w-6xl mx-auto "
+          className="card card-compact bg-base-100 shadow-xl rounded-lg max-w-6xl mx-auto hover:opacity-80 "
         >
           <Link
             href={`/${item.media_type || "movie"}/${item.id} `}

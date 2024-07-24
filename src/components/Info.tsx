@@ -45,11 +45,11 @@ const Info = ({
 }: InfoDetail) => {
   return (
     <div
-      className={`px-4  space-y-4  mx-auto ${
+      className={`px-4  space-y-2  mx-auto ${
         lg_screen ? "hidden md:block text-slate-200" : "block md:hidden"
       }`}
     >
-      <h1 className="text-4xl font-bold">
+      <h1 className="text-3xl  font-bold">
         {name || original_name || original_title}
       </h1>
       <h2>{first_air_date || release_date}</h2>
@@ -83,8 +83,8 @@ const Info = ({
       </div>
       <h3 className="font-serif">{tagline}</h3>
       <div>
-        <h2 className="text-xl font-bold">OverView</h2>
-        <p>{overview}</p>
+        <h2 className="text-lg font-bold">OverView</h2>
+        <p className="text-sm">{overview}</p>
       </div>
       {created_by && (
         <div className="flex gap-2">

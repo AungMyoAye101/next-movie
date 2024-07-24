@@ -15,9 +15,9 @@ const Details = async ({ media_type, id }: Detail) => {
   const data = await res.json();
   console.log(data);
   return (
-    <div>
+    <>
       <div
-        className="hero place-items-start m"
+        className="hero place-items-start "
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original${
             data.backdrop_path || data.poster_path
@@ -112,7 +112,7 @@ const Details = async ({ media_type, id }: Detail) => {
 
         <Footer />
       </div>
-    </div>
+    </>
   );
 };
 

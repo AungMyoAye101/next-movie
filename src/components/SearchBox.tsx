@@ -1,0 +1,26 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+
+const SearchBox = () => {
+  const [search, setSearch] = useState("");
+  const router = useRouter();
+  const handelChange = (e: React.FormEventHandler<HTMLFormElement>) => {
+    e.preventDefault();
+    router.push(`search/${search}`);
+  };
+  return (
+    <form onSubmit={handelChange} className="flex text-lg ">
+      <input
+        type="Text"
+        placeholder="Search for a movie or Tv shows..."
+        className="input input-bordered input-info w-full rounded-3xl bg-slate-50 bg-opacity-50 outline-0 text-gray-800 placeholder-gray-800"
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <button className="btn btn-info rounded-3xl px-10 -ml-12 ">Search</button>
+    </form>
+  );
+};
+
+export default SearchBox;

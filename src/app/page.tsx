@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import NavLinkMenu from "@/components/NavLinkMenu";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
+import Results from "@/components/Results";
 
 const API_KEY = process.env.API_KEY;
 
@@ -42,9 +43,7 @@ export default async function Home({
 
   return (
     <>
-      <Hero image={result.results[randomImage].backdrop_path} />
-      <NavLinkMenu />
-      <Card data={result.results} />
+      <Results data={result.results} />
       <Footer />
     </>
   );

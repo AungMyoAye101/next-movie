@@ -2,24 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Count from "./Count";
-export interface CardData {
-  backdrop_path: string;
-  id: number;
-  title: string;
-  original_name: string;
-  overview: string;
-  poster_path: string;
-  media_type: string;
-  release_date: string;
-  first_air_date: string;
-  vote_average: number;
-  vote_count: number;
-}
-interface CardProps {
-  data: CardData[];
-}
 
-const Card: React.FC<CardProps> = ({ data }) => {
+const Card = ({ data }) => {
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-4 p-4">
       {data.map((item) => (

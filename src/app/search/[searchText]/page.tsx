@@ -1,7 +1,19 @@
+import Card from "@/components/Card";
+import Results from "@/components/Results";
 import React from "react";
 
-const SearchText = () => {
-  return <div>SearchText</div>;
+const SearchText = async ({ params }: { params: { searchText: string } }) => {
+  const searchText = params.searchText;
+  const res = await fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${searchText}&language=en-US&page=1&include_adult=false`
+  );
+  const data = await res.json();
+  const result = data.results;
+  return (
+    <div>
+      <Results data={result} />
+    </div>
+  );
 };
 
 export default SearchText;

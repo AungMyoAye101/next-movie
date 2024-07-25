@@ -1,19 +1,21 @@
 import React from "react";
 import { CardProps } from "./Results";
 import Image from "next/image";
+import Link from "next/link";
 
 const SearchResult = ({ data }: CardProps) => {
   return (
     <div className="my-4">
       {data.map((item) => (
-        <div
+        <Link
+          href={`/${item.media_type || "movie"}/${item.id} `}
           key={item.id}
           className="flex gap-4 border border-gray-400 rounded p-4 mt-3 shadow"
         >
           <Image
             src={`https://image.tmdb.org/t/p/original${
               item.backdrop_path || item.poster_path
-            }  `}
+            } `}
             width={250}
             height={150}
             alt="posters"
@@ -37,7 +39,7 @@ const SearchResult = ({ data }: CardProps) => {
               </p>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

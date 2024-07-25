@@ -49,11 +49,11 @@ const Info = ({
         lg_screen ? "hidden md:block text-slate-200" : "block md:hidden"
       }`}
     >
-      <h1 className="text-3xl  font-bold">
+      <h1 className="text-3xl  font-bold font-mono">
         {name || original_name || original_title}
       </h1>
       <h2>{first_air_date || release_date}</h2>
-      <div className="flex gap-2 ">
+      <div className="flex gap-2 font-serif">
         {genres.map((item: { id: number; name: string }) => (
           <span key={item.id} className="text-md hover:text-primary">
             {item.name}
@@ -84,13 +84,13 @@ const Info = ({
       <h3 className="font-serif">{tagline}</h3>
       <div>
         <h2 className="text-lg font-bold">OverView</h2>
-        <p className="text-sm">{overview}</p>
+        <p className="text-sm ">{overview}</p>
       </div>
       {created_by && (
         <div className="flex gap-2">
           {created_by.map((item) => (
             <div key={item.id}>
-              <h2 className="text-lg">{item.name} </h2>
+              <h2 className="text-lg font-serif">{item.name} </h2>
               <p>Creator</p>
             </div>
           ))}

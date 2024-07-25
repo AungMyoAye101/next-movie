@@ -13,10 +13,10 @@ export interface CardData {
   vote_average: number;
   vote_count: number;
 }
-interface CardProps {
+export interface CardProps {
   data: CardData[];
 }
-const Results: React.FC<CardProps> = ({ data }) => {
+const Results = ({ data }: CardProps) => {
   return (
     <div>
       <Card data={data} />

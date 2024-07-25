@@ -6,12 +6,15 @@ import React, { useState } from "react";
 const SearchBox = () => {
   const [search, setSearch] = useState("");
   const router = useRouter();
-  const handelChange = (e: React.FormEventHandler<HTMLFormElement>) => {
-    e.preventDefault();
-    router.push(`search/${search}`);
-  };
+
   return (
-    <form onSubmit={handelChange} className="flex text-lg ">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        router.push(`search/${search}`);
+      }}
+      className="flex text-lg "
+    >
       <input
         type="Text"
         placeholder="Search for a movie or Tv shows..."

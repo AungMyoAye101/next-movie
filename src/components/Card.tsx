@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Count from "./Count";
-
-const Card = ({ data }) => {
+import { CardProps } from "./Results";
+const Card = ({ data }: CardProps) => {
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-4 p-4">
       {data.map((item) => (
@@ -15,14 +15,16 @@ const Card = ({ data }) => {
             href={`/${item.media_type || "movie"}/${item.id} `}
             className="relative"
           >
-            <Image
-              src={`https://image.tmdb.org/t/p/original${
-                item.poster_path || item.backdrop_path
-              }`}
-              width={300}
-              height={150}
-              alt="posters"
-            />
+            <div>
+              <Image
+                src={`https://image.tmdb.org/t/p/original${
+                  item.poster_path || item.backdrop_path
+                }`}
+                width={300}
+                height={150}
+                alt="posters"
+              />
+            </div>
             <div className="absolute -bottom-2 right-0">
               <Count rating={item.vote_average} />
             </div>

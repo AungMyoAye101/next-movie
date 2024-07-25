@@ -43,6 +43,8 @@ export default async function Home({
 
   return (
     <>
+      <Hero image={result.results[randomImage].backdrop_path} />
+      <NavLinkMenu />
       <Results data={result.results} />
       <Footer />
     </>

@@ -1,5 +1,7 @@
 import Card from "@/components/Card";
 import Results from "@/components/Results";
+import SearchBox from "@/components/SearchBox";
+import Link from "next/link";
 import React from "react";
 
 const SearchText = async ({ params }: { params: { searchText: string } }) => {
@@ -10,7 +12,8 @@ const SearchText = async ({ params }: { params: { searchText: string } }) => {
   const data = await res.json();
   const result = data.results;
   return (
-    <div>
+    <div className="p-4">
+      <Link href={"/"}>&larr; Back to the home</Link>
       <Results data={result} />
     </div>
   );

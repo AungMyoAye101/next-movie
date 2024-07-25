@@ -10,10 +10,11 @@ interface Detail {
 
 const Details = async ({ media_type, id }: Detail) => {
   const res = await fetch(
-    `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.API_KEY}`
+    `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.API_KEY}`,
+    { next: { revalidate: 3600 } }
   );
   const data = await res.json();
-  console.log(data);
+
   return (
     <>
       <div

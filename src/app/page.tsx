@@ -35,8 +35,12 @@ export default async function Home({
   const res = await fetch(
     `https://api.themoviedb.org/3${
       genre === "top_rated" ? "/movie/top_rated" : "/trending/all/week"
-    }?api_key=${API_KEY}`
+    }?api_key=${API_KEY}`,
+    { next: { revalidate: 3600 } }
   );
+  if (!res.ok) {
+    throw new Error("Failed to load.");
+  }
   const result: ApiResponse = await res.json();
 
   const randomImage = Math.round(Math.random() * result.results.length);

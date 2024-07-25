@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Count from "./Count";
 import { CardProps } from "./Results";
+import FallbackImg from "./FallbackImg";
 const Card = ({ data }: CardProps) => {
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-4 p-4">

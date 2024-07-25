@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { CardProps } from "./Results";
 import Image from "next/image";
 import Link from "next/link";
+
+import FallbackImg from "./FallbackImg";
 
 const SearchResult = ({ data }: CardProps) => {
   return (
@@ -12,18 +14,20 @@ const SearchResult = ({ data }: CardProps) => {
           key={item.id}
           className="flex gap-4 border border-gray-400 rounded p-4 mt-3 shadow hover:border-info "
         >
-          <Image
-            src={`https://image.tmdb.org/t/p/original${
-              item.backdrop_path || item.poster_path
-            } `}
-            width={250}
-            height={150}
-            alt="posters"
-            layout="reponsive"
-            objectFit="cover"
-            className="rounded "
-            style={{ aspectRatio: "16/9", maxWidth: "300" }}
-          />
+          <Suspense fallback={<FallbackImg />}>
+            <Image
+              src={`https://image.tmdb.org/t/p/original${
+                item.backdrop_path || item.poster_path
+              } `}
+              width={250}
+              height={150}
+              alt="posters"
+              layout="reponsive"
+              objectFit="cover"
+              className="rounded "
+              style={{ aspectRatio: "16/9", maxWidth: "300" }}
+            />
+          </Suspense>
 
           <div className="space-y-1">
             <h2 className="text-xl font-bold">

@@ -10,7 +10,7 @@ const SearchResult = ({ data }: CardProps) => {
         <Link
           href={`/${item.media_type || "movie"}/${item.id} `}
           key={item.id}
-          className="flex gap-4 border border-gray-400 rounded p-4 mt-3 shadow"
+          className="flex gap-4 border border-gray-400 rounded p-4 mt-3 shadow hover:border-info "
         >
           <Image
             src={`https://image.tmdb.org/t/p/original${

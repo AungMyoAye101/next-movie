@@ -7,7 +7,7 @@ import React from "react";
 const SearchText = async ({ params }: { params: { searchText: string } }) => {
   const searchText = params.searchText;
   const res = await fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${searchText}&language=en-US&page=1&include_adult=false`
+    `https://api.themoviedb.org/3/search/multi?api_key=${process.env.API_KEY}&query=${searchText}&language=en-US&page=1&include_adult=false`
   );
   const data = await res.json();
   const result = data.results;

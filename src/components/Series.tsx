@@ -17,7 +17,6 @@ interface EpInfo {
 }
 
 const Series = ({ next_episode_to_air, last_episode_to_air }: EpInfo) => {
-  console.log(next_episode_to_air, last_episode_to_air);
   return (
     <div className="p-4 space-y-2">
       {next_episode_to_air && (

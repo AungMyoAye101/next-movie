@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import SearchResult from "./SearchResult";
 export interface CardData {
   backdrop_path: string;
   id: number;
@@ -19,7 +20,7 @@ export interface CardProps {
 const Results = ({ data }: CardProps) => {
   return (
     <div>
-      <Card data={data} />
+      <SearchResult data={data} />
     </div>
   );
 };

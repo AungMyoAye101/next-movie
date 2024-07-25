@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import SearchResult from "./SearchResult";
+import Footer from "./Footer";
 export interface CardData {
   backdrop_path: string;
   id: number;
@@ -21,6 +22,7 @@ const Results = ({ data }: CardProps) => {
   return (
     <div>
       <SearchResult data={data} />
+      <Footer />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const SearchResult = ({ data }: CardProps) => {
   return (
-    <div className="">
+    <div className="my-4">
       {data.map((item) => (
         <div
           key={item.id}

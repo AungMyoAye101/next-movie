@@ -13,7 +13,9 @@ const SearchText = async ({ params }: { params: { searchText: string } }) => {
   const result = data.results;
   return (
     <div className="p-4">
-      <Link href={"/"}>&larr; Back to the home</Link>
+      <Link href={"/"} className="link-primary text-lg my-2">
+        &larr; Back to the home
+      </Link>
       <Results data={result} />
     </div>
   );

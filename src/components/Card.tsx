@@ -33,7 +33,7 @@ const Card = ({ data }: CardProps) => {
           </Link>
 
           <div className="card-body p-2">
-            <h2 className="card-title font-mono">
+            <h2 className="card-title font-serif line-clamp-2">
               {item.title || item.original_name}
             </h2>
             <p>{item.first_air_date || item.release_date}</p>

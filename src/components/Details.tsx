@@ -97,7 +97,7 @@ const Details = async ({ media_type, id }: Detail) => {
 
                 <td>
                   <a href={data.homepage} target="_blank">
-                    Home page
+                    Original page
                   </a>
                 </td>
               </tr>

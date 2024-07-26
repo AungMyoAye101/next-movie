@@ -7,14 +7,14 @@ import FallbackImg from "./FallbackImg";
 
 const SearchResult = ({ data }: CardProps) => {
   return (
-    <div className="my-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-4 p-4">
       {data.map((item) => (
         <Link
           href={`/${item.media_type || "movie"}/${item.id} `}
           key={item.id}
-          className="flex gap-4 border border-gray-400 rounded p-4 mt-3 shadow hover:border-info "
+          className=" rounded shadow hover:text-info "
         >
-          <Suspense fallback={<FallbackImg />}>
+          <div>
             <Image
               src={`https://image.tmdb.org/t/p/original${
                 item.backdrop_path || item.poster_path
@@ -22,26 +22,16 @@ const SearchResult = ({ data }: CardProps) => {
               width={250}
               height={150}
               alt="posters"
-              layout="reponsive"
-              objectFit="cover"
-              className="rounded "
-              style={{ aspectRatio: "16/9", maxWidth: "300" }}
+              className="rounded aspect-video object-cover"
             />
-          </Suspense>
+          </div>
 
-          <div className="space-y-1">
-            <h2 className="text-xl font-bold">
+          <div className="space-y-1 p-2">
+            <h2 className="text-lg line-clamp-2 font-bold">
               {item.title || item.original_name}
             </h2>
 
             <h4>{item.release_date || item.first_air_date}</h4>
-
-            <div>
-              <h5 className="text-lg font-bold">Overview</h5>
-              <p className="line-clamp-2 lg:line-clamp-none text-sm font-serif">
-                {item.overview}
-              </p>
-            </div>
           </div>
         </Link>
       ))}

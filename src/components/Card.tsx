@@ -6,7 +6,7 @@ import { CardProps } from "./Results";
 import FallbackImg from "./FallbackImg";
 const Card = ({ data }: CardProps) => {
   return (
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-4 p-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-4 p-4">
       {data.map((item) => (
         <div
           key={item.id}
@@ -19,11 +19,12 @@ const Card = ({ data }: CardProps) => {
             <div>
               <Image
                 src={`https://image.tmdb.org/t/p/original${
-                  item.poster_path || item.backdrop_path
+                  item.backdrop_path || item.poster_path
                 }`}
                 width={300}
                 height={150}
                 alt="posters"
+                className="rounded aspect-video object-cover"
               />
             </div>
             <div className="absolute -bottom-2 right-0">

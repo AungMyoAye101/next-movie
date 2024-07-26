@@ -18,7 +18,7 @@ interface EpInfo {
 
 const Series = ({ next_episode_to_air, last_episode_to_air }: EpInfo) => {
   return (
-    <div className="p-4 space-y-2">
+    <div className="">
       {next_episode_to_air && (
         <SeriesInfo data={next_episode_to_air} ep_time="Upcomming Episode" />
       )}

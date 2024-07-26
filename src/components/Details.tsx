@@ -84,7 +84,7 @@ const Details = async ({ media_type, id }: Detail) => {
                 <th>Status</th>
                 <th>Budget</th>
                 <th>Production</th>
-                <th>Type</th>
+
                 <th>Link</th>
               </tr>
             </thead>
@@ -94,7 +94,7 @@ const Details = async ({ media_type, id }: Detail) => {
                 <th>{data.status}</th>
                 <td>{data.budget || "-"}</td>
                 <td>{data.production_companies[0].name || "-"}</td>
-                <td>{data.type || "-"}</td>
+
                 <td>
                   <a href={data.homepage} target="_blank">
                     Home page

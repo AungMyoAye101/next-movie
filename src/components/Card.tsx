@@ -25,7 +25,8 @@ const Card = ({ data }: CardProps) => {
           className="card card-compact bg-base-100 shadow-xl rounded-lg max-w-6xl mx-auto hover:opacity-80 "
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ ease: "easeOut", duration: 1 }}
+          whileHover={{ scale: 0.9 }}
+          transition={{ ease: "easeOut", duration: 0.8 }}
           exit={{ opacity: 0 }}
         >
           <Link

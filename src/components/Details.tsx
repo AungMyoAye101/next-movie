@@ -3,6 +3,7 @@ import Image from "next/image";
 import Info from "./Info";
 import Footer from "./Footer";
 import Series from "./Series";
+import Table from "./Table";
 interface Detail {
   media_type: string;
   id: number;
@@ -18,7 +19,7 @@ const Details = async ({ media_type, id }: Detail) => {
   return (
     <>
       <div
-        className="hero place-items-start "
+        className="hero place-items-start hidden md:grid "
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original${
             data.backdrop_path || data.poster_path
@@ -57,53 +58,46 @@ const Details = async ({ media_type, id }: Detail) => {
           />
         </div>
       </div>
-      <Info
-        backdrop_path={data.backdrop_path}
-        id={data.id}
-        title={data.title}
-        name={data.name}
-        original_name={data.original_name}
-        original_title={data.original_title}
-        overview={data.overview}
-        poster_path={data.poster_path}
-        release_date={data.release_date}
-        first_air_date={data.first_air_date}
-        vote_average={data.vote_average}
-        runtime={data.runtime}
-        tagline={data.tagline}
-        genres={data.genres}
-        lg_screen={false}
-        created_by={data.created_by}
-      />
-      <div>
-        <div className="overflow-x-auto">
-          <table className="table">
-            {/* head */}
-            <thead className="text-lg">
-              <tr>
-                <th>Status</th>
-                <th>Budget</th>
-                <th>Production</th>
 
-                <th>Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* row 1 */}
-              <tr>
-                <th>{data.status}</th>
-                <td>{data.budget || "-"}</td>
-                <td>{data.production_companies[0].name || "-"}</td>
-
-                <td>
-                  <a href={data.homepage} target="_blank">
-                    Original page
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      {/* mobile view */}
+      <div className="md:hidden">
+        <div>
+          <Image
+            src={`https://image.tmdb.org/t/p/original${data.backdrop_path}  `}
+            width={500}
+            height={300}
+            alt="posters"
+            className="rounded aspect-video object-fill "
+          />
         </div>
+
+        <Info
+          backdrop_path={data.backdrop_path}
+          id={data.id}
+          title={data.title}
+          name={data.name}
+          original_name={data.original_name}
+          original_title={data.original_title}
+          overview={data.overview}
+          poster_path={data.poster_path}
+          release_date={data.release_date}
+          first_air_date={data.first_air_date}
+          vote_average={data.vote_average}
+          runtime={data.runtime}
+          tagline={data.tagline}
+          genres={data.genres}
+          lg_screen={false}
+          created_by={data.created_by}
+        />
+      </div>
+      <div>
+        {/* table */}
+        <Table
+          status={data.status}
+          budget={data.budget}
+          production={data.production_companies}
+          homePage={data.homePage}
+        />
         {media_type === "tv" && (
           <Series
             next_episode_to_air={data.next_episode_to_air}

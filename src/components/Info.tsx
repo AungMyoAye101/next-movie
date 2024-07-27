@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Count from "./Count";
 import { FaBars } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaBookmark } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 interface InfoDetail {
   backdrop_path: string;
@@ -44,10 +47,13 @@ const Info = ({
   created_by,
 }: InfoDetail) => {
   return (
-    <div
+    <motion.div
       className={`px-4  space-y-2  mx-auto ${
         lg_screen ? "hidden md:block text-slate-200" : "block md:hidden"
       }`}
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ ease: "easeOut", duration: 2 }}
     >
       <h1 className="text-3xl  font-bold font-serif">
         {name || original_name || original_title}
@@ -96,7 +102,7 @@ const Info = ({
           ))}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

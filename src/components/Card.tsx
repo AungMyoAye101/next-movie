@@ -18,7 +18,7 @@ const cardContainer = {
 };
 const Card = ({ data }: CardProps) => {
   return (
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5   gap-4 p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5   gap-4 p-4">
       {data.map((item) => (
         <motion.div
           key={item.id}
@@ -42,9 +42,9 @@ const Card = ({ data }: CardProps) => {
                   item.poster_path || item.backdrop_path
                 }`}
                 width={300}
-                height={100}
+                height={300}
                 alt="posters"
-                className="rounded object-cover "
+                className="rounded object-cover aspect-video"
               />
             </motion.div>
             <div className="absolute -bottom-2 right-0">

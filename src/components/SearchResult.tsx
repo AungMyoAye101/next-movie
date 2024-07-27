@@ -7,7 +7,7 @@ import FallbackImg from "./FallbackImg";
 
 const SearchResult = ({ data }: CardProps) => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-4 p-4">
+    <div className="grid  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4 p-4">
       {data.map((item) => (
         <Link
           href={`/${item.media_type || "movie"}/${item.id} `}
@@ -19,8 +19,8 @@ const SearchResult = ({ data }: CardProps) => {
               src={`https://image.tmdb.org/t/p/original${
                 item.backdrop_path || item.poster_path
               } `}
-              width={250}
-              height={150}
+              width={500}
+              height={300}
               alt="posters"
               className="rounded aspect-video object-cover"
             />

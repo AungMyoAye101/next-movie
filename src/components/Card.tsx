@@ -18,34 +18,34 @@ const cardContainer = {
 };
 const Card = ({ data }: CardProps) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5   gap-4 p-4">
+    <div className="grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto  gap-4 p-4">
       {data.map((item) => (
         <motion.div
           key={item.id}
-          className="card card-compact bg-base-100 shadow-xl rounded-lg max-w-6xl mx-auto hover:opacity-80 "
+          className="card card-compact bg-base-100 shadow-md rounded-lg max-w-6xl mx-auto hover:opacity-80 hover:shadow-xl"
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
-          whileHover={{ scale: 0.9 }}
           transition={{ ease: "easeOut", duration: 0.8 }}
           exit={{ opacity: 0 }}
         >
           <Link
             href={`/${item.media_type || "movie"}/${item.id} `}
-            className="relative"
+            className="relative "
           >
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ ease: "easeOut", duration: 2 }}
+              transition={{ ease: "easeOut", duration: 1 }}
+              className="overflow-hidden"
             >
               <Image
                 src={`https://image.tmdb.org/t/p/original${
-                  item.poster_path || item.backdrop_path
+                  item.backdrop_path || item.poster_path
                 }`}
                 width={300}
-                height={300}
+                height={200}
                 alt="posters"
-                className="rounded object-cover aspect-video"
+                className="rounded object-cover aspect-video hover:scale-110 transition-all duration-150 ease-in-out"
               />
             </motion.div>
             <div className="absolute -bottom-2 right-0">
@@ -59,10 +59,9 @@ const Card = ({ data }: CardProps) => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ ease: "easeOut", duration: 1.5 }}
           >
-            <h2 className="card-title font-serif line-clamp-2">
+            <h2 className="card-title font-serif line-clamp-1 text-lg">
               {item.title || item.original_name}
             </h2>
-            <p>{item.first_air_date || item.release_date}</p>
           </motion.div>
         </motion.div>
       ))}

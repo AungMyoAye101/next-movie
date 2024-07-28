@@ -12,7 +12,7 @@ const Hero = ({ image }: BgImage) => {
         minHeight: "80vh",
       }}
     >
-      <div className="hero-overlay bg-opacity-70"></div>
+      <div className="hero-overlay bg-opacity-70 bg-slate-700"></div>
       <div className="hero-content text-neutral-content ">
         <div className="max-w-full">
           <h1 className="mb-5 text-5xl font-bold">Welcome.</h1>

@@ -24,6 +24,7 @@ const Details = async ({ media_type, id }: Detail) => {
           backgroundImage: `url(https://image.tmdb.org/t/p/original${
             data.backdrop_path || data.poster_path
           })`,
+          maxHeight: "80vh",
         }}
       >
         <div className="hero-overlay bg-opacity-80"></div>

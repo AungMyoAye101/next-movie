@@ -7,6 +7,7 @@ import Count from "./Count";
 import { CardProps } from "./Results";
 import FallbackImg from "./FallbackImg";
 import { motion } from "framer-motion";
+import ImageCard from "./ImageCard";
 const cardContainer = {
   hidden: {
     opacity: 0,
@@ -32,22 +33,12 @@ const Card = ({ data }: CardProps) => {
             href={`/${item.media_type || "movie"}/${item.id} `}
             className="relative "
           >
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ ease: "easeOut", duration: 1 }}
-              className="overflow-hidden"
-            >
-              <Image
-                src={`https://image.tmdb.org/t/p/original${
-                  item.backdrop_path || item.poster_path
-                }`}
-                width={300}
-                height={200}
-                alt="posters"
-                className="rounded object-cover aspect-video hover:scale-110 transition-all duration-150 ease-in-out"
-              />
-            </motion.div>
+            <ImageCard
+              img={`https://image.tmdb.org/t/p/original${
+                item.backdrop_path || item.poster_path
+              }`}
+            />
+
             <div className="absolute -bottom-2 right-0">
               <Count rating={item.vote_average} />
             </div>

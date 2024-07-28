@@ -4,6 +4,7 @@ import React from "react";
 import { SeriesType } from "./Series";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import ImageCard from "./ImageCard";
 
 interface Info {
   data: SeriesType;
@@ -14,19 +15,9 @@ const SeriesInfo = ({ data, ep_time }: Info) => {
   console.log(data);
   return (
     <div className="border border-gray-600 my-2 p-2 shadow-sm rounded flex flex-wrap gap-4">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ ease: "easeOut", duration: 1.5 }}
-      >
-        <Image
-          src={`https://image.tmdb.org/t/p/original${data.still_path}  `}
-          width={300}
-          height={200}
-          alt="posters"
-          className="rounded aspect-video "
-        />
-      </motion.div>
+      <ImageCard
+        img={`https://image.tmdb.org/t/p/original${data.still_path}  `}
+      />
 
       <motion.div
         className="space-y-1 "

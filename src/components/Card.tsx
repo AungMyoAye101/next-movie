@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Count from "./Count";
 import { CardProps } from "./Results";
-import FallbackImg from "./FallbackImg";
+
 import { motion } from "framer-motion";
 import ImageCard from "./ImageCard";
 const cardContainer = {

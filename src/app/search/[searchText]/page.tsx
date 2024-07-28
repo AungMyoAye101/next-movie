@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import FallbackImg from "@/components/FallbackImg";
+
 import Results from "@/components/Results";
 import SearchBox from "@/components/SearchBox";
 import Link from "next/link";
@@ -21,9 +21,8 @@ const SearchText = async ({ params }: { params: { searchText: string } }) => {
       <Link href={"/"} className="link-primary text-lg my-2">
         &larr; Back to the home
       </Link>
-      <Suspense fallback={<FallbackImg />}>
-        <Results data={result} />
-      </Suspense>
+
+      <Results data={result} />
     </div>
   );
 };

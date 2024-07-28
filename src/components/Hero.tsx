@@ -6,9 +6,10 @@ interface BgImage {
 const Hero = ({ image }: BgImage) => {
   return (
     <div
-      className="hero min-h-96 "
+      className="hero  "
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${image})`,
+        minHeight: "80vh",
       }}
     >
       <div className="hero-overlay bg-opacity-70"></div>

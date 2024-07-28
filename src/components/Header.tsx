@@ -42,13 +42,16 @@ const Header = () => {
         </div>
       </div>
       <div className="navbar-center">
-        <Link href={"/"} className="btn btn-ghost text-xl">
+        <Link
+          href={"/"}
+          className="link no-underline text-xl hover:text-warning "
+        >
           Rare
         </Link>
       </div>
-      <div className="flex navbar-end gap-2 items-center ">
+      <div className="flex navbar-end gap-4 items-center ">
         <DarkModeSwitch />
-        <button className="btn btn-ghost btn-circle  ">
+        <button className="hover:text-warning  ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -64,7 +67,7 @@ const Header = () => {
             />
           </svg>
         </button>
-        <button className="btn btn-ghost btn-circle">
+        <button className="hover:text-warning">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"

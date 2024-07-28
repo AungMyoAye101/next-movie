@@ -12,7 +12,7 @@ const NavItems = ({ title, param }: SearchProps) => {
   return (
     <Link
       href={`/?genre=${param}`}
-      className={`link  text-lg font-bold no-underline ${
+      className={`link  text-lg font-bold no-underline hover:text-warning ${
         genre === param ? "link-primary" : ""
       }`}
     >

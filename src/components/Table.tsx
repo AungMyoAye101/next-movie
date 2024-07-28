@@ -13,8 +13,8 @@ const Table = ({ status, budget, production, homePage }: MovieData) => {
   return (
     <motion.div
       className="overflow-x-auto"
-      initial={{ opacity: 0, x: -900 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ ease: "easeOut", duration: 1 }}
     >
       <table className="table">

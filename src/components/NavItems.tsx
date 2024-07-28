@@ -12,8 +12,8 @@ const NavItems = ({ title, param }: SearchProps) => {
   return (
     <Link
       href={`/?genre=${param}`}
-      className={`btn  text-lg font-bold ${
-        genre === param ? "btn-outline btn-success" : ""
+      className={`link  text-lg font-bold no-underline ${
+        genre === param ? "link-primary" : ""
       }`}
     >
       {title}

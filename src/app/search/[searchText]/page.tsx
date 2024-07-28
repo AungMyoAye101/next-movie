@@ -22,7 +22,7 @@ const SearchText = async ({ params }: { params: { searchText: string } }) => {
         &larr; Back to the home
       </Link>
 
-      <Results data={result} />
+      <Results data={result} searchWord={searchText} />
     </div>
   );
 };

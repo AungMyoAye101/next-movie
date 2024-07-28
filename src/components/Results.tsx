@@ -3,6 +3,7 @@ import Card from "./Card";
 import SearchResult from "./SearchResult";
 import Footer from "./Footer";
 import Link from "next/link";
+import SearchBox from "./SearchBox";
 
 export interface CardData {
   backdrop_path: string;
@@ -19,8 +20,9 @@ export interface CardData {
 }
 export interface CardProps {
   data: CardData[];
+  searchWord: string;
 }
-const Results = ({ data }: CardProps) => {
+const Results = ({ data, searchWord }: CardProps) => {
   return (
     <div>
       {data.length === 0 ? (
@@ -31,7 +33,7 @@ const Results = ({ data }: CardProps) => {
           </Link>
         </div>
       ) : (
-        <SearchResult data={data} />
+        <SearchResult data={data} searchWord={searchWord} />
       )}
     </div>
   );

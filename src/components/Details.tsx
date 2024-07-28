@@ -27,7 +27,7 @@ const Details = async ({ media_type, id }: Detail) => {
           maxHeight: "80vh",
         }}
       >
-        <div className="hero-overlay bg-opacity-80"></div>
+        <div className="hero-overlay bg-opacity-80 bg-slate-700"></div>
         <div className="p-4 flex gap-1 ">
           <Image
             src={`https://image.tmdb.org/t/p/original${

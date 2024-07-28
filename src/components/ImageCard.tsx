@@ -18,8 +18,8 @@ const ImageCard = ({ img }: ImageLink) => {
     >
       <Image
         src={imgSrc}
-        width={500}
-        height={300}
+        width={400}
+        height={200}
         alt="posters"
         className="rounded aspect-video object-cover hover:scale-110 transition-all duration-150 ease-in-out"
         onError={(e) => setimgSrc("/failedImg.jpg")}

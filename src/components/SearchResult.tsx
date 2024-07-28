@@ -8,9 +8,12 @@ import ImageCard from "./ImageCard";
 import { motion } from "framer-motion";
 import Footer from "./Footer";
 
-const SearchResult = ({ data }: CardProps) => {
+const SearchResult = ({ data, searchWord }: CardProps) => {
   return (
     <>
+      <h1 className="text-center my-4 text-lg font-serif font-semibold">
+        Search results of '{searchWord}'
+      </h1>
       <div className="grid  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4 p-4">
         {data.map((item) => (
           <Link
@@ -35,8 +38,6 @@ const SearchResult = ({ data }: CardProps) => {
               <h2 className="text-lg line-clamp-2 font-bold">
                 {item.title || item.original_name}
               </h2>
-
-              <h4>{item.release_date || item.first_air_date}</h4>
             </motion.div>
           </Link>
         ))}

@@ -51,6 +51,7 @@ const Header = () => {
       </div>
       <div className="flex navbar-end gap-4 items-center ">
         <DarkModeSwitch />
+
         <button className="hover:text-warning  ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,6 +68,7 @@ const Header = () => {
             />
           </svg>
         </button>
+
         <button className="hover:text-warning">
           <svg
             xmlns="http://www.w3.org/2000/svg"

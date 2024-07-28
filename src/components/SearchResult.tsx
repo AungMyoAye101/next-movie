@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import FallbackImg from "./FallbackImg";
+import ImageCard from "./ImageCard";
 
 const SearchResult = ({ data }: CardProps) => {
   return (
@@ -15,14 +16,10 @@ const SearchResult = ({ data }: CardProps) => {
           className=" rounded shadow hover:text-info "
         >
           <div>
-            <Image
-              src={`https://image.tmdb.org/t/p/original${
+            <ImageCard
+              img={`https://image.tmdb.org/t/p/original${
                 item.backdrop_path || item.poster_path
               } `}
-              width={500}
-              height={300}
-              alt="posters"
-              className="rounded aspect-video object-cover"
             />
           </div>
 

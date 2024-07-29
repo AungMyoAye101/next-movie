@@ -1,9 +1,8 @@
 "use client";
-import React, { Suspense } from "react";
+
 import { CardProps } from "./Results";
 import Image from "next/image";
 import Link from "next/link";
-
 import ImageCard from "./ImageCard";
 import { motion } from "framer-motion";
 import Footer from "./Footer";

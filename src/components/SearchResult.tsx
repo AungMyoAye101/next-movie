@@ -7,24 +7,24 @@ import ImageCard from "./ImageCard";
 import { motion } from "framer-motion";
 import Footer from "./Footer";
 
-const SearchResult = ({ data, searchWord }: CardProps) => {
+const SearchResult = ({ data }: CardProps) => {
   return (
     <>
-      <h1 className="text-center my-4 text-lg font-serif font-semibold">
+      {/* <h1 className="text-center my-4 text-lg font-serif font-semibold">
         Search results of {searchWord}
-      </h1>
+      </h1> */}
       <div className="grid  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4 p-4">
         {data.map((item) => (
           <Link
-            href={`/${item.media_type || "movie"}/${item.id} `}
+            href={`/${item.media_type || "movie"}/${item.id}`}
             key={item.id}
-            className=" rounded shadow hover:text-info "
+            className="rounded shadow hover:text-info"
           >
             <div>
               <ImageCard
                 img={`https://image.tmdb.org/t/p/original${
                   item.backdrop_path || item.poster_path
-                } `}
+                }`}
               />
             </div>
 

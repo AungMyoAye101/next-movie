@@ -20,9 +20,9 @@ export interface CardData {
 }
 export interface CardProps {
   data: CardData[];
-  searchWord: string;
 }
-const Results = ({ data, searchWord }: CardProps) => {
+
+const Results = ({ data }: CardProps) => {
   return (
     <div>
       {data.length === 0 ? (
@@ -33,7 +33,7 @@ const Results = ({ data, searchWord }: CardProps) => {
           </Link>
         </div>
       ) : (
-        <SearchResult data={data} searchWord={searchWord} />
+        <SearchResult data={data} />
       )}
     </div>
   );

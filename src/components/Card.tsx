@@ -8,15 +8,7 @@ import { CardProps } from "./Results";
 
 import { motion } from "framer-motion";
 import ImageCard from "./ImageCard";
-const cardContainer = {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    duration: 0.5,
-  },
-};
+
 const Card = ({ data }: CardProps) => {
   return (
     <div className="grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto  gap-4 p-4">

@@ -77,14 +77,14 @@ const Info = ({
         <span>User Score</span>
       </div>
       <div className="space-x-2">
-        <button className="btn btn-circle btn-success">
-          <FaBars className=" text-lg" />
+        <button className="btn btn-circle bg-green-500">
+          <FaBars className=" text-lg text-slate-200" />
         </button>
-        <button className="btn btn-circle btn-success">
-          <FaHeart className=" text-lg" />
+        <button className="btn btn-circle bg-green-500">
+          <FaHeart className=" text-lg text-slate-200" />
         </button>
-        <button className="btn btn-circle btn-success">
-          <FaBookmark className=" text-lg" />
+        <button className="btn btn-circle bg-green-500">
+          <FaBookmark className=" text-lg text-slate-200" />
         </button>
       </div>
       <h3 className="font-serif">{tagline}</h3>

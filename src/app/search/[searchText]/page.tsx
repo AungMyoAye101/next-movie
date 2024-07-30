@@ -21,6 +21,10 @@ const SearchText = async ({ params }: { params: { searchText: string } }) => {
       <Link href={"/"} className="link-primary text-lg my-2">
         &larr; Back to the home
       </Link>
+      <div>
+        <span>Movie</span>
+        <span>Tv show</span>
+      </div>
       <Results data={result} />
     </div>
   );

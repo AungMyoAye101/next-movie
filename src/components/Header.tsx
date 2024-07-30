@@ -4,9 +4,12 @@ import Link from "next/link";
 
 import DarkModeSwitch from "./DarkModeSwiitch";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const [search, setSearch] = useState(false);
+  const [searchText, setSetsearchText] = useState("");
+  const router = useRouter();
   return (
     <>
       <header className="navbar bg-base-100 border-b border-gray-600 relative z-50 ">
@@ -104,12 +107,17 @@ const Header = () => {
         className={`absolute mt-2 right-0 z-10  ${
           search ? "top-16 opacity-100" : "top-0 opacity-0"
         }  transition-all ease-in-out duration-300`}
+        onSubmit={(e) => {
+          e.preventDefault();
+          router.push(`search/${searchText}`);
+        }}
       >
         <label className="input input-bordered flex items-center gap-2">
           <input
             type="text"
             className="grow bg-slate-100 focus:outine-0  outline-none"
             placeholder="Search"
+            onChange={(e) => setSetsearchText(e.target.value)}
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"

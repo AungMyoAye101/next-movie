@@ -48,7 +48,7 @@ const Info = ({
 }: InfoDetail) => {
   return (
     <motion.div
-      className={`px-4  space-y-2  mx-auto ${
+      className={`prose px-4  space-y-2  mx-auto ${
         lg_screen ? "hidden md:block text-slate-200" : "block md:hidden"
       }`}
       initial={{ opacity: 0, y: 10 }}
@@ -59,7 +59,7 @@ const Info = ({
         {name || original_name || original_title}
       </h1>
       <h2>{first_air_date || release_date}</h2>
-      <div className="flex gap-2 font-mono">
+      <div className="flex gap-2 ">
         {genres.map((item: { id: number; name: string }) => (
           <span key={item.id} className="text-md hover:text-primary">
             {item.name}

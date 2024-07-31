@@ -48,17 +48,17 @@ const Info = ({
 }: InfoDetail) => {
   return (
     <motion.div
-      className={`prose px-4  space-y-2  mx-auto ${
-        lg_screen ? "hidden md:block text-slate-200" : "block md:hidden"
+      className={`px-4  space-y-2  mx-auto  ${
+        lg_screen ? "hidden md:block" : "block md:hidden"
       }`}
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ ease: "easeOut", duration: 2 }}
     >
-      <h1 className="text-3xl  font-bold font-serif">
+      <h1 className=" text-xl font-serif">
         {name || original_name || original_title}
       </h1>
-      <h2>{first_air_date || release_date}</h2>
+      <h3>{first_air_date || release_date}</h3>
       <div className="flex gap-2 ">
         {genres.map((item: { id: number; name: string }) => (
           <span key={item.id} className="text-md hover:text-primary">
@@ -76,27 +76,17 @@ const Info = ({
         <Count rating={vote_average} />
         <span>User Score</span>
       </div>
-      <div className="space-x-2">
-        <button className="btn btn-circle bg-green-500">
-          <FaBars className=" text-lg text-slate-200" />
-        </button>
-        <button className="btn btn-circle bg-green-500">
-          <FaHeart className=" text-lg text-slate-200" />
-        </button>
-        <button className="btn btn-circle bg-green-500">
-          <FaBookmark className=" text-lg text-slate-200" />
-        </button>
-      </div>
-      <h3 className="font-serif">{tagline}</h3>
+
+      <h3 className="font-serif italic">{tagline}</h3>
       <div>
-        <h2 className="text-lg font-bold">OverView</h2>
-        <p className="text">{overview}</p>
+        <h2 className="text-lg font-semibold">OverView</h2>
+        <p className="">{overview}</p>
       </div>
       {created_by && (
         <div className="flex gap-2">
           {created_by.map((item) => (
             <div key={item.id}>
-              <h2 className="text-lg font-serif">{item.name} </h2>
+              <h3 className="">{item.name} </h3>
               <p>Creator</p>
             </div>
           ))}

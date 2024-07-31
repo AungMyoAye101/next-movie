@@ -18,46 +18,36 @@ const Details = async ({ media_type, id }: Detail) => {
 
   return (
     <>
-      <div
-        className="hero place-items-start hidden md:grid "
-        style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/original${
-            data.backdrop_path || data.poster_path
-          })`,
-          maxHeight: "80vh",
-        }}
-      >
-        <div className="hero-overlay bg-opacity-80 bg-slate-700"></div>
-        <div className="p-4 flex gap-1 ">
-          <Image
-            src={`https://image.tmdb.org/t/p/original${
-              data.poster_path || data.backdrop_path
-            }  `}
-            width={300}
-            height={200}
-            alt="posters"
-            className="rounded "
-          />
+      <div className="hero-overlay bg-opacity-80 bg-slate-700"></div>
+      <div className="p-4  gap-4 hidden md:flex ">
+        <Image
+          src={`https://image.tmdb.org/t/p/original${
+            data.poster_path || data.backdrop_path
+          }  `}
+          width={300}
+          height={200}
+          alt="posters"
+          className="rounded-md shadow"
+        />
 
-          <Info
-            backdrop_path={data.backdrop_path}
-            id={data.id}
-            title={data.title}
-            name={data.name}
-            original_name={data.original_name}
-            original_title={data.original_title}
-            overview={data.overview}
-            poster_path={data.poster_path}
-            release_date={data.release_date}
-            first_air_date={data.first_air_date}
-            vote_average={data.vote_average}
-            runtime={data.runtime}
-            tagline={data.tagline}
-            genres={data.genres}
-            lg_screen={true}
-            created_by={data.created_by}
-          />
-        </div>
+        <Info
+          backdrop_path={data.backdrop_path}
+          id={data.id}
+          title={data.title}
+          name={data.name}
+          original_name={data.original_name}
+          original_title={data.original_title}
+          overview={data.overview}
+          poster_path={data.poster_path}
+          release_date={data.release_date}
+          first_air_date={data.first_air_date}
+          vote_average={data.vote_average}
+          runtime={data.runtime}
+          tagline={data.tagline}
+          genres={data.genres}
+          lg_screen={true}
+          created_by={data.created_by}
+        />
       </div>
 
       {/* mobile view */}

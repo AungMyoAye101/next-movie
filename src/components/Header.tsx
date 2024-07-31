@@ -4,17 +4,32 @@ import DarkModeSwitch from "./DarkModeSwiitch";
 const Header = () => {
   return (
     <>
-      <header>
+      <header className="flex justify-between items-center px-4 py-2">
         <div>
-          <Link href={"/"}>Rare</Link>
+          <Link
+            href={"/"}
+            className="text-xl font-semibold hover:text-amber-500 "
+          >
+            Rare
+          </Link>
         </div>
-        <div>
-          <Link href={"/"}>Home</Link>
-          <Link href={"/"}>About</Link>
+        <div className="space-x-4 hidden md:block">
+          <Link
+            href={"/"}
+            className="text-xl font-semibold hover:text-amber-500 "
+          >
+            Home
+          </Link>
+          <Link
+            href={"/about"}
+            className="text-xl font-semibold hover:text-amber-500 "
+          >
+            About
+          </Link>
         </div>
-        <div>
+        <div className="flex items-center gap-2">
           <DarkModeSwitch />
-          <div className="dropdown">
+          <div className="dropdown relative block md:hidden">
             <div
               tabIndex={0}
               role="button"
@@ -37,7 +52,7 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow absolute right-0"
             >
               <li>
                 <Link href={"/"} className="text-xl hover:text-blue-400">

@@ -1,6 +1,7 @@
 import Card from "@/components/Card";
 import Results from "@/components/Results";
 import SearchBox from "@/components/SearchBox";
+import SearchNav from "@/components/SearchNav";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -18,13 +19,7 @@ const SearchText = async ({ params }: { params: { searchText: string } }) => {
   const result = data.results;
   return (
     <div className="p-4">
-      <Link href={"/"} className="link-primary text-lg my-2">
-        &larr; Back to the home
-      </Link>
-      <div>
-        <span>Movie</span>
-        <span>Tv show</span>
-      </div>
+      <SearchNav />
       <Results data={result} />
     </div>
   );

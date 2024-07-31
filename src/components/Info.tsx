@@ -86,7 +86,7 @@ const Info = ({
         <div className="flex gap-2">
           {created_by.map((item) => (
             <div key={item.id}>
-              <h3 className="">{item.name} </h3>
+              <h3 className="text-md font-semibold">{item.name} </h3>
               <p>Creator</p>
             </div>
           ))}

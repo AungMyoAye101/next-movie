@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { MdOutlineArrowBackIos } from "react-icons/md";
 
 const SearchNav = () => {
   const [search, setSearch] = useState("");
@@ -55,8 +56,8 @@ const SearchNav = () => {
       </div>
 
       <div className="items-center gap-3 hidden md:flex">
-        <Link href={"/"} className="btn btn-circle btn-sm">
-          Back
+        <Link href={"/"} className="btn btn-circle btn-sm btn-ghost">
+          <MdOutlineArrowBackIos />
         </Link>
         <button className="btn text-md btn-sm btn-ghost">Populer</button>
         <button className="btn text-md btn-sm btn-ghost">Trending</button>
@@ -73,7 +74,7 @@ const SearchNav = () => {
         >
           <input
             type="text"
-            placeholder="Search..."
+            placeholder="Enter Search Text..."
             onChange={(e) => setSearch(e.target.value)}
             className="input input-sm input-bordered focus:outline-none"
           />

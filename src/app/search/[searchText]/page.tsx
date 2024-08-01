@@ -18,7 +18,7 @@ const SearchText = async ({ params }: { params: { searchText: string } }) => {
   const data = await res.json();
   const result = data.results;
   return (
-    <div className="p-4">
+    <div>
       <SearchNav />
       <Results data={result} />
     </div>

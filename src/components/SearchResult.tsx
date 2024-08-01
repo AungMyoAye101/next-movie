@@ -18,7 +18,7 @@ interface CardData {
   vote_average: number;
   vote_count: number;
 }
-interface CardProps {
+export interface CardProps {
   data: CardData[];
 }
 const SearchResult = ({ data }: CardProps) => {

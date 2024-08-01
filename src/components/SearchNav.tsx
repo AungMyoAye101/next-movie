@@ -60,7 +60,12 @@ const SearchNav = () => {
         <Link href={"/"} className="btn btn-circle btn-sm btn-ghost">
           <MdOutlineArrowBackIos />
         </Link>
-        <button className="btn text-md btn-sm btn-ghost">Populer</button>
+        <button
+          className="btn text-md btn-sm btn-ghost"
+          onClick={() => console.log("hi")}
+        >
+          Populer
+        </button>
         <button className="btn text-md btn-sm btn-ghost">Trending</button>
         <button className="btn text-md btn-sm btn-ghost">Movie</button>
         <button className="btn text-md btn-sm btn-ghost">TV Shows</button>

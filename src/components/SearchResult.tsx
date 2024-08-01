@@ -10,9 +10,6 @@ import Footer from "./Footer";
 const SearchResult = ({ data }: CardProps) => {
   return (
     <>
-      {/* <h1 className="text-center my-4 text-lg font-serif font-semibold">
-        Search results of {searchWord}
-      </h1> */}
       <div className="grid  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4 p-4">
         {data.map((item) => (
           <Link

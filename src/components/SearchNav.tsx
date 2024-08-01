@@ -8,6 +8,7 @@ import { MdOutlineArrowBackIos } from "react-icons/md";
 const SearchNav = () => {
   const [search, setSearch] = useState("");
   const router = useRouter();
+
   return (
     <nav className=" flex justify-between items-center px-4 py-2 bg-base-200">
       <div className="dropdown relative block md:hidden">
@@ -48,7 +49,7 @@ const SearchNav = () => {
             </Link>
           </li>
           <li>
-            <Link href={"/"} className="text-xl hover:text-blue-400">
+            <Link href={`tv/${search}`} className="text-xl hover:text-blue-400">
               TV Shows
             </Link>
           </li>

@@ -5,7 +5,7 @@ import SearchNav from "@/components/SearchNav";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const SearchText = async ({ params }: { params: { searchText: string } }) => {
+const SearchText = ({ params }: { params: { searchText: string } }) => {
   const searchText = params.searchText;
 
   return (

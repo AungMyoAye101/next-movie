@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Count from "./Count";
-import { CardProps } from "./Results";
+import { CardProps } from "./SearchResult";
 
 import { motion } from "framer-motion";
 import ImageCard from "./ImageCard";

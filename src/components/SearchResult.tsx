@@ -1,12 +1,26 @@
 "use client";
 
-import { CardProps } from "./Results";
 import Image from "next/image";
 import Link from "next/link";
 import ImageCard from "./ImageCard";
 import { motion } from "framer-motion";
 import Footer from "./Footer";
-
+interface CardData {
+  backdrop_path: string;
+  id: number;
+  title: string;
+  original_name: string;
+  overview: string;
+  poster_path: string;
+  media_type: string;
+  release_date: string;
+  first_air_date: string;
+  vote_average: number;
+  vote_count: number;
+}
+interface CardProps {
+  data: CardData[];
+}
 const SearchResult = ({ data }: CardProps) => {
   return (
     <>

@@ -2,27 +2,23 @@ import React from "react";
 import Card from "./Card";
 import SearchResult from "./SearchResult";
 import Footer from "./Footer";
-import Link from "next/link";
 import SearchBox from "./SearchBox";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-export interface CardData {
-  backdrop_path: string;
-  id: number;
-  title: string;
-  original_name: string;
-  overview: string;
-  poster_path: string;
-  media_type: string;
-  release_date: string;
-  first_air_date: string;
-  vote_average: number;
-  vote_count: number;
-}
-export interface CardProps {
-  data: CardData[];
-}
-
-const Results = ({ data }: CardProps) => {
+type resultProps = {
+  searchText: string;
+};
+const Results = async ({ searchText }: resultProps) => {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/search/multi?api_key=${process.env.API_KEY}&query=${searchText}&language=en-US&page=1&include_adult=false`,
+    { next: { revalidate: 3600 } }
+  );
+  if (!res.ok) {
+    throw new Error("Failed to load.");
+  }
+  const resData = await res.json();
+  const data = resData.results;
   return (
     <div>
       {data.length === 0 ? (

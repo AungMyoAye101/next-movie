@@ -61,9 +61,12 @@ const SearchNav = () => {
         <Link href={"/"} className="btn btn-circle btn-sm btn-ghost">
           <MdOutlineArrowBackIos />
         </Link>
-        <button className="link link-neutral text-md no-underline hover:underline px-2 ">
+        <Link
+          href={"/populer"}
+          className="link link-neutral text-md no-underline hover:underline px-2 "
+        >
           Populer
-        </button>
+        </Link>
         <button className="link link-neutral text-md no-underline hover:underline px-2 ">
           Trending
         </button>
@@ -71,7 +74,7 @@ const SearchNav = () => {
           Movie
         </button>
         <Link
-          href={`/tv/${search}`}
+          href={`/tvTrend`}
           className="link link-neutral text-md no-underline hover:underline px-2 "
         >
           TV Shows

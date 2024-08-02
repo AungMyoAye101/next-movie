@@ -4,7 +4,7 @@ import React from "react";
 
 const page = async () => {
   const res = await fetch(
-    `https://api.themoviedb.org/3/trending/tv/day?api_key=${process.env.API_KEY}`
+    `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.API_KEY}`
   );
   const resData = await res.json();
   const data = resData.results;

@@ -67,9 +67,12 @@ const SearchNav = () => {
         >
           Populer
         </Link>
-        <button className="link link-neutral text-md no-underline hover:underline px-2 ">
+        <Link
+          href={`/trending`}
+          className="link link-neutral text-md no-underline hover:underline px-2 "
+        >
           Trending
-        </button>
+        </Link>
         <Link
           href={`/movieTrend`}
           className="link link-neutral text-md no-underline hover:underline px-2 "

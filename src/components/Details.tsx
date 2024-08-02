@@ -18,7 +18,6 @@ const Details = async ({ media_type, id }: Detail) => {
 
   return (
     <>
-      <div className="hero-overlay bg-opacity-80 bg-slate-700"></div>
       <div className="p-4  gap-4 hidden md:flex ">
         <Image
           src={`https://image.tmdb.org/t/p/original${
@@ -87,7 +86,7 @@ const Details = async ({ media_type, id }: Detail) => {
           status={data.status}
           budget={data.budget}
           production={data.production_companies}
-          homePage={data.homePage}
+          homePage={data.homepage}
         />
         {media_type === "tv" && (
           <Series

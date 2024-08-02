@@ -1,5 +1,6 @@
 "use client";
 
+import SearchText from "@/app/search/[searchText]/page";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -60,15 +61,21 @@ const SearchNav = () => {
         <Link href={"/"} className="btn btn-circle btn-sm btn-ghost">
           <MdOutlineArrowBackIos />
         </Link>
-        <button
-          className="btn text-md btn-sm btn-ghost"
-          onClick={() => console.log("hi")}
-        >
+        <button className="link link-neutral text-md no-underline hover:underline px-2 ">
           Populer
         </button>
-        <button className="btn text-md btn-sm btn-ghost">Trending</button>
-        <button className="btn text-md btn-sm btn-ghost">Movie</button>
-        <button className="btn text-md btn-sm btn-ghost">TV Shows</button>
+        <button className="link link-neutral text-md no-underline hover:underline px-2 ">
+          Trending
+        </button>
+        <button className="link link-neutral text-md no-underline hover:underline px-2 ">
+          Movie
+        </button>
+        <Link
+          href={`/tv/${search}`}
+          className="link link-neutral text-md no-underline hover:underline px-2 "
+        >
+          TV Shows
+        </Link>
       </div>
 
       <div>

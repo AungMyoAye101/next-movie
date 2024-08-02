@@ -42,7 +42,7 @@ const Card = ({ data }: CardProps) => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ ease: "easeOut", duration: 1.5 }}
           >
-            <h2 className="card-title font-serif line-clamp-1 text-lg">
+            <h2 className="card-title font-serif text-lg">
               {item.title || item.original_name}
             </h2>
           </motion.div>

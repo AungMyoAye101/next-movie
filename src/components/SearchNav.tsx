@@ -63,25 +63,25 @@ const SearchNav = () => {
         </Link>
         <Link
           href={"/populer"}
-          className="link link-neutral text-md no-underline hover:underline px-2 "
+          className="link  text-md no-underline hover:underline px-2 "
         >
           Populer
         </Link>
         <Link
           href={`/trending`}
-          className="link link-neutral text-md no-underline hover:underline px-2 "
+          className="link text-md no-underline hover:underline px-2 "
         >
           Trending
         </Link>
         <Link
           href={`/movieTrend`}
-          className="link link-neutral text-md no-underline hover:underline px-2 "
+          className="link text-md no-underline hover:underline px-2 "
         >
           Movie
         </Link>
         <Link
           href={`/tvTrend`}
-          className="link link-neutral text-md no-underline hover:underline px-2 "
+          className="link  text-md no-underline hover:underline px-2 "
         >
           TV Shows
         </Link>

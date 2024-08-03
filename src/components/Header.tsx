@@ -13,22 +13,23 @@ const Header = () => {
             Rare
           </Link>
         </div>
-        <div className="space-x-4 hidden md:block">
-          <Link
-            href={"/"}
-            className="text-xl font-semibold hover:text-amber-500 "
-          >
-            Home
-          </Link>
-          <Link
-            href={"/about"}
-            className="text-xl font-semibold hover:text-amber-500 "
-          >
-            About
-          </Link>
-        </div>
+
         <div className="flex items-center gap-2">
           <DarkModeSwitch />
+          <div className="space-x-4 hidden md:block">
+            <Link
+              href={"/"}
+              className="text-lg font-semibold hover:text-amber-500 "
+            >
+              HOME
+            </Link>
+            <Link
+              href={"/about"}
+              className="text-lg font-semibold hover:text-amber-500 "
+            >
+              ABOUT
+            </Link>
+          </div>
           <div className="dropdown relative block md:hidden">
             <div
               tabIndex={0}

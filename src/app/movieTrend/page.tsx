@@ -12,6 +12,7 @@ const page = async () => {
   return (
     <div>
       <SearchNav />
+      <h1 className="text-xl font-bold p-4">Movie</h1>
       <SearchResult data={data} />
     </div>
   );

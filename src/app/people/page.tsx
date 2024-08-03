@@ -13,6 +13,7 @@ const page = async () => {
   return (
     <div>
       <SearchNav />
+      <h1 className="text-xl font-bold p-4">People</h1>
       <Person data={data} />
     </div>
   );

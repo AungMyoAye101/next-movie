@@ -4,7 +4,7 @@ import DarkModeSwitch from "./DarkModeSwiitch";
 const Header = () => {
   return (
     <>
-      <header className="flex justify-between items-center px-4 py-2">
+      <header className="flex justify-between items-center px-4 py-2 border-b border-b-gray-600">
         <div className="flex items-center gap-4">
           <Link
             href={"/"}

@@ -9,7 +9,7 @@ const page = async () => {
   );
   const resData = await res.json();
   const data = resData.results;
-  console.log(data);
+
   return (
     <div>
       <SearchNav />

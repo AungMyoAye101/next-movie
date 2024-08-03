@@ -65,7 +65,7 @@ const SearchNav = () => {
           href={"/people"}
           className="link  text-md no-underline hover:underline px-2 "
         >
-          Populer
+          People
         </Link>
         <Link
           href={`/trending`}

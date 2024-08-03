@@ -21,6 +21,9 @@ interface CardData {
 export interface CardProps {
   data: CardData[];
 }
+interface ProfileProp {
+  profile: string;
+}
 const SearchResult = ({ data }: CardProps) => {
   return (
     <>

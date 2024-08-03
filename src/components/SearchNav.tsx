@@ -62,7 +62,7 @@ const SearchNav = () => {
           <MdOutlineArrowBackIos />
         </Link>
         <Link
-          href={"/populer"}
+          href={"/people"}
           className="link  text-md no-underline hover:underline px-2 "
         >
           Populer

@@ -1,3 +1,4 @@
+import Person from "@/components/Person";
 import SearchNav from "@/components/SearchNav";
 import SearchResult from "@/components/SearchResult";
 import React from "react";
@@ -12,7 +13,7 @@ const page = async () => {
   return (
     <div>
       <SearchNav />
-      <SearchResult data={data} />
+      <Person data={data} />
     </div>
   );
 };

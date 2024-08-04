@@ -12,7 +12,6 @@ const page = async () => {
 
   return (
     <div>
-      <SearchNav />
       <h1 className="text-xl font-bold p-4">Tv Shows</h1>
       <SearchResult data={data} />
     </div>

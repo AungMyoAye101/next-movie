@@ -38,12 +38,6 @@ const SearchNav = () => {
               Home
             </Link>
           </li>
-
-          <li>
-            <Link href={"/"} className="text-xl hover:text-blue-400">
-              About
-            </Link>
-          </li>
           <li>
             <Link href={"/"} className="text-xl hover:text-blue-400">
               Movie

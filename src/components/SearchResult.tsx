@@ -34,23 +34,30 @@ const SearchResult = ({ data }: CardProps) => {
             key={item.id}
             className="rounded shadow hover:text-info"
           >
-            <div>
-              <ImageCard
-                img={`https://image.tmdb.org/t/p/original${
-                  item.backdrop_path || item.poster_path
-                }`}
-              />
-            </div>
-
             <motion.div
-              className="space-y-1 p-2"
-              initial={{ x: -40, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ ease: "easeOut", duration: 1.5 }}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ ease: "easeOut", duration: 0.8 }}
+              exit={{ opacity: 0 }}
             >
-              <h2 className="text-lg line-clamp-2 font-bold">
-                {item.title || item.original_name}
-              </h2>
+              <div>
+                <ImageCard
+                  img={`https://image.tmdb.org/t/p/original${
+                    item.backdrop_path || item.poster_path
+                  }`}
+                />
+              </div>
+
+              <motion.div
+                className="space-y-1 p-2"
+                initial={{ x: -40, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ ease: "easeOut", duration: 1.5 }}
+              >
+                <h2 className="text-lg line-clamp-2 font-bold">
+                  {item.title || item.original_name}
+                </h2>
+              </motion.div>
             </motion.div>
           </Link>
         ))}

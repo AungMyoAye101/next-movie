@@ -9,24 +9,26 @@ const page = async ({ params }: { params: { personId: number } }) => {
   const data = await res.json();
 
   return (
-    <div className="flex gap-4 px-4 w-screen mx-auto mt-6 flex-wrap ">
-      <div className="min-w-60 max-w-72 " style={{ width: "40%" }}>
+    <div className="flex gap-6 flex-wrap md:flex-nowrap p-4">
+      <div className="min-w-80">
         <Image
           src={`https://image.tmdb.org/t/p/original${data.profile_path}`}
           alt="profile "
           width={400}
-          height={200}
+          height={400}
           objectFit="cover"
           className="rounded shadow"
         />
       </div>
-      <div style={{ width: "70%" }}>
+      <div className="space-y-2">
         <h1 className="text-2xl font-bold font-serif">{data.name}</h1>
         <div>
           <h2 className="text-xl font-semibold">Biography</h2>
-          <p className="text-sm ">{data.biography}</p>
+          <p className="text-sm font-serif mt-2 text-pretty">
+            {data.biography}
+          </p>
         </div>
-        <div className="flex justify-between p-4">
+        <div className="flex justify-between p-4 flex-wrap">
           <div>
             <h3 className="text-lg font-semibold ">Birthday</h3>
             <p>{data.birthday}</p>

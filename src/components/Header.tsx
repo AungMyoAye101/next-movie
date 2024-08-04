@@ -13,7 +13,32 @@ const Header = () => {
             Rare
           </Link>
         </div>
-
+        <div className="hidden md:flex gap-4 ">
+          <Link
+            href={"/people"}
+            className="link  text-md no-underline hover:underline px-2 "
+          >
+            People
+          </Link>
+          <Link
+            href={`/trending`}
+            className="link text-md no-underline hover:underline px-2 "
+          >
+            Trending
+          </Link>
+          <Link
+            href={`/movieTrend`}
+            className="link text-md no-underline hover:underline px-2 "
+          >
+            Movie
+          </Link>
+          <Link
+            href={`/tvTrend`}
+            className="link  text-md no-underline hover:underline px-2 "
+          >
+            TV Shows
+          </Link>
+        </div>
         <div className="flex items-center gap-2">
           <DarkModeSwitch />
 
@@ -43,14 +68,35 @@ const Header = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow absolute right-0"
             >
               <li>
-                <Link href={"/"} className="text-xl hover:text-blue-400">
-                  Home
+                <Link
+                  href={"/people"}
+                  className="link  text-md no-underline hover:underline px-2 "
+                >
+                  People
                 </Link>
               </li>
-
               <li>
-                <Link href={"/about"} className="text-xl hover:text-blue-400">
-                  About
+                <Link
+                  href={`/trending`}
+                  className="link text-md no-underline hover:underline px-2 "
+                >
+                  Trending
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/movieTrend`}
+                  className="link text-md no-underline hover:underline px-2 "
+                >
+                  Movie
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/tvTrend`}
+                  className="link  text-md no-underline hover:underline px-2 "
+                >
+                  TV Shows
                 </Link>
               </li>
             </ul>

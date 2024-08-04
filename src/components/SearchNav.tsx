@@ -55,7 +55,7 @@ const SearchNav = () => {
             type="text"
             placeholder="Enter Search Text..."
             onChange={(e) => setSearch(e.target.value)}
-            className="input  input-bordered focus:outline-none"
+            className="input input-sm p-4 input-bordered focus:outline-none"
           />
         </form>
       </div>

@@ -60,12 +60,12 @@ const Header = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow absolute right-0"
+            className="menu  dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow absolute -right-10"
           >
             <li>
               <Link
                 href={"/people"}
-                className="link  text-md no-underline hover:underline px-2 "
+                className="link  text-md no-underline hover:underline px-4 py-2"
               >
                 People
               </Link>
@@ -73,7 +73,7 @@ const Header = () => {
             <li>
               <Link
                 href={`/trending`}
-                className="link text-md no-underline hover:underline px-2 "
+                className="link text-md no-underline hover:underline px-4 py-2 "
               >
                 Trending
               </Link>
@@ -81,7 +81,7 @@ const Header = () => {
             <li>
               <Link
                 href={`/movieTrend`}
-                className="link text-md no-underline hover:underline px-2 "
+                className="link text-md no-underline hover:underline px-4 py-2"
               >
                 Movie
               </Link>
@@ -89,7 +89,7 @@ const Header = () => {
             <li>
               <Link
                 href={`/tvTrend`}
-                className="link  text-md no-underline hover:underline px-2 "
+                className="link  text-md no-underline hover:underline px-4 py-2 "
               >
                 TV Shows
               </Link>

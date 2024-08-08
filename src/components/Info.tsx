@@ -25,7 +25,7 @@ interface InfoDetail {
   runtime: number;
   tagline: string;
   genres: { id: number; name: string }[];
-  lg_screen: Boolean;
+
   created_by: { id: number; name: string }[];
 }
 
@@ -43,45 +43,55 @@ const Info = ({
   tagline,
   runtime,
   genres,
-  lg_screen,
   created_by,
 }: InfoDetail) => {
   return (
     <motion.div
-      className={`px-4  space-y-2  mx-auto  ${
-        lg_screen ? "hidden md:block" : "block md:hidden"
-      }`}
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ ease: "easeOut", duration: 2 }}
+      className="max-w-96"
     >
-      <h1 className=" text-xl font-serif">
+      <h1 className=" text-2xl font-serif font-bold">
         {name || original_name || original_title}
       </h1>
-      <h3>{first_air_date || release_date}</h3>
-      <div className="flex gap-2 ">
-        {genres.map((item: { id: number; name: string }) => (
-          <span key={item.id} className="text-md hover:text-primary">
-            {item.name}
-          </span>
-        ))}
 
-        {runtime && (
-          <p>
-            - {Math.floor(runtime / 60)}h {runtime % 60}min
-          </p>
-        )}
+      <div className="space-y-1 max-w-80">
+        <h2 className="text-lg font-serif font-semibold text-center">
+          STORYLINE
+        </h2>
+        <p className="text-sm text-pretty text-center">{overview}</p>
       </div>
-      <div className="flex items-center gap-1">
-        <Count rating={vote_average} />
-        <span>User Score</span>
+
+      <div>
+        <div className="flex">
+          <h3 className="text-md font-mono w-40">Rating</h3>
+          <p>{vote_average}</p>
+        </div>
+        <div className="flex ">
+          <h3 className="text-md font-mono w-40">Released Date</h3>
+          <p>{release_date || first_air_date}</p>
+        </div>
+        <div className="flex ">
+          <h3 className="text-md font-mono w-40">Genre</h3>
+          <p>
+            {genres.map((item: { id: number; name: string }) => (
+              <span key={item.id} className="text-md hover:text-primary">
+                {item.name}
+              </span>
+            ))}
+          </p>
+        </div>
+        <div className="flex ">
+          <h3 className="text-md font-mono w-40">Duration</h3>
+          <p>
+            {Math.floor(runtime / 60)}h {runtime % 60} min
+          </p>
+        </div>
       </div>
 
       <h3 className="font-serif italic">{tagline}</h3>
-      <div>
-        <h2 className="text-lg font-semibold">OverView</h2>
-        <p className="">{overview}</p>
-      </div>
+
       {created_by && (
         <div className="flex gap-2">
           {created_by.map((item) => (

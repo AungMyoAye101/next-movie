@@ -50,15 +50,15 @@ const Info = ({
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ ease: "easeOut", duration: 2 }}
-      className="max-w-96 flex flex-col gap-2"
+      className=" flex flex-col gap-2 w-full md:max-w-2xl"
     >
       <h1 className=" text-2xl font-serif font-bold">
         {name || original_name || original_title}
       </h1>
 
-      <h3 className="font-serif italic text-gray-400">{tagline}</h3>
+      <h3 className="font-serif italic ">{tagline}</h3>
       <div className="flex flex-col  gap-4 md:flex-row items-center">
-        <button className="btn rounded-xl text-bold text-lg min-w-60">
+        <button className="btn btn-neutral rounded-xl text-bold text-lg w-full md:max-w-60">
           Add To Watchlist
         </button>
         <button className="btn btn-circle btn-outline border-none text-slate-200 bg-gray-600">
@@ -74,18 +74,18 @@ const Info = ({
 
       <div className="flex flex-col gap-2">
         <div className="flex ">
-          <h3 className="text-md font-mono min-w-60 text-gray-400">Rating</h3>
+          <h3 className="text-md font-mono min-w-48 opacity-40">Rating</h3>
           <p>{vote_average}</p>
         </div>
         <div className="flex   ">
-          <h3 className="text-md font-mono min-w-60 text-gray-400">
+          <h3 className="text-md font-mono min-w-48 opacity-40">
             Released Date
           </h3>
           <p>{release_date || first_air_date}</p>
         </div>
-        <div className="flex justify-between  ">
-          <h3 className="text-md font-mono min-w-60 text-gray-400">Genre</h3>
-          <p className="space-x-1">
+        <div className="flex ">
+          <h3 className="text-md font-mono min-w-48 opacity-40">Genre</h3>
+          <p className="flex flex-wrap gap-1">
             {genres.map((item: { id: number; name: string }) => (
               <span
                 key={item.id}
@@ -97,7 +97,7 @@ const Info = ({
           </p>
         </div>
         <div className="flex  ">
-          <h3 className="text-md font-mono min-w-60 text-gray-400">Duration</h3>
+          <h3 className="text-md font-mono min-w-48 opacity-40">Duration</h3>
           <p>
             {Math.floor(runtime / 60)}h {runtime % 60} min
           </p>

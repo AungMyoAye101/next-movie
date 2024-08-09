@@ -3,7 +3,7 @@ import React from "react";
 
 const MoviePage = async ({ params }: { params: { id: number } }) => {
   return (
-    <div className=" p-8 ">
+    <div>
       <Details media_type="movie" id={params.id} />
     </div>
   );

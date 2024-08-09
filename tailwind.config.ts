@@ -17,8 +17,7 @@ const config: Config = {
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
-    themes: ["autumn", "night"],
+    themes: ["night"],
   },
-  darkMode: ["class", '[data-theme="autumn"]'],
 };
 export default config;

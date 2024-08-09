@@ -50,47 +50,59 @@ const Info = ({
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ ease: "easeOut", duration: 2 }}
-      className="max-w-96"
+      className="max-w-96 flex flex-col gap-2"
     >
       <h1 className=" text-2xl font-serif font-bold">
         {name || original_name || original_title}
       </h1>
 
-      <div className="space-y-1 max-w-80">
-        <h2 className="text-lg font-serif font-semibold text-center">
+      <h3 className="font-serif italic text-gray-400">{tagline}</h3>
+      <div className="flex flex-col  gap-4 md:flex-row items-center">
+        <button className="btn rounded-xl text-bold text-lg min-w-60">
+          Add To Watchlist
+        </button>
+        <button className="btn btn-circle btn-outline border-none text-slate-200 bg-gray-600">
+          share
+        </button>
+      </div>
+      <div>
+        <h2 className="text-lg font-mono font-semibold text-center md:text-left">
           STORYLINE
         </h2>
-        <p className="text-sm text-pretty text-center">{overview}</p>
+        <p className="text-pretty text-center md:text-left">{overview}</p>
       </div>
 
-      <div>
-        <div className="flex">
-          <h3 className="text-md font-mono w-40">Rating</h3>
+      <div className="flex flex-col gap-2">
+        <div className="flex ">
+          <h3 className="text-md font-mono min-w-60 text-gray-400">Rating</h3>
           <p>{vote_average}</p>
         </div>
-        <div className="flex ">
-          <h3 className="text-md font-mono w-40">Released Date</h3>
+        <div className="flex   ">
+          <h3 className="text-md font-mono min-w-60 text-gray-400">
+            Released Date
+          </h3>
           <p>{release_date || first_air_date}</p>
         </div>
-        <div className="flex ">
-          <h3 className="text-md font-mono w-40">Genre</h3>
-          <p>
+        <div className="flex justify-between  ">
+          <h3 className="text-md font-mono min-w-60 text-gray-400">Genre</h3>
+          <p className="space-x-1">
             {genres.map((item: { id: number; name: string }) => (
-              <span key={item.id} className="text-md hover:text-primary">
+              <span
+                key={item.id}
+                className="text-md hover:bg-gray-300 hover:text-black  rounded"
+              >
                 {item.name}
               </span>
             ))}
           </p>
         </div>
-        <div className="flex ">
-          <h3 className="text-md font-mono w-40">Duration</h3>
+        <div className="flex  ">
+          <h3 className="text-md font-mono min-w-60 text-gray-400">Duration</h3>
           <p>
             {Math.floor(runtime / 60)}h {runtime % 60} min
           </p>
         </div>
       </div>
-
-      <h3 className="font-serif italic">{tagline}</h3>
 
       {created_by && (
         <div className="flex gap-2">

@@ -13,7 +13,7 @@ const Hero = ({ image }: BgImage) => {
       />
       <div className="h-screen hero-overlay bg-opacity-70 absolute -z-10"></div>
       <div className="h-80 flex items-center justify-center">
-        <div className="max-w-screen-md mx-auto flex flex-col gap-2">
+        <div className="min-w-screen-sm max-w-screen-xl  mx-auto flex flex-col gap-2 px-4">
           <h1 className="text-xl md:text-4xl font-bold font-serif">Welcome.</h1>
           <p className="text-lg font-semibold ">
             Millions of movies, TV shows and people to discover. Explore now.

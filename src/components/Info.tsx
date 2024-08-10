@@ -7,6 +7,7 @@ import { FaBars } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaBookmark } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { GiH2O } from "react-icons/gi";
 
 interface InfoDetail {
   backdrop_path: string;
@@ -21,7 +22,7 @@ interface InfoDetail {
   release_date: string;
   first_air_date: string;
   vote_average: number;
-
+  total_season: number;
   runtime: number;
   tagline: string;
   genres: { id: number; name: string }[];
@@ -42,6 +43,7 @@ const Info = ({
   vote_average,
   tagline,
   runtime,
+  total_season,
   genres,
   created_by,
 }: InfoDetail) => {
@@ -55,7 +57,7 @@ const Info = ({
       <h1 className=" text-2xl font-serif font-bold">
         {name || original_name || original_title}
       </h1>
-
+      {total_season && <h2>Seasons {total_season}</h2>}
       <h3 className="font-serif italic ">{tagline}</h3>
       <div className="flex flex-col  gap-4 md:flex-row items-center">
         <button className="btn btn-neutral rounded-3xl text-bold text-lg w-full md:max-w-60 hover:bg-blue-400 hover:text-gray-800">

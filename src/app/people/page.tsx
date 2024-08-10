@@ -1,6 +1,5 @@
 import Person from "@/components/Person";
 import SearchNav from "@/components/SearchNav";
-import SearchResult from "@/components/SearchResult";
 import React from "react";
 
 const page = async () => {
@@ -12,8 +11,8 @@ const page = async () => {
   const data = resData.results;
 
   return (
-    <div>
-      <h1 className="text-xl font-bold p-4">People</h1>
+    <div className="p-6 ">
+      <h1 className="text-xl font-bold mb-4">People</h1>
       <Person data={data} />
     </div>
   );

@@ -11,8 +11,8 @@ const page = async () => {
   const data = resData.results;
 
   return (
-    <div>
-      <h1 className="text-xl font-bold p-4">Tv Shows</h1>
+    <div className="p-6">
+      <h1 className="text-xl font-bold mb-4">Tv Shows</h1>
       <Card data={data} />
     </div>
   );

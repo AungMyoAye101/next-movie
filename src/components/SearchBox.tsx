@@ -12,6 +12,7 @@ const SearchBox = () => {
       onSubmit={(e) => {
         e.preventDefault();
         router.push(`/search/${search}`);
+        setSearch("");
       }}
       className="relative flex-1 max-w-xs"
     >

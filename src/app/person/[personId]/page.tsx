@@ -9,7 +9,7 @@ const page = async ({ params }: { params: { personId: number } }) => {
   const data = await res.json();
 
   return (
-    <div className="flex gap-6 flex-wrap md:flex-nowrap p-4">
+    <div className="flex gap-6 flex-wrap md:flex-nowrap py-4 px-6">
       <div className="min-w-80">
         <Image
           src={`https://image.tmdb.org/t/p/original${data.profile_path}`}

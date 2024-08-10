@@ -107,11 +107,11 @@ const Info = ({
       </div>
 
       {created_by && (
-        <div className="flex gap-2">
+        <div className="flex gap-3 ">
+          <h1>Created By-</h1>
           {created_by.map((item) => (
             <div key={item.id}>
               <h3 className="text-md font-semibold">{item.name} </h3>
-              <p>Creator</p>
             </div>
           ))}
         </div>

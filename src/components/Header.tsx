@@ -19,10 +19,7 @@ const Header = () => {
     <header className="flex items-center justify-between px-6 py-2 gap-4 sticky top-0 bg-base-300 z-10 ">
       <div>
         <Link href={"/"} className=" hover:text-warning ">
-          <h1 className="text-3xl inline-block pr-2">Rare</h1>
-          <span className="text-sm bg-warning px-2 text-gray-800 rounded hidden lg:inline-block ">
-            movie
-          </span>
+          <h1 className="text-3xl inline-block  font-serif font-bold">Rare</h1>
         </Link>
       </div>
       <div className="hidden lg:flex gap-3 text-lg font-semibold ">

@@ -19,6 +19,7 @@ const SearchBox = () => {
       <input
         type="Text"
         placeholder="Search for a movie or Tv shows..."
+        value={search}
         className="py-2 px-3 rounded-2xl  bg-gray-300 focus:outline-none  text-sm text-gray-600 w-full"
         onChange={(e) => setSearch(e.target.value)}
       />

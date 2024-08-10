@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../components/Header";
 import Transition from "@/components/Transition";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Rare Movie App",
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body>
         <Header />
         <Transition>{children}</Transition>
+        <Footer />
       </body>
     </html>
   );

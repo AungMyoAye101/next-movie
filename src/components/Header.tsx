@@ -27,12 +27,6 @@ const Header = () => {
       </div>
       <div className="hidden lg:flex gap-3 text-lg font-semibold ">
         <Link
-          href={"/"}
-          className="hover:underline hover:text-warning hover:underline-offset-8"
-        >
-          Home
-        </Link>
-        <Link
           href={"/trending"}
           className="hover:underline hover:text-warning hover:underline-offset-8"
         >
@@ -49,6 +43,12 @@ const Header = () => {
           className="hover:underline hover:text-warning hover:underline-offset-8"
         >
           TV Series
+        </Link>
+        <Link
+          href={"/topRated"}
+          className="hover:underline hover:text-warning hover:underline-offset-8"
+        >
+          Top Rated
         </Link>
         <Link
           href={"/people"}
@@ -106,7 +106,7 @@ const Header = () => {
             People
           </Link>
           <Link
-            href={"/"}
+            href={"/topRated"}
             className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
           >
             Top Rated

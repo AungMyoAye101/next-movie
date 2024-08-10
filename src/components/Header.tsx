@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { LuMenu } from "react-icons/lu";
+import { ImCross } from "react-icons/im";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -12,10 +13,10 @@ const Header = () => {
   };
   return (
     <header className="flex items-center justify-between px-8 py-2 gap-4 sticky top-0 bg-base-300 z-10 ">
-      <div className="text-3xl">
-        <Link href={"/"} className="  hover:text-warning ">
-          Rare
-          <span className="text-sm bg-warning px-2 text-gray-800 rounded hidden lg:inline-block">
+      <div>
+        <Link href={"/"} className=" hover:text-warning ">
+          <h1 className="text-3xl inline-block pr-2">Rare</h1>
+          <span className="text-sm bg-warning px-2 text-gray-800 rounded hidden lg:inline-block ">
             movie
           </span>
         </Link>
@@ -25,28 +26,28 @@ const Header = () => {
           href={"/"}
           className="hover:underline hover:text-warning hover:underline-offset-8"
         >
-          Home{" "}
+          Home
         </Link>
         <Link
-          href={"/"}
+          href={"/trending"}
           className="hover:underline hover:text-warning hover:underline-offset-8"
         >
           Trending
         </Link>
         <Link
-          href={"/"}
+          href={"/movieTrend"}
           className="hover:underline hover:text-warning hover:underline-offset-8"
         >
           Movie
         </Link>
         <Link
-          href={"/"}
+          href={"/tvTrend"}
           className="hover:underline hover:text-warning hover:underline-offset-8"
         >
           TV Series
         </Link>
         <Link
-          href={"/"}
+          href={"/people"}
           className="hover:underline hover:text-warning hover:underline-offset-8"
         >
           People
@@ -63,8 +64,9 @@ const Header = () => {
       {/* mobile side bar */}
       <div className="block lg:hidden relative ">
         <div>
-          <button className="btn btn-circle" onClick={toggleHandeler}>
-            <LuMenu className="text-2xl" />
+          <button className="btn btn-circle text-2xl " onClick={toggleHandeler}>
+            <LuMenu className={`${toggle ? "hidden" : "block"}`} />
+            <ImCross className={`${toggle ? "block" : "hidden"} text-xl`} />
           </button>
         </div>
         <div
@@ -82,25 +84,25 @@ const Header = () => {
             Home
           </Link>
           <Link
-            href={"/"}
+            href={"/trending"}
             className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
           >
             Trending
           </Link>
           <Link
-            href={"/"}
+            href={"/movieTrend"}
             className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
           >
             Movie
           </Link>
           <Link
-            href={"/"}
+            href={"/tvTrend"}
             className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
           >
             TV Series
           </Link>
           <Link
-            href={"/"}
+            href={"/people"}
             className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
           >
             People

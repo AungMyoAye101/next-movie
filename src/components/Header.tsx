@@ -53,13 +53,13 @@ const Header = () => {
           People
         </Link>
       </div>
-      <div className="bg-greem-200 min-w-72 max-w-96 relative">
+      <div className=" relative flex-1 max-w-xs">
         <input
           type="text"
           placeholder="Search Movie & Tv Shows.. "
-          className="py-2 px-3 rounded-2xl  bg-gray-300 focus:outline-none w-full text-sm text-gray-600"
+          className="py-2 px-3 rounded-2xl  bg-gray-300 focus:outline-none  text-sm text-gray-600 w-full"
         />
-        <FaSearch className="absolute right-5 top-3 text-lg text-gray-600" />
+        <FaSearch className="absolute right-2 top-3 text-lg text-gray-600" />
       </div>
       {/* mobile side bar */}
       <div className="block lg:hidden relative ">

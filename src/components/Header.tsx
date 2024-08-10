@@ -1,101 +1,55 @@
 import Link from "next/link";
-import DarkModeSwitch from "./DarkModeSwiitch";
-
+import { FaSearch } from "react-icons/fa";
 const Header = () => {
   return (
-    <header className="flex justify-between items-center px-8 py-2 border-b border-b-gray-600 sticky top-0 bg-base-300 bg-opacity-90 z-30">
-      <div className="flex items-center gap-4">
-        <Link
-          href={"/"}
-          className="text-xl font-semibold hover:text-amber-500 "
-        >
-          Rare
+    <header className="flex items-center justify-between px-8 py-2 gap-4">
+      <div className="text-3xl">
+        <Link href={"/"} className="  hover:text-warning ">
+          Rare{" "}
+          <span className="text-sm bg-warning px-2 text-gray-800 rounded hidden lg:inline-block">
+            movie
+          </span>
         </Link>
       </div>
-      <div className="hidden md:flex gap-4 ">
+      <div className="hidden lg:flex gap-3 text-lg font-semibold ">
         <Link
-          href={"/people"}
-          className="link  text-md no-underline hover:underline px-2 "
+          href={"/"}
+          className="hover:underline hover:text-warning hover:underline-offset-8"
         >
-          People
+          Home{" "}
         </Link>
         <Link
-          href={`/trending`}
-          className="link text-md no-underline hover:underline px-2 "
+          href={"/"}
+          className="hover:underline hover:text-warning hover:underline-offset-8"
         >
           Trending
         </Link>
         <Link
-          href={`/movieTrend`}
-          className="link text-md no-underline hover:underline px-2 "
+          href={"/"}
+          className="hover:underline hover:text-warning hover:underline-offset-8"
         >
           Movie
         </Link>
         <Link
-          href={`/tvTrend`}
-          className="link  text-md no-underline hover:underline px-2 "
+          href={"/"}
+          className="hover:underline hover:text-warning hover:underline-offset-8"
         >
-          TV Shows
+          TV Series
+        </Link>
+        <Link
+          href={"/"}
+          className="hover:underline hover:text-warning hover:underline-offset-8"
+        >
+          People
         </Link>
       </div>
-      <div className="flex items-center gap-2">
-        <DarkModeSwitch />
-
-        <div className="dropdown relative block md:hidden">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h7"
-              />
-            </svg>
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu  dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow absolute -right-10"
-          >
-            <li>
-              <Link
-                href={"/people"}
-                className="link  text-md no-underline hover:underline px-4 py-2"
-              >
-                People
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={`/trending`}
-                className="link text-md no-underline hover:underline px-4 py-2 "
-              >
-                Trending
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={`/movieTrend`}
-                className="link text-md no-underline hover:underline px-4 py-2"
-              >
-                Movie
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={`/tvTrend`}
-                className="link  text-md no-underline hover:underline px-4 py-2 "
-              >
-                TV Shows
-              </Link>
-            </li>
-          </ul>
-        </div>
+      <div className="bg-greem-200 min-w-72 max-w-96 relative">
+        <input
+          type="text"
+          placeholder="Search Movie & Tv Shows.. "
+          className="py-2 px-3 rounded-2xl  bg-gray-300 focus:outline-none w-full text-gray-600"
+        />
+        <FaSearch className="absolute right-5 top-3 text-lg text-gray-600" />
       </div>
     </header>
   );

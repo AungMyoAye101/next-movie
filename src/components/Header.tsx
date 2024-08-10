@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
+import { LuMenu } from "react-icons/lu";
 const Header = () => {
   return (
-    <header className="flex items-center justify-between px-8 py-2 gap-4">
+    <header className="flex items-center justify-between px-8 py-2 gap-4 sticky top-0 bg-base-300 z-10">
       <div className="text-3xl">
         <Link href={"/"} className="  hover:text-warning ">
           Rare{" "}
@@ -47,9 +48,55 @@ const Header = () => {
         <input
           type="text"
           placeholder="Search Movie & Tv Shows.. "
-          className="py-2 px-3 rounded-2xl  bg-gray-300 focus:outline-none w-full text-gray-600"
+          className="py-2 px-3 rounded-2xl  bg-gray-300 focus:outline-none w-full text-sm text-gray-600"
         />
         <FaSearch className="absolute right-5 top-3 text-lg text-gray-600" />
+      </div>
+      <div className="block lg:hidden relative">
+        <div className="">
+          <LuMenu className="text-2xl" />
+        </div>
+        <div className="absolute -right-10 top-9 z-10 w-80 p-4 bg-gray-800 flex flex-col">
+          <div className="border-b border-b-slate-100 mb-1">
+            <h1 className="text-2xl text-center py-2">Rare Movie</h1>
+          </div>
+          <Link
+            href={"/"}
+            className="  text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
+          >
+            Home
+          </Link>
+          <Link
+            href={"/"}
+            className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
+          >
+            Trending
+          </Link>
+          <Link
+            href={"/"}
+            className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
+          >
+            Movie
+          </Link>
+          <Link
+            href={"/"}
+            className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
+          >
+            TV Series
+          </Link>
+          <Link
+            href={"/"}
+            className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
+          >
+            People
+          </Link>
+          <Link
+            href={"/"}
+            className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
+          >
+            Top Rated
+          </Link>
+        </div>
       </div>
     </header>
   );

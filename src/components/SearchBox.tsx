@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-
+import { FaSearch } from "react-icons/fa";
 const SearchBox = () => {
   const [search, setSearch] = useState("");
   const router = useRouter();
@@ -11,17 +11,19 @@ const SearchBox = () => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        router.push(`search/${search}`);
+        router.push(`/search/${search}`);
       }}
-      className="flex text-lg "
+      className="relative flex-1 max-w-xs"
     >
       <input
         type="Text"
         placeholder="Search for a movie or Tv shows..."
-        className="input input-bordered input-info w-full rounded-3xl bg-slate-50 bg-opacity-50 focus:outline-none text-gray-800 placeholder-gray-800"
+        className="py-2 px-3 rounded-2xl  bg-gray-300 focus:outline-none  text-sm text-gray-600 w-full"
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button className="btn btn-info rounded-3xl px-10 -ml-12 ">Search</button>
+      <button>
+        <FaSearch className="absolute right-2 top-3 text-lg text-gray-600" />
+      </button>
     </form>
   );
 };

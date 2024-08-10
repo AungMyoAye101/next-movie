@@ -1,13 +1,17 @@
 "use client";
+import { useRouter } from "next/navigation";
 
 import Link from "next/link";
 import { useState } from "react";
-import { FaSearch } from "react-icons/fa";
+
 import { LuMenu } from "react-icons/lu";
 import { ImCross } from "react-icons/im";
+import SearchBox from "./SearchBox";
 
 const Header = () => {
+  const router = useRouter();
   const [toggle, setToggle] = useState(false);
+  const [searchText, setSearchText] = useState("");
   const toggleHandeler = () => {
     setToggle((pre) => !pre);
   };
@@ -53,14 +57,8 @@ const Header = () => {
           People
         </Link>
       </div>
-      <div className=" relative flex-1 max-w-xs">
-        <input
-          type="text"
-          placeholder="Search Movie & Tv Shows.. "
-          className="py-2 px-3 rounded-2xl  bg-gray-300 focus:outline-none  text-sm text-gray-600 w-full"
-        />
-        <FaSearch className="absolute right-2 top-3 text-lg text-gray-600" />
-      </div>
+      <SearchBox />
+
       {/* mobile side bar */}
       <div className="block lg:hidden relative ">
         <div>

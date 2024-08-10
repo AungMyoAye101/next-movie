@@ -10,7 +10,6 @@ const SearchText = ({ params }: { params: { searchText: string } }) => {
 
   return (
     <div>
-      <SearchNav />
       <Results searchText={searchText} />
     </div>
   );

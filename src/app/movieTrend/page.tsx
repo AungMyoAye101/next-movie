@@ -1,5 +1,5 @@
+import Card from "@/components/Card";
 import SearchNav from "@/components/SearchNav";
-import SearchResult from "@/components/SearchResult";
 import React from "react";
 
 const page = async () => {
@@ -13,7 +13,7 @@ const page = async () => {
   return (
     <div>
       <h1 className="text-xl font-bold p-4">Movie</h1>
-      <SearchResult data={data} />
+      <Card data={data} />
     </div>
   );
 };

@@ -1,10 +1,8 @@
 import React from "react";
 import Card from "./Card";
-import SearchResult from "./SearchResult";
 import Footer from "./Footer";
 import SearchBox from "./SearchBox";
 import Link from "next/link";
-import { CardProps } from "./SearchResult";
 
 type SearchProps = {
   searchText: string;
@@ -28,7 +26,7 @@ const Results = async ({ searchText }: SearchProps) => {
           </Link>
         </div>
       ) : (
-        <SearchResult data={data} />
+        <Card data={data} />
       )}
     </div>
   );

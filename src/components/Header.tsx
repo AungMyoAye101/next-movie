@@ -1,12 +1,20 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { LuMenu } from "react-icons/lu";
+
 const Header = () => {
+  const [toggle, setToggle] = useState(false);
+  const toggleHandeler = () => {
+    setToggle((pre) => !pre);
+  };
   return (
-    <header className="flex items-center justify-between px-8 py-2 gap-4 sticky top-0 bg-base-300 z-10">
+    <header className="flex items-center justify-between px-8 py-2 gap-4 sticky top-0 bg-base-300 z-10 ">
       <div className="text-3xl">
         <Link href={"/"} className="  hover:text-warning ">
-          Rare{" "}
+          Rare
           <span className="text-sm bg-warning px-2 text-gray-800 rounded hidden lg:inline-block">
             movie
           </span>
@@ -52,11 +60,18 @@ const Header = () => {
         />
         <FaSearch className="absolute right-5 top-3 text-lg text-gray-600" />
       </div>
-      <div className="block lg:hidden relative">
-        <div className="">
-          <LuMenu className="text-2xl" />
+      {/* mobile side bar */}
+      <div className="block lg:hidden relative ">
+        <div>
+          <button className="btn btn-circle" onClick={toggleHandeler}>
+            <LuMenu className="text-2xl" />
+          </button>
         </div>
-        <div className="absolute -right-10 top-9 z-10 w-80 p-4 bg-gray-800 flex flex-col">
+        <div
+          className={`absolute top-14 z-20 w-80 p-4 bg-gray-800 flex flex-col -right-8 ${
+            toggle ? " opacity-100" : " opacity-0"
+          } transition-all  duration-200 ease-out`}
+        >
           <div className="border-b border-b-slate-100 mb-1">
             <h1 className="text-2xl text-center py-2">Rare Movie</h1>
           </div>

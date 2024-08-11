@@ -3,7 +3,8 @@ import Image from "next/image";
 import Info from "./Info";
 import Footer from "./Footer";
 import Series from "./Series";
-import Table from "./Table";
+import Cast from "./Cast";
+
 interface Detail {
   media_type: string;
   id: number;
@@ -18,7 +19,7 @@ const Details = async ({ media_type, id }: Detail) => {
 
   return (
     <>
-      <div className="p-8 h-screen  flex flex-col md:flex-row gap-6 text-slate-200">
+      <div className="p-8 min-h-screen  flex flex-col md:flex-row gap-6 text-slate-200">
         <div className="max-w-80">
           <Image
             src={`https://image.tmdb.org/t/p/original${
@@ -50,6 +51,7 @@ const Details = async ({ media_type, id }: Detail) => {
           created_by={data.created_by}
         />
       </div>
+      <Cast series_id={data.id} season_number={data.number_of_seasons} />
     </>
   );
 };

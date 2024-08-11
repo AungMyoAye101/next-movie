@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
-const Cast = async () => {
-  const series_id = "94997";
-  const season_number = "2";
+interface CastProps {
+  series_id: number;
+  season_number: number;
+}
+const Cast = async ({ series_id, season_number }: CastProps) => {
   const res = await fetch(
     `https://api.themoviedb.org/3/tv/${series_id}/season/${season_number}?api_key=${process.env.API_KEY}`
   );
   const data = await res.json();
-  console.log(data);
 
   return (
     <section className="p-6">

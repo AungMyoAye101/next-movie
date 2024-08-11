@@ -7,7 +7,7 @@ import Count from "./Count";
 import { motion } from "framer-motion";
 import ImageCard from "./ImageCard";
 
-interface CardData {
+export interface CardData {
   backdrop_path: string;
   id: number;
   title: string;

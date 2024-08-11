@@ -5,21 +5,45 @@ import Footer from "./Footer";
 import Series from "./Series";
 import Cast from "./Cast";
 
-interface Detail {
-  media_type: string;
+export interface InfoDetail {
+  backdrop_path: string;
   id: number;
+  title: string;
+  name: string;
+  original_name: string;
+  original_title: string;
+  overview: string;
+  poster_path: string;
+  release_date: string;
+  first_air_date: string;
+  vote_average: number;
+  total_season: number;
+  runtime: number;
+  tagline: string;
+  genres: { id: number; name: string }[];
+
+  // created_by: { id: number; name: string }[];
 }
 
-const Details = async ({ media_type, id }: Detail) => {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.API_KEY}`,
-    { next: { revalidate: 3600 } }
-  );
-  const data = await res.json();
-  console.log(data);
+const Details = async ({
+  backdrop_path,
+  id,
+  original_name,
+  original_title,
+  overview,
+  poster_path,
+  name,
+  release_date,
+  first_air_date,
+  vote_average,
+  tagline,
+  runtime,
+  total_season,
+  genres,
+}: InfoDetail) => {
   return (
     <>
-      <div className="p-8   flex flex-col md:flex-row gap-6 text-slate-200">
+      {/* <div className="p-8   flex flex-col md:flex-row gap-6 text-slate-200">
         <div className="max-w-80">
           <Image
             src={`https://image.tmdb.org/t/p/original${
@@ -51,10 +75,14 @@ const Details = async ({ media_type, id }: Detail) => {
           created_by={data.created_by}
         />
       </div>
-      <Cast
-        series_id={data.id}
-        season_number={data.number_of_seasons || data.season_number}
-      />
+      {data.season_number ||
+        (data.number_of_seasons && (
+          <Cast
+            series_id={data.id}
+            season_number={data.number_of_seasons || data.season_number}
+          />
+        ))} */}
+      <div>detail</div>
     </>
   );
 };

@@ -7,15 +7,15 @@ interface CastProps {
 }
 const Cast = async ({ series_id, season_number }: CastProps) => {
   const res = await fetch(
-    `https://api.themoviedb.org/3/tv/${series_id}/season/${season_number}?api_key=${process.env.API_KEY}`
+    `https://api.themoviedb.org/3/tv/${series_id}/season/${season_number}/aggregate_credits?api_key=${process.env.API_KEY}`
   );
   const data = await res.json();
-
+  console.log(data);
   return (
     <section className="p-6">
       <h1 className="text-2xl font-semibold font-serif mb-2">Cast List</h1>
       <div className=" flex overflow-hidden overflow-x-scroll  gap-4 ">
-        {data.episodes["0"].guest_stars.map((data: any) => (
+        {data.cast.map((data: any) => (
           <div
             key={data.id}
             className="rounded bg-base-100 shadow-sm hover:shadow-lg  hover:text-purple-500 w-56"

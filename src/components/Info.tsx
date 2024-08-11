@@ -9,7 +9,7 @@ import { FaBookmark } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { GiH2O } from "react-icons/gi";
 
-interface InfoDetail {
+export interface InfoDetail {
   backdrop_path: string;
   id: number;
   title: string;
@@ -18,7 +18,6 @@ interface InfoDetail {
   original_title: string;
   overview: string;
   poster_path: string;
-
   release_date: string;
   first_air_date: string;
   vote_average: number;

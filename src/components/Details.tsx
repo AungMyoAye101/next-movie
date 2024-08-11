@@ -19,7 +19,7 @@ const Details = async ({ media_type, id }: Detail) => {
   console.log(data);
   return (
     <>
-      <div className="p-8 min-h-screen  flex flex-col md:flex-row gap-6 text-slate-200">
+      <div className="p-8   flex flex-col md:flex-row gap-6 text-slate-200">
         <div className="max-w-80">
           <Image
             src={`https://image.tmdb.org/t/p/original${

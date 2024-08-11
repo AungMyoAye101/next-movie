@@ -1,23 +1,14 @@
 "use client";
-import { useRouter } from "next/navigation";
 
 import Link from "next/link";
 import { useState } from "react";
-
-import { LuMenu } from "react-icons/lu";
-import { ImCross } from "react-icons/im";
 import SearchBox from "./SearchBox";
 
 const Header = () => {
-  const router = useRouter();
-  const [toggle, setToggle] = useState(false);
   const [searchText, setSearchText] = useState("");
-  const toggleHandler = () => {
-    setToggle(!toggle);
-  };
 
   return (
-    <nav className="drawer drawer-end">
+    <nav className="drawer drawer-end sticky top-0 z-10">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
@@ -31,7 +22,7 @@ const Header = () => {
           </div>
 
           <div className="hidden flex-none lg:block">
-            <ul className="menu menu-horizontal text-md font-bold">
+            <ul className="menu menu-horizontal text-lg font-bold">
               {/* Navbar menu content here */}
               <li>
                 <Link

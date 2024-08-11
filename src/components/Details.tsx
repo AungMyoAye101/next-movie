@@ -16,7 +16,7 @@ const Details = async ({ media_type, id }: Detail) => {
     { next: { revalidate: 3600 } }
   );
   const data = await res.json();
-
+  console.log(data);
   return (
     <>
       <div className="p-8 min-h-screen  flex flex-col md:flex-row gap-6 text-slate-200">
@@ -51,7 +51,10 @@ const Details = async ({ media_type, id }: Detail) => {
           created_by={data.created_by}
         />
       </div>
-      <Cast series_id={data.id} season_number={data.number_of_seasons} />
+      <Cast
+        series_id={data.id}
+        season_number={data.number_of_seasons || data.season_number}
+      />
     </>
   );
 };

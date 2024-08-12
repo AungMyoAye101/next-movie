@@ -15,25 +15,16 @@ const PersonCredit = async ({ person_id }: PersonCreditProps) => {
   console.log(personalInfo);
   return (
     <section className="flex overflow-hidden overflow-x-scroll gap-4">
-      {personalInfo.map((person: any) => (
-        <div key={person.id} className="min-w-60 ">
-          <Link href={`/${person.media_type || "movie"}/${person.id} `}>
-            <Image
-              src={`https://image.tmdb.org/t/p/original${
-                person.backdrop_path || person.poster_path
-              }`}
-              width={400}
-              height={200}
-              alt="posters"
-              className="rounded aspect-video object-cover hover:scale-110 transition-all duration-150 ease-in-out"
-            />
-            <div>
-              <h1 className="text-lg font-semibold p-2">
-                {person.name || person.original_name || person.title}
-              </h1>
-            </div>
-          </Link>
-        </div>
+      {personalInfo.map((item: any) => (
+        <ImageCard
+          id={item.id}
+          media_type={item.media_type}
+          backdrop_path={item.backdrop_path}
+          poster_path={item.poster_path}
+          vote_average={item.vote_average}
+          title={item.title}
+          original_name={item.original_name}
+        />
       ))}
     </section>
   );

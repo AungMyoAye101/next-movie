@@ -30,7 +30,6 @@ const ImageCard = ({
   return (
     <>
       <motion.div
-        key={id}
         className="card card-compact bg-base-100 shadow-md rounded-lg min-w-60 mx-auto hover:opacity-80 hover:shadow-xl"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -78,7 +78,7 @@ const Info = ({
           <h3 className="text-md font-mono min-w-48 opacity-40">Rating</h3>
           <p>{vote_average.toFixed(1)}</p>
         </div>
-        <div className="flex   ">
+        <div className="flex">
           <h3 className="text-md font-mono min-w-48 opacity-40">
             Released Date
           </h3>

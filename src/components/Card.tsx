@@ -28,16 +28,18 @@ const Card = ({ data }: CardProps) => {
   return (
     <div className="grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto  gap-4 ">
       {data.map((item) => (
-        <ImageCard
-          id={item.id}
-          media_type={item.media_type}
-          backdrop_path={item.backdrop_path}
-          poster_path={item.poster_path}
-          vote_average={item.vote_average}
-          name={null}
-          title={item.title}
-          original_name={item.original_name}
-        />
+        <div key={item.id}>
+          <ImageCard
+            id={item.id}
+            media_type={item.media_type}
+            backdrop_path={item.backdrop_path}
+            poster_path={item.poster_path}
+            vote_average={item.vote_average}
+            name={null}
+            title={item.title}
+            original_name={item.original_name}
+          />
+        </div>
       ))}
     </div>
   );

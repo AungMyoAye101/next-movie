@@ -26,7 +26,7 @@ export interface InfoDetail {
   created_by: { id: number; name: string }[];
 }
 
-const Details = async ({
+const Details = ({
   backdrop_path,
   id,
   original_name,
@@ -44,7 +44,6 @@ const Details = async ({
   genres,
   created_by,
 }: InfoDetail) => {
-  console.log(id);
   return (
     <>
       <div className="p-8   flex flex-col md:flex-row gap-6 text-slate-200">

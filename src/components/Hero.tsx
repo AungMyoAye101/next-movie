@@ -1,12 +1,12 @@
+import Image from "next/image";
 import SearchBox from "./SearchBox";
-
 interface BgImage {
   image: string;
 }
 const Hero = ({ image }: BgImage) => {
   return (
     <>
-      <img
+      <Image
         src={`https://image.tmdb.org/t/p/original${image}`}
         alt="image"
         className="h-screen object-cover w-full absolute left-0 right-0 -z-20 bg-opacity-50"

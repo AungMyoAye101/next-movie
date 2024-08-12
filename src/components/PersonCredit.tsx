@@ -23,6 +23,7 @@ const PersonCredit = async ({ person_id }: PersonCreditProps) => {
             backdrop_path={item.backdrop_path}
             poster_path={item.poster_path}
             vote_average={item.vote_average}
+            name={item.name}
             title={item.title}
             original_name={item.original_name}
           />

@@ -12,7 +12,7 @@ interface CardDetailProps {
   backdrop_path: string;
   poster_path: string;
   vote_average: number;
-
+  name: string | null;
   title: string;
   original_name: string;
 }
@@ -22,7 +22,7 @@ const ImageCard = ({
   backdrop_path,
   poster_path,
   vote_average,
-
+  name,
   title,
   original_name,
 }: CardDetailProps) => {
@@ -67,8 +67,8 @@ const ImageCard = ({
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ ease: "easeOut", duration: 1.5 }}
         >
-          <h2 className="card-title font-serif text-lg">
-            {title || original_name}
+          <h2 className="card-title font-serif text-lg line-clamp-2">
+            {name || title || original_name}
           </h2>
         </motion.div>
       </motion.div>

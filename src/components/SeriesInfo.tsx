@@ -12,11 +12,14 @@ interface Info {
 }
 
 const SeriesInfo = ({ data, ep_time }: Info) => {
-  console.log(data);
   return (
     <div className="border border-gray-600 my-2 p-2 shadow-sm rounded flex flex-wrap gap-4">
-      <ImageCard
-        img={`https://image.tmdb.org/t/p/original${data.still_path}  `}
+      <Image
+        src={`https://image.tmdb.org/t/p/original${data.still_path}`}
+        width={400}
+        height={200}
+        alt="posters"
+        className="rounded aspect-video object-cover hover:scale-110 transition-all duration-150 ease-in-out"
       />
 
       <motion.div

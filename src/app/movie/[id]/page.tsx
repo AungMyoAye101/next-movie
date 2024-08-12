@@ -1,4 +1,5 @@
 import Details from "@/components/Details";
+import Recommendation from "@/components/Recommendation";
 import React from "react";
 
 const MoviePage = async ({ params }: { params: { id: number } }) => {
@@ -29,6 +30,9 @@ const MoviePage = async ({ params }: { params: { id: number } }) => {
         genres={data.genres}
         created_by={data.created_by}
       />
+      <div>
+        <Recommendation media_type="movie" id={params.id} />
+      </div>
     </div>
   );
 };

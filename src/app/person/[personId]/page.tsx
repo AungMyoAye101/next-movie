@@ -9,7 +9,7 @@ const page = async ({ params }: { params: { personId: number } }) => {
     { next: { revalidate: 3600 } }
   );
   const data = await res.json();
-
+  console.log(data);
   return (
     <main>
       <div className="flex gap-6 flex-wrap md:flex-nowrap py-4 px-6">
@@ -47,7 +47,10 @@ const page = async ({ params }: { params: { personId: number } }) => {
           </div>
         </div>
       </div>
-      <PersonCredit person_id={id} />
+      <div className="px-6 space-y-2">
+        <h1 className="text-xl font-semibold font-serif">Know For</h1>
+        <PersonCredit person_id={id} />
+      </div>
     </main>
   );
 };

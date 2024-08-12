@@ -12,10 +12,10 @@ const Header = () => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="navbar bg-base-300 w-full flex justify-between items-center">
-          <div className="mx-2  px-2">
+        <div className="navbar bg-base-300 w-full flex justify-between items-center gap-4 px-6">
+          <div className=" ">
             <Link href={"/"} className=" hover:text-warning ">
-              <h1 className="text-3xl inline-block  font-serif font-bold">
+              <h1 className="text-xl md:text-3xl inline-block  font-serif font-bold">
                 Rare
               </h1>
             </Link>

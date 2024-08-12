@@ -7,7 +7,7 @@ const MoviePage = async ({ params }: { params: { id: number } }) => {
     { next: { revalidate: 3600 } }
   );
   const data = await res.json();
-  console.log(data);
+
   return (
     <div>
       <Details
@@ -24,8 +24,10 @@ const MoviePage = async ({ params }: { params: { id: number } }) => {
         vote_average={data.vote_average}
         runtime={data.runtime}
         tagline={data.tagline}
-        total_season={data.number_of_seasons}
+        number_of_seasons={data.number_of_seasons}
+        season_number={data.season_number}
         genres={data.genres}
+        created_by={data.created_by}
       />
     </div>
   );

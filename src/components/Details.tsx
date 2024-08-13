@@ -69,10 +69,10 @@ const Details = ({
 
         <h3 className="font-serif italic text-gray-400 ">{tagline}</h3>
         <div className="flex flex-col  gap-4 md:flex-row items-center">
-          <button className="btn btn-neutral rounded-3xl text-bold text-lg w-full md:max-w-60 hover:bg-blue-400 hover:text-gray-800">
+          <button className="btn btn-neutral rounded-3xl text-bold text-lg w-full md:max-w-60 hover:bg-amber-400 hover:text-gray-800">
             Add To Watchlist
           </button>
-          <button className="btn btn-circle btn-outline border-none text-slate-200 bg-gray-600">
+          <button className="btn btn-circle btn-outline border-none text-slate-200 bg-gray-600 hover:bg-amber-400">
             share
           </button>
         </div>

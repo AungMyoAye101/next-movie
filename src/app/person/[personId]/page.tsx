@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import PersonCredit from "@/components/PersonCredit";
 import Image from "next/image";
 import React from "react";
@@ -51,6 +52,7 @@ const page = async ({ params }: { params: { personId: number } }) => {
         <h1 className="text-xl font-semibold font-serif">Know For</h1>
         <PersonCredit person_id={id} />
       </div>
+      <Footer />
     </main>
   );
 };

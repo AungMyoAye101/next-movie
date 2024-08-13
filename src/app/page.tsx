@@ -57,6 +57,7 @@ export default async function Home({
         <NavLinkMenu />
         <Card data={result.results} />
       </div>
+      <Footer />
     </>
   );
 }

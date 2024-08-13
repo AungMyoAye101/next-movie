@@ -4,7 +4,7 @@ import Person from "./Person";
 import Link from "next/link";
 import PeopleCard from "./PeopleCard";
 
-interface CreditProps {
+export interface CreditProps {
   media: string;
   id: number;
 }

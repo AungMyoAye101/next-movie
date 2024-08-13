@@ -21,7 +21,7 @@ const CastCredit = async ({ media, id }: CreditProps) => {
       <h1 className="text-xl font-semibold font-serif">Cast List</h1>
       <main className="flex overflow-hidden overflow-x-scroll gap-4 ">
         {data.cast.map((data: any) => (
-          <div key={data.id} className="min-w-60">
+          <div key={data.id} className="min-w-48">
             <PeopleCard
               id={data.id}
               name={data.name}

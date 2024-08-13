@@ -26,7 +26,10 @@ const ImageCard = ({
   title,
   original_name,
 }: CardDetailProps) => {
-  const [imgSrc, setimgSrc] = useState("");
+  const [imgSrc, setimgSrc] = useState(
+    `https://image.tmdb.org/t/p/original${backdrop_path || poster_path}`
+  );
+
   return (
     <>
       <motion.div
@@ -44,9 +47,7 @@ const ImageCard = ({
             className="overflow-hidden"
           >
             <Image
-              src={`https://image.tmdb.org/t/p/original${
-                backdrop_path || poster_path
-              }`}
+              src={imgSrc}
               width={400}
               height={200}
               alt="posters"

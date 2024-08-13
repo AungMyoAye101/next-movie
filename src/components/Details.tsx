@@ -63,13 +63,13 @@ const Details = ({
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeOut", duration: 2 }}
-          className=" flex flex-col gap-2 w-full md:max-w-2xl"
+          className=" flex flex-col gap-4 w-full md:max-w-2xl"
         >
           <h1 className=" text-2xl font-serif font-bold">
             {name || original_name || original_title}
           </h1>
 
-          <h3 className="font-serif italic ">{tagline}</h3>
+          <h3 className="font-serif italic text-gray-400 ">{tagline}</h3>
           <div className="flex flex-col  gap-4 md:flex-row items-center">
             <button className="btn btn-neutral rounded-3xl text-bold text-lg w-full md:max-w-60 hover:bg-blue-400 hover:text-gray-800">
               Add To Watchlist
@@ -87,17 +87,17 @@ const Details = ({
 
           <div className="flex flex-col gap-2">
             <div className="flex ">
-              <h3 className="text-md font-mono min-w-48 opacity-40">Rating</h3>
+              <h3 className="text-md font-mono min-w-40 opacity-40">Rating</h3>
               <p>{vote_average.toFixed(1)}</p>
             </div>
             <div className="flex   ">
-              <h3 className="text-md font-mono min-w-48 opacity-40">
+              <h3 className="text-md font-mono min-w-40 opacity-40">
                 Released Date
               </h3>
               <p>{release_date || first_air_date}</p>
             </div>
             <div className="flex ">
-              <h3 className="text-md font-mono min-w-48 opacity-40">Genre</h3>
+              <h3 className="text-md font-mono min-w-40 opacity-40">Genre</h3>
               <p className="flex flex-wrap gap-1">
                 {genres.map((item: { id: number; name: string }) => (
                   <span
@@ -111,7 +111,7 @@ const Details = ({
             </div>
             {runtime && (
               <div className="flex  ">
-                <h3 className="text-md font-mono min-w-48 opacity-40">
+                <h3 className="text-md font-mono min-w-40 opacity-40">
                   Duration
                 </h3>
                 <p>

@@ -1,6 +1,7 @@
 import CastCredit from "@/components/CastCredit";
 import Details from "@/components/Details";
 import Recommendation from "@/components/Recommendation";
+import Review from "@/components/Review";
 import React from "react";
 
 const TvShow = async ({ params }: { params: { id: number } }) => {
@@ -32,6 +33,7 @@ const TvShow = async ({ params }: { params: { id: number } }) => {
       />
       <div>
         <CastCredit media="tv" id={params.id} />
+        <Review media="tv" id={params.id} />
       </div>
       <div>
         <Recommendation media_type="tv" id={params.id} />

@@ -35,8 +35,9 @@ const MoviePage = async ({ params }: { params: { id: number } }) => {
 
       <div>
         <CastCredit media="movie" id={params.id} />
+
+        <Review media="movie" id={params.id} />
       </div>
-      <Review media="movie" id={params.id} />
       <div>
         <Recommendation media_type="movie" id={params.id} />
       </div>

@@ -28,7 +28,7 @@ const PeopleCard = ({ id, name, original_name, profile_path }: PersonData) => {
             src={`https://image.tmdb.org/t/p/original/${profile_path}`}
             alt="person "
             width={400}
-            height={500}
+            height={600}
             objectFit="cover"
             className="rounded hover:scale-110 transition-transform ease-in-out"
           />

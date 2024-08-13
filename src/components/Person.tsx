@@ -17,7 +17,6 @@ interface DataProp {
   data: PersonData[];
 }
 const Person = ({ data }: DataProp) => {
-  console.log(data);
   return (
     <div className=" grid grid-cols-2  sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 mx-auto  gap-4 ">
       {data.map((data) => (

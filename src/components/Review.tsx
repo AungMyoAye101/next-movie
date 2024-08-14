@@ -29,7 +29,7 @@ const Review = async ({ media, id }: CreditProps) => {
   ));
   return (
     <>
-      {data.results.legth > 1 && (
+      {data.results.length > 1 && (
         <section>
           <h1 className="text-xl font-semibold font-serif text-center my-2">
             Reviews

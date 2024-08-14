@@ -9,7 +9,8 @@ const Hero = ({ image }: BgImage) => {
       <Image
         src={`https://image.tmdb.org/t/p/original${image}`}
         alt="image"
-        fill
+        width={1200}
+        height={1000}
         className="h-screen object-cover w-full absolute left-0 right-0 -z-20 bg-opacity-50"
       />
       <div className="h-screen hero-overlay bg-opacity-70 absolute -z-10"></div>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import SearchBox from "./SearchBox";
+import { ImCross } from "react-icons/im";
 
 const Header = () => {
   const [searchText, setSearchText] = useState("");
@@ -71,7 +72,7 @@ const Header = () => {
             <label
               htmlFor="my-drawer-3"
               aria-label="open sidebar"
-              className="text-lg"
+              className="text-lg cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -90,17 +91,20 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="drawer-side z-20">
-        <label
-          htmlFor="my-drawer-3"
-          aria-label="close sidebar"
-          className="drawer-overlay"
-        ></label>
-        <ul className="menu bg-base-200 min-h-full w-80 p-4">
+      <div className="drawer-side z-20 ">
+        <ul className="menu bg-base-200 bg-opacity-90  min-h-full w-full p-4">
           {/* Sidebar content here */}
           <li>
+            <label
+              htmlFor="my-drawer-3"
+              className="btn btn-circle hover:bg-amber-400 hover:text-black"
+            >
+              <ImCross />
+            </label>
+          </li>
+          <li>
             <div className="border-b border-b-slate-100 mb-1 rounded-none flex justify-center">
-              <h1 className="text-2xl py-2">Rare Movie</h1>
+              <h1 className="text-2xl py-1">Rare Movie</h1>
             </div>
           </li>
           <li>

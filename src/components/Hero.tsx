@@ -16,7 +16,7 @@ const Hero = ({ image }: BgImage) => {
       <div className="h-80 flex items-center justify-center">
         <div className="min-w-screen-sm max-w-screen-xl  mx-auto flex flex-col items-center gap-2 px-4">
           <h1 className="text-xl md:text-4xl font-bold font-serif">Welcome.</h1>
-          <p className="text-lg font-semibold ">
+          <p className="text-lg font-semibold text-center">
             Millions of movies, TV shows and people to discover. Explore now.
           </p>
         </div>

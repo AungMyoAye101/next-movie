@@ -15,7 +15,7 @@ const Review = async ({ media, id }: CreditProps) => {
         Reviews
       </h1>
 
-      <div className="grid grid-cols-2 max-w-3xl gap-4 mx-auto">
+      <div className="grid md:grid-cols-2 max-w-3xl gap-4 mx-auto">
         {data.results.slice(0, 4).map((item: any) => (
           <div
             className="min-w-40 md:min-w-80  rounded border border-gray-300 p-2 space-y-2 "

@@ -47,12 +47,7 @@ export default async function Home({
 
   return (
     <>
-      <Hero
-        image={
-          result.results[randomImage].backdrop_path ||
-          result.results["1"].backdrop_path
-        }
-      />
+      <Hero />
       <div className="p-6">
         <NavLinkMenu />
         <Card data={result.results} />

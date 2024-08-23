@@ -6,22 +6,17 @@ interface BgImage {
 }
 const Hero = () => {
   return (
-    <main className="h-[calc(100vh-60px)] bg-right-bottom bg-no-repeat bg-cover bg-black relative flex items-center justify-center ">
+    <main
+      className="h-[calc(100vh-60px)] bg-center bg-no-repeat bg-cover relative flex items-center justify-center "
+      style={{ backgroundImage: "url(/backdrop.jpg)" }}
+    >
       <div className="flex flex-col justify-center items-center  z-30">
-        <h1 className="text-xl md:text-4xl  font-bold font-serif z-40 shadow">
+        <h1 className="text-3xl md:text-4xl lg:5xl text-gray-100  font-bold font-serif z-40 text-shadow">
           Welcome.
         </h1>
-        <p className="text-lg font-semibold text-center z-30 shadow">
+        <p className="text-lg md:text-xl text-gray-200 font-semibold text-center z-30 shadow">
           Millions of movies, TV shows and people to discover. Explore now.
         </p>
-      </div>
-      <div className="absolute right-0 bottom-0 z-0">
-        <Image
-          src={"/backdrop.jpg"}
-          width={600}
-          height={600}
-          alt="background image"
-        />
       </div>
     </main>
   );

@@ -6,7 +6,7 @@ interface BgImage {
 }
 const Hero = () => {
   return (
-    <main className="h-96 bg-right-bottom bg-no-repeat bg-cover bg-black relative flex items-center justify-center ">
+    <main className="h-[calc(100vh-60px)] bg-right-bottom bg-no-repeat bg-cover bg-black relative flex items-center justify-center ">
       <div className="flex flex-col justify-center items-center  z-30">
         <h1 className="text-xl md:text-4xl  font-bold font-serif z-40 shadow">
           Welcome.

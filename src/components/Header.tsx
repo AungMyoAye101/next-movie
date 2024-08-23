@@ -9,7 +9,7 @@ const Header = () => {
   const [searchText, setSearchText] = useState("");
 
   return (
-    <nav className="drawer drawer-end sticky top-0 z-10">
+    <nav className="drawer drawer-end sticky top-0 z-50 ">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
@@ -91,7 +91,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="drawer-side z-20 ">
+      <div className="drawer-side z-50 ">
         <ul className="menu bg-base-200 bg-opacity-90  min-h-full w-full p-4">
           {/* Sidebar content here */}
           <li>

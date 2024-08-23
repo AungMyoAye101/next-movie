@@ -44,14 +44,13 @@ const Details = ({
   created_by,
 }: InfoDetail) => {
   return (
-    <div className="px-6 py-4  flex flex-col md:flex-row gap-6 text-slate-200">
-      <div className="max-w-80">
+    <div className="px-6 py-4  flex flex-col md:flex-row gap-6 max-w-6xl mx-auto text-slate-200">
+      <div className="relative w-80 lg:w-[25%] h-96 mx-auto">
         <Image
           src={`https://image.tmdb.org/t/p/original${
             poster_path || backdrop_path
           }  `}
-          width={300}
-          height={200}
+          fill
           alt="posters"
           className="rounded-md shadow "
         />
@@ -61,13 +60,15 @@ const Details = ({
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 2 }}
-        className=" flex flex-col gap-4 w-full md:max-w-2xl"
+        className=" flex flex-col gap-4 w-full lg:w-[70%]"
       >
-        <h1 className=" text-2xl font-serif font-bold">
+        <h1 className=" text-2xl font-serif font-bold text-center">
           {name || original_name || original_title}
         </h1>
 
-        <h3 className="font-serif italic text-gray-400 ">{tagline}</h3>
+        <h3 className="font-serif italic text-gray-400 text-center ">
+          {tagline}
+        </h3>
         <div className="flex flex-col  gap-4 md:flex-row items-center">
           <button className="btn btn-neutral rounded-3xl text-bold text-lg w-full md:max-w-60 hover:bg-amber-400 hover:text-gray-800">
             Add To Watchlist

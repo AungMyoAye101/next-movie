@@ -62,11 +62,11 @@ const Details = ({
         transition={{ ease: "easeOut", duration: 2 }}
         className=" flex flex-col gap-4 w-full lg:w-[70%]"
       >
-        <h1 className=" text-2xl font-serif font-bold text-center">
+        <h1 className=" text-2xl font-serif font-bold text-center lg:text-left">
           {name || original_name || original_title}
         </h1>
 
-        <h3 className="font-serif italic text-gray-400 text-center ">
+        <h3 className="font-serif italic text-gray-400 text-center lg:text-left ">
           {tagline}
         </h3>
         <div className="flex flex-col  gap-4 md:flex-row items-center">

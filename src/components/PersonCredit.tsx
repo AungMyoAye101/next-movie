@@ -14,7 +14,7 @@ const PersonCredit = async ({ person_id }: PersonCreditProps) => {
   const personalInfo = data.cast;
 
   return (
-    <section className="flex overflow-hidden overflow-x-scroll gap-4">
+    <section className="flex overflow-hidden overflow-x-scroll gap-4 scroll-bar">
       {personalInfo.map((item: any) => (
         <div key={item.id}>
           <ImageCard

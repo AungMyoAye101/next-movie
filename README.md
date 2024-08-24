@@ -1,10 +1,13 @@
-## Movie Review Web App
+# Movie Review Web App
 
-# Description
+## Preview
+movie-rlcbicl39-aung-myo-ayes-projects.vercel.app
+
+## Description
 
 The Movie Review Web App is a comprehensive platform for movie enthusiasts to explore and review trending movies and TV shows. This web application allows users to search for movies and TV shows, view personal details of each title, and receive personalized recommendations based on their preferences.
 
-# Features
+## Features
 
 Trending Movies & TV Shows: Browse the latest and most popular movies and TV shows currently trending.
 Search Functionality: Quickly search for any movie or TV show by title, genre, or other criteria.
@@ -12,7 +15,7 @@ Detailed Information: Access comprehensive details for each movie or TV show, in
 Personal Recommendations: Receive tailored recommendations based on your viewing history and preferences.
 User Reviews: Submit your own reviews and read reviews from other users to help make informed viewing decisions.
 
-Technologies Used
+## Technologies Used
 Frontend: React, Tailwind CSS
 Backend: Node.js
 
@@ -24,7 +27,6 @@ Clone the repository:
 
 
 ```bash
-Copy code
 npm install
 ```
 Set up environment variables:
@@ -37,16 +39,16 @@ npm run dev
 ```
 The app will be available at http://localhost:3000.
 
-# Usage
+## Usage
 
 Navigate to the home page to see trending movies and TV shows.
 Use the search bar to find specific titles.
 Click on any movie or TV show to view detailed information.
 
-# Contributing
+## Contributing
 Contributions are welcome! Please follow these steps to contribute:
 
-# Fork the repository.
+## Fork the repository.
 Create a new branch
 ```bash 
 git checkout -b feature/your-feature-name
@@ -54,7 +56,7 @@ git checkout -b feature/your-feature-name
 Make your changes.
 Commit your changes 
 ``` bash 
-git commit -m 'Add some feature
+git commit -m 'Add some feature'
 ```
 Push to the branch
 ```bash 
@@ -63,6 +65,6 @@ git push origin feature/your-feature-name
 Open a pull request.
 
 
-Acknowledgements
+## Acknowledgements
 The Movie Database (TMDb) API for providing the movie and TV show data.
 React and Tailwind CSS for the seamless UI/UX development.

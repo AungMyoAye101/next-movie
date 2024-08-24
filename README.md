@@ -8,20 +8,17 @@ Search Functionality: Quickly search for any movie or TV show by title, genre, o
 Detailed Information: Access comprehensive details for each movie or TV show, including cast, synopsis, ratings, and reviews.
 Personal Recommendations: Receive tailored recommendations based on your viewing history and preferences.
 User Reviews: Submit your own reviews and read reviews from other users to help make informed viewing decisions.
+
 Technologies Used
 Frontend: React, Tailwind CSS
-Backend: Node.js, Express
-Database: MongoDB with Prisma ORM
+Backend: Node.js
+
 API: The Movie Database (TMDb) API for fetching movie and TV show data
-Deployment: Vercel / Netlify
+Deployment: Vercel 
 Installation
 Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/yourusername/moviereviewapp.git
-cd moviereviewapp
-Install dependencies:
+
 
 bash
 Copy code
@@ -55,10 +52,8 @@ Make your changes.
 Commit your changes (git commit -m 'Add some feature').
 Push to the branch (git push origin feature/your-feature-name).
 Open a pull request.
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 Acknowledgements
 The Movie Database (TMDb) API for providing the movie and TV show data.
-Prisma for making database management easier.
 React and Tailwind CSS for the seamless UI/UX development.

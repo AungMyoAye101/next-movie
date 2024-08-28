@@ -1,4 +1,8 @@
-# Rare Movie Web App
+# Movie Review Web App
+
+## Preview
+
+[movie-rlcbicl39-aung-myo-ayes-projects.vercel.app](url)
 
 ## Description
 
@@ -13,50 +17,61 @@ Personal Recommendations: Receive tailored recommendations based on your viewing
 User Reviews: Submit your own reviews and read reviews from other users to help make informed viewing decisions.
 
 ## Technologies Used
+
 Frontend: React, Tailwind CSS
-Backend: Node.js,
+Backend: Node.js
+
 API: The Movie Database (TMDb) API for fetching movie and TV show data
 Deployment: Vercel
 Installation
 Clone the repository:
 
 ```bash
-
-git clone https://github.com/yourusername/moviereviewapp.git
-cd moviereviewapp
-Install dependencies:
-```
-```bash
-
 npm install
+```
+
 Set up environment variables:
 Create a .env file in the root directory and add your environment variables:
-```
-``` bash
-TMDB_API_KEY=your_tmdb_api_key
-Run the application:
-```
-``` bash
+
+```bash
 npm run dev
-The app will be available at http://localhost:3000.
 ```
 
+The app will be available at http://localhost:3000.
+
+````
+
 ## Usage
+
 Navigate to the home page to see trending movies and TV shows.
 Use the search bar to find specific titles.
 Click on any movie or TV show to view detailed information.
-Sign up or log in to receive personalized recommendations based on your preferences.
-Submit reviews and read reviews from other users.
-Contributing
+
+## Contributing
 Contributions are welcome! Please follow these steps to contribute:
 
 ## Fork the repository.
-Create a new branch (`git checkout -b feature/your-feature-name`).
+Create a new branch
+```bash
+git checkout -b feature/your-feature-name
+````
+
 Make your changes.
-Commit your changes (`git commit -m 'Add some feature'`).
-Push to the branch (`git push origin feature/your-feature-name`).
+Commit your changes
+
+```bash
+git commit -m 'Add some feature'
+```
+
+Push to the branch
+
+```bash
+git push origin feature/your-feature-name
+```
+
 Open a pull request.
 
 ## Acknowledgements
+
 The Movie Database (TMDb) API for providing the movie and TV show data.
 React and Tailwind CSS for the seamless UI/UX development.

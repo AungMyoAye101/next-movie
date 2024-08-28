@@ -92,7 +92,7 @@ const Header = () => {
         </div>
       </div>
       <div className="drawer-side z-50 ">
-        <ul className="menu bg-base-200 bg-opacity-90  min-h-full w-full p-4">
+        <ul className="menu bg-base-200 bg-opacity-90  min-h-full w-[90vw] p-4">
           {/* Sidebar content here */}
           <li>
             <label

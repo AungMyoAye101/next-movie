@@ -39,8 +39,6 @@ npm run dev
 
 The app will be available at http://localhost:3000.
 
-````
-
 ## Usage
 
 Navigate to the home page to see trending movies and TV shows.
@@ -48,13 +46,16 @@ Use the search bar to find specific titles.
 Click on any movie or TV show to view detailed information.
 
 ## Contributing
+
 Contributions are welcome! Please follow these steps to contribute:
 
 ## Fork the repository.
+
 Create a new branch
+
 ```bash
 git checkout -b feature/your-feature-name
-````
+```
 
 Make your changes.
 Commit your changes

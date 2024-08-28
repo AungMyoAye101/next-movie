@@ -45,14 +45,14 @@ const Details = ({
 }: InfoDetail) => {
   return (
     <div className="px-6 py-4  flex flex-col md:flex-row gap-6 max-w-6xl mx-auto text-slate-200">
-      <div className="relative w-80 lg:w-[25%] h-96 mx-auto">
+      <div className="relative w-80 lg:w-[25%] h-[calc(100vh-180px)] mx-auto">
         <Image
           src={`https://image.tmdb.org/t/p/original${
             poster_path || backdrop_path
           }  `}
           fill
           alt="posters"
-          className="rounded-md shadow "
+          className="rounded-lg shadow-md "
         />
       </div>
 
@@ -81,7 +81,9 @@ const Details = ({
           <h2 className="text-lg font-mono font-semibold text-center md:text-left">
             STORYLINE
           </h2>
-          <p className="text-pretty text-center md:text-left">{overview}</p>
+          <p className="text-sm md:text-base text-center text-balance md:text-left">
+            {overview}
+          </p>
         </div>
 
         <div className="flex flex-col gap-2">

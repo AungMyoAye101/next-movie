@@ -1,10 +1,13 @@
+import Link from "next/link";
 import React from "react";
 
 const Notfount = () => {
   return (
-    <div className="mt-10 text-center">
+    <div className="mt-10 text-center space-y-3">
       <h1>Opps; Something wrong.Please try again!</h1>
-      <button className="btn btn-ghost">Try Again</button>
+      <Link href={"/"} className="btn btn-ghost">
+        Go back to home page
+      </Link>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import NavLinkMenu from "@/components/NavLinkMenu";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Results from "@/components/Results";
+import { movieDataFetch } from "@/actions/action";
 
 const API_KEY = process.env.API_KEY;
 
@@ -30,7 +31,7 @@ export default async function Home({
 }: {
   searchParams: { genre: string };
 }) {
-  const genre = searchParams.genre || "trending";
+  const genre: string = searchParams.genre || "trending";
 
   const res = await fetch(
     `https://api.themoviedb.org/3${
@@ -42,8 +43,6 @@ export default async function Home({
     throw new Error("Failed to load.");
   }
   const result: ApiResponse = await res.json();
-
-  const randomImage = Math.round(Math.random() * result.results.length);
 
   return (
     <>

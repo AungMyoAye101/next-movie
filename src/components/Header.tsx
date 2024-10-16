@@ -5,163 +5,59 @@ import { useState } from "react";
 import SearchBox from "./SearchBox";
 import { ImCross } from "react-icons/im";
 
+const navLinks = [
+  {
+    name: "Home",
+    link: "/",
+  },
+  {
+    name: "Movie",
+    link: "/movie",
+  },
+  {
+    name: "TV Series",
+    link: "/tvseries",
+  },
+  {
+    name: "People",
+    link: "/people",
+  },
+];
+
 const Header = () => {
   const [searchText, setSearchText] = useState("");
 
   return (
-    <nav className="drawer drawer-end sticky top-0 z-50 ">
-      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col">
-        {/* Navbar */}
-        <div className="navbar bg-base-300 w-full flex justify-between items-center gap-4 px-6">
-          <div className=" ">
-            <Link href={"/"} className=" hover:text-warning ">
-              <h1 className="text-xl md:text-3xl inline-block  font-serif font-bold">
-                Rare
-              </h1>
-            </Link>
-          </div>
-
-          <div className="hidden flex-none lg:block">
-            <ul className="menu menu-horizontal text-lg font-bold">
-              {/* Navbar menu content here */}
-              <li>
-                <Link
-                  href={"/trending"}
-                  className="hover:underline hover:text-warning hover:underline-offset-8"
-                >
-                  Trending
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={"/movieTrend"}
-                  className="hover:underline hover:text-warning hover:underline-offset-8"
-                >
-                  Movie
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={"/tvTrend"}
-                  className="hover:underline hover:text-warning hover:underline-offset-8"
-                >
-                  TV Series
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={"/topRated"}
-                  className="hover:underline hover:text-warning hover:underline-offset-8"
-                >
-                  Top Rated
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={"/people"}
-                  className="hover:underline hover:text-warning hover:underline-offset-8"
-                >
-                  People
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <SearchBox />
-          <div className="flex-none lg:hidden">
-            <label
-              htmlFor="my-drawer-3"
-              aria-label="open sidebar"
-              className="text-lg cursor-pointer"
+    <header>
+      <nav className="flex justify-between items-center px-4 py-2 fixed top-0 left-0 right-0 z-50  bg-opacity-35">
+        <a
+          href="#"
+          className=" font-serif text-orange-500 flex gap-1 items-center"
+        >
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold">Rare</h1>
+          <span className="hidden md:block text-lg font-sans font-semibold text-orange-300">
+            -movie
+          </span>
+        </a>
+        <div className="flex items-center ">
+          {navLinks.map((item, i) => (
+            <a
+              key={i}
+              href={item.link}
+              className="text-lg lg:text-xl px-3 py-2 font-serif font-semibold"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block h-6 w-6 stroke-current"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </label>
-          </div>
+              {item.name}
+            </a>
+          ))}
         </div>
-      </div>
-      <div className="drawer-side z-50 ">
-        <ul className="menu bg-base-200 bg-opacity-90  min-h-full w-[90vw] p-4">
-          {/* Sidebar content here */}
-          <li>
-            <label
-              htmlFor="my-drawer-3"
-              className="btn btn-circle hover:bg-amber-400 hover:text-black"
-            >
-              <ImCross />
-            </label>
-          </li>
-          <li>
-            <div className="border-b border-b-slate-100 mb-1 rounded-none flex justify-center">
-              <h1 className="text-2xl py-1">Rare Movie</h1>
-            </div>
-          </li>
-          <li>
-            <Link
-              href={"/"}
-              className="  text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={"/trending"}
-              className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
-            >
-              Trending
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={"/movieTrend"}
-              className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
-            >
-              Movie
-            </Link>
-          </li>
-
-          <li>
-            {" "}
-            <Link
-              href={"/tvTrend"}
-              className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
-            >
-              TV Series
-            </Link>
-          </li>
-          <li>
-            {" "}
-            <Link
-              href={"/topRated"}
-              className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
-            >
-              Top Rated
-            </Link>
-          </li>
-          <li>
-            {" "}
-            <Link
-              href={"/people"}
-              className="text-xl px-4 py-2 rounded-xl hover:bg-warning hover:text-black"
-            >
-              People
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+        <div>
+          <input
+            type="text"
+            className="px-3 py-2 rounded-full border-none focus:outline-none"
+          />
+        </div>
+      </nav>
+    </header>
   );
 };
 

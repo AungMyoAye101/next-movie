@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Transition from "@/components/Transition";
 import Footer from "@/components/Footer";
+import { Providers } from "./Provider";
 
 export const metadata: Metadata = {
   title: "Rare Movie App",
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <Transition>{children}</Transition>
+        <Providers>
+          <Header />
+          <Transition>{children}</Transition>
+        </Providers>
       </body>
     </html>
   );

@@ -44,8 +44,8 @@ const Details = ({
   created_by,
 }: InfoDetail) => {
   return (
-    <div className="px-6 py-4  flex flex-col md:flex-row gap-6 max-w-6xl mx-auto text-slate-200">
-      <div className="relative w-80 lg:w-[25%] h-[calc(100vh-180px)] mx-auto">
+    <div className="px-6   flex flex-col md:flex-row justify-center gap-6 md:gap-10  w-full ">
+      <div className="relative w-full md:w-[30%] h-[50vh] sm:h-[70vh] md:h-[70vh]">
         <Image
           src={`https://image.tmdb.org/t/p/original${
             poster_path || backdrop_path
@@ -60,50 +60,49 @@ const Details = ({
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 2 }}
-        className=" flex flex-col gap-4 w-full lg:w-[70%]"
+        className=" flex flex-col gap-4 w-full lg:w-[60%]"
       >
         <h1 className=" text-2xl font-serif font-bold text-center lg:text-left">
           {name || original_name || original_title}
         </h1>
 
-        <h3 className="font-serif italic text-gray-400 text-center lg:text-left ">
+        <h3 className="font-serif italic text-center lg:text-left font-semibold ">
           {tagline}
         </h3>
         <div className="flex flex-col  gap-4 md:flex-row items-center">
-          <button className="btn btn-neutral rounded-3xl text-bold text-lg w-full md:max-w-60 hover:bg-amber-400 hover:text-gray-800">
+          <button className="px-6 py-2 rounded-full text-lg font-serif  bg-orange-500 hover:bg-purple-500 shadow-md">
             Add To Watchlist
-          </button>
-          <button className="btn btn-circle btn-outline border-none text-slate-200 bg-gray-600 hover:bg-amber-400">
-            share
           </button>
         </div>
         <div>
-          <h2 className="text-lg font-mono font-semibold text-center md:text-left">
+          <h2 className="text-xl md:text-2xl  font-sans font-bold text-center md:text-left">
             STORYLINE
           </h2>
-          <p className="text-sm md:text-base text-center text-balance md:text-left">
+          <p className="text-base md:text-lg font-serif text-center  md:text-left">
             {overview}
           </p>
         </div>
 
         <div className="flex flex-col gap-2">
-          <div className="flex flex-col md:flex-row">
-            <h3 className="text-md font-mono min-w-40 opacity-40">Rating</h3>
-            <p>{vote_average.toFixed(1)}</p>
+          <div className="flex flex-wrap">
+            <h3 className="text-lg  font-mono min-w-40 ">Rating</h3>
+            <p className="font-sans  font-semibold">
+              {vote_average.toFixed(1)}
+            </p>
           </div>
-          <div className="flex  flex-col md:flex-row ">
-            <h3 className="text-md font-mono min-w-40 opacity-40">
-              Released Date
-            </h3>
-            <p>{release_date || first_air_date}</p>
+          <div className="flex  flex-wrap">
+            <h3 className="text-lg  font-mono min-w-40 ">Released Date</h3>
+            <p className="font-sans  font-semibold">
+              {release_date || first_air_date}
+            </p>
           </div>
-          <div className="flex flex-col md:flex-row">
-            <h3 className="text-md font-mono min-w-40 opacity-40">Genre</h3>
+          <div className="flex flex-wrap">
+            <h3 className="text-lg font-mono min-w-40 ">Genre</h3>
             <p className="flex flex-wrap gap-1">
               {genres.map((item: { id: number; name: string }) => (
                 <span
                   key={item.id}
-                  className="text-md hover:bg-gray-300 hover:text-black  rounded"
+                  className="text-lg  hover:bg-gray-300 hover:text-black  rounded-lg px-2 py-1 "
                 >
                   {item.name}
                 </span>
@@ -112,10 +111,8 @@ const Details = ({
           </div>
           {runtime && (
             <div className="flex  ">
-              <h3 className="text-md font-mono min-w-40 opacity-40">
-                Duration
-              </h3>
-              <p>
+              <h3 className="text-lg font-mono min-w-40 ">Duration</h3>
+              <p className="font-sans  font-semibold">
                 {Math.floor(runtime / 60)}h {runtime % 60} min
               </p>
             </div>

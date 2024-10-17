@@ -47,10 +47,10 @@ export default async function Home({
   return (
     <>
       <Hero />
-      <div className="p-6">
-        <NavLinkMenu />
-        <Card data={result.results} />
-      </div>
+
+      <NavLinkMenu />
+      <Card data={result.results} />
+
       <Footer />
     </>
   );

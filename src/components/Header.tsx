@@ -31,7 +31,7 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center px-4 py-2 fixed top-0 left-0 right-0 z-50 dark:bg-neutral-800 bg-neutral-100 backdrop-blur  bg-opacity-90 shadow-md">
+    <nav className="flex justify-between items-center px-9 py-2 fixed top-0 left-0 right-0 z-50 dark:bg-neutral-800 bg-neutral-100 backdrop-blur  bg-opacity-90 shadow-md">
       <a
         href="#"
         className=" font-serif text-orange-500 flex gap-1 items-center"

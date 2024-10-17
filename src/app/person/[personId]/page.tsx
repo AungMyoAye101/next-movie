@@ -52,7 +52,6 @@ const page = async ({ params }: { params: { personId: number } }) => {
         <h1 className="text-xl font-semibold font-serif">Know For</h1>
         <PersonCredit person_id={id} />
       </div>
-      <Footer />
     </main>
   );
 };

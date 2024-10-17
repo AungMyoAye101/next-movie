@@ -23,6 +23,7 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto">
             <Header />
             <Transition>{children}</Transition>
+            <Footer />
           </div>
         </Providers>
       </body>

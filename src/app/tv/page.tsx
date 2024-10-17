@@ -15,7 +15,6 @@ const page = async () => {
     <div className="p-6">
       <h1 className="text-xl font-bold mb-4">Tv Shows</h1>
       <Card data={data} />
-      <Footer />
     </div>
   );
 };

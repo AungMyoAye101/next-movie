@@ -33,7 +33,7 @@ const ImageCard = ({
   return (
     <>
       <motion.div
-        className=" bg-base-100 shadow-md rounded-lg min-w-60 mx-auto hover:opacity-80 hover:shadow-xl"
+        className="shadow-lg rounded-lg min-w-60 mx-auto hover:opacity-80 hover:shadow-xl"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 0.8 }}
@@ -44,14 +44,14 @@ const ImageCard = ({
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ ease: "easeOut", duration: 1 }}
-            className="overflow-hidden"
+            className="overflow-hidden rounded-lg"
           >
             <Image
               src={imgSrc}
               width={400}
               height={200}
               alt="posters"
-              className="rounded aspect-video object-cover hover:scale-110 transition-all duration-150 ease-in-out"
+              className="rounded-lg aspect-video object-cover hover:scale-110 transition-all duration-150 ease-in-out"
               onError={(e) => setimgSrc("/failedImg.jpg")}
             />
           </motion.div>
@@ -67,7 +67,7 @@ const ImageCard = ({
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ ease: "easeOut", duration: 1.5 }}
         >
-          <h2 className="card-title font-serif text-lg line-clamp-2">
+          <h2 className="font-bold font-serif text-lg line-clamp-2">
             {name || title || original_name}
           </h2>
         </motion.div>

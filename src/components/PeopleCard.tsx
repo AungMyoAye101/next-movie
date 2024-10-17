@@ -16,21 +16,21 @@ const PeopleCard = ({ id, name, original_name, profile_path }: PersonData) => {
   return (
     <motion.div
       key={id}
-      className="rounded bg-base-100 shadow-sm hover:shadow-lg  hover:text-purple-500"
+      className="hover:shadow-lg  hover:text-purple-500 rounded-lg shadow-md border"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ ease: "easeOut", duration: 0.8 }}
       exit={{ opacity: 0 }}
     >
-      <Link href={`/person/${id}`}>
-        <div className="overflow-hidden">
+      <Link href={`/person/${id}`} className="">
+        <div className="overflow-hidden rounded-lg">
           <Image
             src={`https://image.tmdb.org/t/p/original/${profile_path}`}
             alt="person "
             width={400}
             height={600}
             objectFit="cover"
-            className="rounded hover:scale-110 transition-transform ease-in-out"
+            className="rounded-lg hover:scale-110 transition-transform ease-in-out"
           />
         </div>
         <motion.div

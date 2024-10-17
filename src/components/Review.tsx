@@ -11,19 +11,19 @@ const Review = async ({ media, id }: CreditProps) => {
 
   const reviewList = data.results.slice(0, 4).map((item: any) => (
     <div
-      className="min-w-full  md:min-w-80 h-40  rounded border border-gray-300 p-2 space-y-2 mx-auto"
+      className="min-w-full  md:min-w-80 h-40  rounded-lg border border-gray-800 dark:border-gray-200 p-2 space-y-2 mx-auto shadow-lg"
       key={item.id}
     >
       <div className="flex items-center">
         <MdAccountCircle className="size-14 " />
         <div>
-          <h1 className="text-lg font-semibold">{item.author}</h1>
+          <h1 className="text-lg font-semibold font-serif">{item.author}</h1>
 
           <DateString dateString={item.created_at} />
         </div>
       </div>
       <div>
-        <p className="line-clamp-3">{item.content}</p>
+        <p className="line-clamp-3 ">{item.content}</p>
       </div>
     </div>
   ));

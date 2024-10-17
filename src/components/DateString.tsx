@@ -15,7 +15,7 @@ const DateString = ({ dateString }: DateProps) => {
     hour12: true,
     timeZoneName: "short",
   });
-  return <h2 className="text-sm text-gray-400">{formattedDate}</h2>;
+  return <h2 className="text-sm font-light">{formattedDate}</h2>;
 };
 
 export default DateString;

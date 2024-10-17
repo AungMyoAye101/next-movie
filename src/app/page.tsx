@@ -45,13 +45,10 @@ export default async function Home({
   const result: ApiResponse = await res.json();
 
   return (
-    <>
+    <section>
       <Hero />
-
       <NavLinkMenu />
       <Card data={result.results} />
-
-      <Footer />
-    </>
+    </section>
   );
 }

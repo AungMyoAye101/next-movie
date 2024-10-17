@@ -102,7 +102,7 @@ const Details = ({
               {genres.map((item: { id: number; name: string }) => (
                 <span
                   key={item.id}
-                  className="text-lg  hover:bg-gray-300 hover:text-black  rounded-lg px-2 py-1 "
+                  className="text-base font-serif border border-gray-800 dark:border-gray-300  shadow-lg hover:bg-purple-300 hover:text-black  rounded-full px-3 py-1 "
                 >
                   {item.name}
                 </span>

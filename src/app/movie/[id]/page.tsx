@@ -13,7 +13,7 @@ const MoviePage = async ({ params }: { params: { id: number } }) => {
   const data = await res.json();
 
   return (
-    <section className="py-20 px-4">
+    <section className=" py-20 px-4">
       <Details
         backdrop_path={data.backdrop_path}
         id={data.id}
@@ -36,7 +36,6 @@ const MoviePage = async ({ params }: { params: { id: number } }) => {
 
       <div>
         <CastCredit media="movie" id={params.id} />
-
         <Review media="movie" id={params.id} />
       </div>
       <div>

@@ -16,7 +16,7 @@ const PeopleCard = ({ id, name, original_name, profile_path }: PersonData) => {
   return (
     <motion.div
       key={id}
-      className="hover:shadow-lg  hover:text-purple-500 rounded-lg shadow-md border"
+      className="hover:shadow-lg  hover:text-purple-500 rounded-lg shadow-md "
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ ease: "easeOut", duration: 0.8 }}
@@ -27,7 +27,7 @@ const PeopleCard = ({ id, name, original_name, profile_path }: PersonData) => {
           <Image
             src={`https://image.tmdb.org/t/p/original/${profile_path}`}
             alt="person "
-            width={400}
+            width={500}
             height={600}
             objectFit="cover"
             className="rounded-lg hover:scale-110 transition-transform ease-in-out"

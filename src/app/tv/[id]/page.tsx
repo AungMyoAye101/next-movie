@@ -12,7 +12,7 @@ const TvShow = async ({ params }: { params: { id: number } }) => {
   );
   const data = await res.json();
   return (
-    <div>
+    <div className="px-4 py-20 ">
       <Details
         backdrop_path={data.backdrop_path}
         id={data.id}
@@ -39,7 +39,6 @@ const TvShow = async ({ params }: { params: { id: number } }) => {
       <div>
         <Recommendation media_type="tv" id={params.id} />
       </div>
-      <Footer />
     </div>
   );
 };

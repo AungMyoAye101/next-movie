@@ -28,7 +28,7 @@ const Person = ({ data }: DataProp) => {
           transition={{ ease: "easeOut", duration: 0.8 }}
           exit={{ opacity: 0 }}
         >
-          <Link href={`/person/${data.id}`}>
+          <Link href={`/people/${data.id}`}>
             <div className="overflow-hidden">
               <Image
                 src={`https://image.tmdb.org/t/p/original/${data.profile_path}`}

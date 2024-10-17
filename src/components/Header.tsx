@@ -19,7 +19,7 @@ export const navLinks = [
   },
   {
     name: "TV Series",
-    link: "/tvseries",
+    link: "/tv",
   },
   {
     name: "People",
@@ -30,6 +30,9 @@ export const navLinks = [
 const Header = () => {
   const [searchText, setSearchText] = useState("");
   const [toggle, setToggle] = useState(false);
+  const handleToggle = () => {
+    setToggle((pre) => !pre);
+  };
 
   return (
     <nav className="flex justify-between items-center px-4 md:px-9 py-2 fixed top-0 left-0 right-0 z-50 dark:bg-neutral-800 bg-neutral-100 backdrop-blur  bg-opacity-90 shadow-md">
@@ -65,11 +68,11 @@ const Header = () => {
       </div>
       <div
         className="size-8 md:hidden flex justify-center items-center shadow-lg rounded-full border border-gray-100 cursor-pointer"
-        onClick={() => setToggle((pre) => !pre)}
+        onClick={handleToggle}
       >
         <FaBars />
       </div>
-      {toggle && <SideBar />}
+      {toggle && <SideBar handleToggle={handleToggle} />}
     </nav>
   );
 };

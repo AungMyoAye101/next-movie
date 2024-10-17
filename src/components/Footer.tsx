@@ -3,7 +3,7 @@ import { FaFacebookF, FaGithub, FaInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-between  flex-wrap px-4 md:px-10 py-4 rounded-tl-md rounded-tr-lg shadow-lg border-t  border-gray-200">
+    <footer className="flex justify-between bg-neutral-300 dark:bg-neutral-900 flex-wrap px-4 md:px-10 py-4 rounded-tl-md rounded-tr-lg shadow-lg">
       <div className="text-xl font-bold text-orange-500">Rare-Movie</div>
       <div>
         <ul className="flex flex-col gap-2 ">

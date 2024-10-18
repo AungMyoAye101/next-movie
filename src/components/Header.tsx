@@ -3,7 +3,12 @@
 import Link from "next/link";
 import { useContext, useState } from "react";
 import { ImCross } from "react-icons/im";
-import { FaBagShopping, FaSun, FaVideo } from "react-icons/fa6";
+import {
+  FaBagShopping,
+  FaMagnifyingGlass,
+  FaSun,
+  FaVideo,
+} from "react-icons/fa6";
 import { ThemeSwitcher } from "./ThemesChanger";
 import { FaBars } from "react-icons/fa";
 import SideBar from "./SideBar";
@@ -11,6 +16,7 @@ import { MdOndemandVideo } from "react-icons/md";
 import { watchList } from "@/lib";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import SearchBox from "./SearchBox";
 
 export const navLinks = [
   {
@@ -40,6 +46,7 @@ const Header = () => {
   const [searchText, setSearchText] = useState("");
   const [toggle, setToggle] = useState(false);
   const [show, setShow] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   const path = usePathname();
   const handleToggle = () => {
     setToggle((pre) => !pre);
@@ -77,8 +84,21 @@ const Header = () => {
           onMouseLeave={() => setShow(false)}
         >
           <MdOndemandVideo />
-          <div className="bg-red-400 size-1 rounded-full absolute right-0 top-2 z-10 "></div>
         </div>
+        <div
+          className="size-8 flex justify-center items-center rounded-full shadow-md text-lg relative "
+          onClick={() => setShowSearch(true)}
+        >
+          <FaMagnifyingGlass />
+        </div>
+        {showSearch && (
+          <div
+            className="absolute right-1 top-14 "
+            onSubmit={() => setShowSearch(false)}
+          >
+            <SearchBox />
+          </div>
+        )}
         <div
           className="size-8 md:hidden flex justify-center items-center shadow-lg rounded-full border border-gray-100 cursor-pointer"
           onClick={handleToggle}

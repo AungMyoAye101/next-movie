@@ -87,6 +87,7 @@ const Header = () => {
           <div className="p-4 rounded-lg shadow-md absolute top-16 right-0 w-60 bg-neutral-100 dark:bg-neutral-800 flex flex-col gap-1">
             {watchList.map((item) => (
               <Link
+                key={item.id}
                 href={`/movie/${item.id}`}
                 className="flex items-center gap-2 border-b border-gray-100 shadow p-1"
               >

@@ -4,7 +4,6 @@ import NavLinkMenu from "@/components/NavLinkMenu";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Results from "@/components/Results";
-import { movieDataFetch } from "@/actions/action";
 
 const API_KEY = process.env.API_KEY;
 

@@ -1,11 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import Footer from "./Footer";
 import Series from "./Series";
 import { motion } from "framer-motion";
 import { watchList } from "@/lib";
+
+interface ListProps {
+  image: string;
+  title: string;
+}
 export interface InfoDetail {
   backdrop_path: string;
   id: number;
@@ -44,12 +49,6 @@ const Details = ({
   genres,
   created_by,
 }: InfoDetail) => {
-  const addWatchList = () => {
-    watchList.push({
-      image: backdrop_path,
-      title: original_name || original_title,
-    });
-  };
   return (
     <div className="px-6   flex flex-col md:flex-row justify-center gap-6 md:gap-10  w-full ">
       <div className="relative w-full md:w-[30%] h-[50vh] sm:h-[70vh] md:h-[70vh]">
@@ -79,7 +78,13 @@ const Details = ({
         <div className="flex flex-col  gap-4 md:flex-row items-center">
           <button
             className="px-6 py-2 rounded-full text-lg font-serif  bg-orange-500 hover:bg-purple-500 shadow-md"
-            onClick={addWatchList}
+            onClick={() => {
+              watchList.push({
+                id,
+                image: backdrop_path || poster_path,
+                title: original_name || original_title,
+              });
+            }}
           >
             Add To Watchlist
           </button>

@@ -1,14 +1,7 @@
 export const watchList = [
   {
-    image: "",
-    title: "Title",
-  },
-  {
-    image: "",
-    title: "Title",
-  },
-  {
-    image: "",
-    title: "Title",
+    id: 38501,
+    image: "/tYLXJW1sZQU09VWY1BhSVPKGIwc.jpg",
+    title: "Agetha All Long",
   },
 ];

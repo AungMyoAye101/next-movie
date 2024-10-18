@@ -14,17 +14,17 @@ const SearchBox = () => {
         router.push(`/search/${search}`);
         setSearch("");
       }}
-      className="relative flex-1 max-w-xs"
+      className="relative w-full "
     >
       <input
         type="Text"
-        placeholder="Search with text ..."
+        placeholder="Search movies and TV show ..."
         value={search}
-        className="py-2 px-3 rounded-2xl  bg-gray-300 focus:outline-none  text-sm text-gray-600 w-full"
+        className="py-2 px-4 rounded-full  bg-gray-300 focus:outline-none   text-gray-600 w-full relative z-10 "
         onChange={(e) => setSearch(e.target.value)}
       />
       <button>
-        <FaSearch className="absolute right-2 top-3 text-lg text-gray-600" />
+        <FaSearch className="absolute right-2 top-3 text-lg text-gray-600 z-20" />
       </button>
     </form>
   );

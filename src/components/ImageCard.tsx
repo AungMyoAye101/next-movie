@@ -67,7 +67,7 @@ const ImageCard = ({
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ ease: "easeOut", duration: 1.5 }}
         >
-          <h2 className="font-bold font-serif text-lg line-clamp-2">
+          <h2 className="font-bold font-serif text-lg line-clamp-1">
             {name || title || original_name}
           </h2>
         </motion.div>

@@ -17,7 +17,13 @@ const Results = async ({ searchText }: SearchProps) => {
 
   const data = await resData.results;
   return (
-    <div>
+    <section>
+      <h1 className="text-xl mb-4">
+        Search result of{" "}
+        <span className="font-serif text-orange-400 font-semibold">
+          {searchText}
+        </span>
+      </h1>
       {data.length < 1 ? (
         <div className="text-center mt-10">
           <h1 className="text-lg  font-serif">No match search results .</h1>
@@ -28,7 +34,7 @@ const Results = async ({ searchText }: SearchProps) => {
       ) : (
         <Card data={data} />
       )}
-    </div>
+    </section>
   );
 };
 

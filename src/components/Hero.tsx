@@ -16,11 +16,7 @@ const Hero = () => {
           Millions of movies, TV shows and people to discover. Explore now.
         </p>
 
-        <input
-          type="text"
-          className="w-full px-4 py-3 rounded-full focus:outline-none shadow-md z-10"
-          placeholder="Search movies and tv series"
-        />
+        <SearchBox />
       </div>
       <div className="absolute inset-0">
         <div className="relative w-full h-full -z-10">

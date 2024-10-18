@@ -10,10 +10,8 @@ const SearchText = ({ params }: { params: { searchText: string } }) => {
   const searchText = params.searchText;
 
   return (
-    <div className="p-6">
-      <h1 className="text-xl font-bold mb-4">Search Results</h1>
+    <div className="py-20 px-4 ">
       <Results searchText={searchText} />
-      <Footer />
     </div>
   );
 };

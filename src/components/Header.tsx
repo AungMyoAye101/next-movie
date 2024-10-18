@@ -10,6 +10,7 @@ import SideBar from "./SideBar";
 import { MdOndemandVideo } from "react-icons/md";
 import { watchList } from "@/lib";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export const navLinks = [
   {
@@ -39,7 +40,7 @@ const Header = () => {
   const [searchText, setSearchText] = useState("");
   const [toggle, setToggle] = useState(false);
   const [show, setShow] = useState(false);
-
+  const path = usePathname();
   const handleToggle = () => {
     setToggle((pre) => !pre);
   };
@@ -60,7 +61,9 @@ const Header = () => {
           <a
             key={i}
             href={item.link}
-            className="text-lg lg:text-xl px-3 py-2 font-serif font-semibold"
+            className={`text-lg lg:text-xl px-3 py-1 font-serif font-semibold hover:text-purple-400 rounded-full ${
+              item.link === path ? "bg-purple-400" : ""
+            }`}
           >
             {item.name}
           </a>

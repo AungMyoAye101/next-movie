@@ -12,7 +12,7 @@ const page = async () => {
   const data = resData.results;
 
   return (
-    <div className=" px-4">
+    <div className="py-20 px-4">
       <h1 className="text-xl font-bold mb-4">Movie</h1>
       <Card data={data} />
     </div>

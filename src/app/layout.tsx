@@ -18,9 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-neutral-50 dark:bg-neutral-950">
         <Providers>
-          <div className="max-w-7xl mx-auto dark:bg-neutral-950">
+          <div className="max-w-7xl mx-auto ">
             <Header />
             <Transition>{children}</Transition>
             <Footer />

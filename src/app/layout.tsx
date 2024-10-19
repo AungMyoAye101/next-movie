@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto dark:bg-neutral-950">
             <Header />
             <Transition>{children}</Transition>
             <Footer />

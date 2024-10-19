@@ -69,7 +69,7 @@ const Header = () => {
             key={i}
             href={item.link}
             className={`text-lg lg:text-xl px-3 py-1 font-serif font-semibold hover:text-purple-400 rounded-full ${
-              item.link === path ? "bg-purple-400" : ""
+              item.link === path ? "border border-purple-500" : ""
             }`}
           >
             {item.name}

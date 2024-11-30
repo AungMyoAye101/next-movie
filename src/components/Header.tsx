@@ -54,26 +54,30 @@ const Header = () => {
 
   return (
     <nav className="flex justify-between items-center px-4 md:px-9 py-2 fixed top-0 left-0 right-0 z-50 dark:bg-neutral-800 bg-neutral-100 backdrop-blur  bg-opacity-90 shadow-md">
-      <a
-        href="#"
-        className=" font-serif text-orange-500 flex gap-1 items-center"
+      <div
+        className="size-8 md:hidden flex justify-center items-center shadow-lg rounded-full border border-gray-100 cursor-pointer"
+        onClick={handleToggle}
       >
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold">Rare</h1>
-        <span className="hidden md:block text-lg font-sans font-semibold text-orange-300">
-          -movie
-        </span>
-      </a>
+        <FaBars />
+      </div>
+
+      {toggle && <SideBar handleToggle={handleToggle} />}
+      <Link href="/">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-serif text-purple-600   font-bold">
+          RARE
+        </h1>
+      </Link>
       <div className="hidden md:flex items-center ">
         {navLinks.map((item, i) => (
-          <a
+          <Link
             key={i}
             href={item.link}
             className={`text-lg lg:text-xl px-3 py-1 font-serif font-semibold hover:text-purple-400 rounded-full ${
-              item.link === path ? "border border-purple-500" : ""
+              item.link === path ? " text-purple-400" : ""
             }`}
           >
             {item.name}
-          </a>
+          </Link>
         ))}
       </div>
       <div className="flex gap-2 items-center">
@@ -86,25 +90,19 @@ const Header = () => {
           <MdOndemandVideo />
         </div>
         <div
-          className="size-8 flex justify-center items-center rounded-full shadow-md text-lg relative "
-          onClick={() => setShowSearch(true)}
+          className="size-8 flex justify-center items-center rounded-full shadow-md text-lg relative cursor-pointer "
+          onClick={() => setShowSearch((pre) => !pre)}
         >
           <FaMagnifyingGlass />
         </div>
         {showSearch && (
           <div
             className="absolute right-1 top-14 "
-            onSubmit={() => setShowSearch(false)}
+            onClick={() => setShowSearch(false)}
           >
             <SearchBox />
           </div>
         )}
-        <div
-          className="size-8 md:hidden flex justify-center items-center shadow-lg rounded-full border border-gray-100 cursor-pointer"
-          onClick={handleToggle}
-        >
-          <FaBars />
-        </div>
 
         {show && (
           <div className="p-4 rounded-lg shadow-md absolute top-16 right-0 w-60 bg-neutral-100 dark:bg-neutral-800 flex flex-col gap-1">
@@ -127,8 +125,6 @@ const Header = () => {
           </div>
         )}
       </div>
-
-      {toggle && <SideBar handleToggle={handleToggle} />}
     </nav>
   );
 };

@@ -21,7 +21,7 @@ const Hero = ({ image }: BgImage) => {
       <div className="absolute inset-0">
         <div className="relative w-full h-full -z-10">
           <Image
-            src={image}
+            src={`https://image.tmdb.org/t/p/original${image}`}
             fill
             alt="cinima background"
             className="object-cover object-center"

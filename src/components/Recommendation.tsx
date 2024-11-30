@@ -14,7 +14,7 @@ const Recommendation = async ({ media_type, id }: RecommedProps) => {
   return (
     <section className="px-6 py-4 space-y-2">
       <h1 className="text-xl font-semibold font-serif ">Recommendations</h1>
-      <main className="flex overflow-hidden overflow-x-scroll gap-4 scroll-bar">
+      <main className="flex overflow-hidden overflow-x-scroll gap-4 py-4 scroll-bar">
         {data.results.map((item: any) => (
           <div key={item.id}>
             <ImageCard

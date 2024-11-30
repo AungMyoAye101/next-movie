@@ -33,7 +33,7 @@ const ImageCard = ({
   return (
     <>
       <motion.div
-        className="shadow-lg rounded-lg min-w-60 mx-auto hover:opacity-80 hover:shadow-xl"
+        className="shadow-md rounded-md min-w-60 hover:text-purple-400 hover:shadow-purple-400 overflow-hidden"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 0.8 }}
@@ -44,14 +44,14 @@ const ImageCard = ({
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ ease: "easeOut", duration: 1 }}
-            className="overflow-hidden rounded-lg"
+            className="overflow-hidden "
           >
             <Image
               src={imgSrc}
               width={400}
               height={200}
               alt="posters"
-              className="rounded-lg aspect-video object-cover hover:scale-110 transition-all duration-150 ease-in-out"
+              className=" aspect-video object-cover hover:scale-110 transition-all duration-150 ease-in-out"
               onError={(e) => setimgSrc("/failedImg.jpg")}
             />
           </motion.div>
@@ -62,7 +62,7 @@ const ImageCard = ({
         </Link>
 
         <motion.div
-          className="card-body p-2"
+          className="card-body p-1"
           initial={{ x: -40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ ease: "easeOut", duration: 1.5 }}

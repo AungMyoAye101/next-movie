@@ -69,30 +69,23 @@ const Details = ({
         className=" flex flex-col gap-4 w-full lg:w-[60%]"
       >
         <h1 className=" text-2xl font-serif font-bold text-center lg:text-left">
-          {name || original_name || original_title}
+          {name || original_name || original_title}{" "}
+          <span className="font-sans  font-semibold">
+            ( {release_date || first_air_date} )
+          </span>
         </h1>
+        <p className="flex flex-wrap gap-1">
+          {genres.map((item: { id: number; name: string }) => (
+            <span
+              key={item.id}
+              className="text-base font-serif border border-gray-800 dark:border-gray-300  shadow-lg hover:bg-purple-300 hover:text-black  rounded-full px-3 py-1 "
+            >
+              {item.name}
+            </span>
+          ))}
+        </p>
 
-        <h3 className="font-serif italic text-center lg:text-left font-semibold ">
-          {tagline}
-        </h3>
-        <div className="flex flex-col  gap-4 md:flex-row items-center">
-          <button
-            className="px-6 py-2 rounded-full text-lg font-serif  bg-orange-500 hover:bg-purple-500 shadow-md"
-            onClick={() => {
-              watchList.push({
-                id,
-                image: backdrop_path || poster_path,
-                title: original_name || original_title,
-              });
-            }}
-          >
-            Add To Watchlist
-          </button>
-        </div>
         <div>
-          <h2 className="text-xl md:text-2xl  font-sans font-bold text-center md:text-left">
-            STORYLINE
-          </h2>
           <p className="text-base md:text-lg font-serif text-center  md:text-left">
             {overview}
           </p>
@@ -111,19 +104,7 @@ const Details = ({
               {release_date || first_air_date}
             </p>
           </div>
-          <div className="flex flex-wrap">
-            <h3 className="text-lg font-mono min-w-40 ">Genre</h3>
-            <p className="flex flex-wrap gap-1">
-              {genres.map((item: { id: number; name: string }) => (
-                <span
-                  key={item.id}
-                  className="text-base font-serif border border-gray-800 dark:border-gray-300  shadow-lg hover:bg-purple-300 hover:text-black  rounded-full px-3 py-1 "
-                >
-                  {item.name}
-                </span>
-              ))}
-            </p>
-          </div>
+
           {runtime && (
             <div className="flex  ">
               <h3 className="text-lg font-mono min-w-40 ">Duration</h3>
@@ -144,6 +125,18 @@ const Details = ({
             ))}
           </div>
         )}
+        <button
+          className="px-6 py-2 rounded-full text-lg font-serif  bg-orange-500 hover:bg-purple-500 shadow-md"
+          onClick={() => {
+            watchList.push({
+              id,
+              image: backdrop_path || poster_path,
+              title: original_name || original_title,
+            });
+          }}
+        >
+          Add To Watchlist
+        </button>
       </motion.div>
     </div>
   );

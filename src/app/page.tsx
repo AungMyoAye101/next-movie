@@ -43,9 +43,11 @@ export default async function Home({
   }
   const result: ApiResponse = await res.json();
 
+  const index = Math.floor(Math.random() * result.results.length);
+
   return (
     <section>
-      <Hero image={result.results[1].backdrop_path} />
+      <Hero image={result.results[index].backdrop_path} />
       <NavLinkMenu />
       <Card data={result.results} />
     </section>

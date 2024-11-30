@@ -5,7 +5,7 @@ interface Rating {
 const Rating = ({ rating }: Rating) => {
   return (
     <div
-      className={`rounded-full bg-slate-900 text-slate-200 size-12 flex items-center justify-center  border-4 border-l-gray-600  ${
+      className={`rounded-full bg-slate-900 text-slate-200 size-12 flex items-center justify-center  border-4  ${
         rating === 0
           ? " border-gray-500"
           : rating < 60

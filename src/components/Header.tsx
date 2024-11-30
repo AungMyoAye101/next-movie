@@ -12,8 +12,6 @@ import {
 import { ThemeSwitcher } from "./ThemesChanger";
 import { FaBars } from "react-icons/fa";
 import SideBar from "./SideBar";
-import { MdOndemandVideo } from "react-icons/md";
-import { watchList } from "@/lib";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import SearchBox from "./SearchBox";
@@ -45,7 +43,6 @@ interface ListProps {
 const Header = () => {
   const [searchText, setSearchText] = useState("");
   const [toggle, setToggle] = useState(false);
-  const [show, setShow] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const path = usePathname();
   const handleToggle = () => {
@@ -82,13 +79,7 @@ const Header = () => {
       </div>
       <div className="flex gap-2 items-center">
         <ThemeSwitcher />
-        <div
-          className="size-8 flex justify-center items-center rounded-full shadow-md text-xl relative "
-          onMouseEnter={() => setShow(true)}
-          onMouseLeave={() => setShow(false)}
-        >
-          <MdOndemandVideo />
-        </div>
+
         <div
           className="size-8 flex justify-center items-center rounded-full shadow-md text-lg relative cursor-pointer "
           onClick={() => setShowSearch((pre) => !pre)}
@@ -101,27 +92,6 @@ const Header = () => {
             onClick={() => setShowSearch(false)}
           >
             <SearchBox />
-          </div>
-        )}
-
-        {show && (
-          <div className="p-4 rounded-lg shadow-md absolute top-16 right-0 w-60 bg-neutral-100 dark:bg-neutral-800 flex flex-col gap-1">
-            {watchList.map((item) => (
-              <Link
-                key={item.id}
-                href={`/movie/${item.id}`}
-                className="flex items-center gap-2 border-b border-gray-100 shadow p-1"
-              >
-                <Image
-                  src={`https://image.tmdb.org/t/p/original${item.image}`}
-                  width={60}
-                  height={40}
-                  alt={item.title}
-                  className="rounded-md "
-                />
-                <h1>{item.title}</h1>
-              </Link>
-            ))}
           </div>
         )}
       </div>

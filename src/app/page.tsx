@@ -45,7 +45,7 @@ export default async function Home({
 
   return (
     <section>
-      <Hero />
+      <Hero image={result.results[1].backdrop_path} />
       <NavLinkMenu />
       <Card data={result.results} />
     </section>

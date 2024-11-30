@@ -12,7 +12,7 @@ const TvShow = async ({ params }: { params: { id: number } }) => {
   );
   const data = await res.json();
   return (
-    <div className="px-4 py-20 ">
+    <div className="px-4  ">
       <Details
         backdrop_path={data.backdrop_path}
         id={data.id}

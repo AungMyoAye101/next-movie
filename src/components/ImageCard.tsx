@@ -62,7 +62,7 @@ const ImageCard = ({
         </Link>
 
         <motion.div
-          className="card-body p-1"
+          className="card-body px-2 py-1"
           initial={{ x: -40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ ease: "easeOut", duration: 1.5 }}

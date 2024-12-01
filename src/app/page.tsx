@@ -4,6 +4,7 @@ import NavLinkMenu from "@/components/NavLinkMenu";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Results from "@/components/Results";
+import { getMovie } from "@/ApiConfig";
 
 const API_KEY = process.env.API_KEY;
 
@@ -42,6 +43,9 @@ export default async function Home({
     throw new Error("Failed to load.");
   }
   const result: ApiResponse = await res.json();
+
+  // const movie = await getMovie("/movie/top_rated");
+  // console.log(movie);
 
   const index = Math.floor(Math.random() * result.results.length);
   const data = result.results[index];

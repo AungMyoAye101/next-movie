@@ -1,3 +1,4 @@
+import { getMovieDetails } from "@/ApiConfig";
 import CastCredit from "@/components/CastCredit";
 import Details from "@/components/Details";
 import Footer from "@/components/Footer";
@@ -7,11 +8,7 @@ import Video from "@/components/Video";
 import React from "react";
 
 const MoviePage = async ({ params }: { params: { id: number } }) => {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.API_KEY}`,
-    { next: { revalidate: 3600 } }
-  );
-  const data = await res.json();
+  const data = await getMovieDetails(params.id);
 
   return (
     <section className="  px-4">

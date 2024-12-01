@@ -26,7 +26,7 @@ export interface CardProps {
 
 const Card = ({ data }: CardProps) => {
   return (
-    <div className="grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto  gap-4 ">
+    <div className=" grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto  gap-4 ">
       {data.map((item) => (
         <div key={item.id}>
           <ImageCard

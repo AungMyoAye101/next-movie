@@ -44,12 +44,20 @@ export default async function Home({
   const result: ApiResponse = await res.json();
 
   const index = Math.floor(Math.random() * result.results.length);
+  const data = result.results[index];
 
   return (
     <section>
-      <Hero image={result.results[index].backdrop_path} />
-      <NavLinkMenu />
-      <Card data={result.results} />
+      <Hero
+        image={data.backdrop_path || data.poster_path}
+        title={data.title || data.original_name}
+        poster={data.poster_path}
+        overview={data.overview}
+      />
+      <div className="py-6 px-4 md:px-4">
+        <NavLinkMenu />
+        <Card data={result.results} />
+      </div>
     </section>
   );
 }

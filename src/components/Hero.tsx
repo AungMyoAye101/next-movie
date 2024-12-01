@@ -4,24 +4,43 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 
 interface BgImage {
   image: string;
+  title: string;
+  poster: string;
+  overview: string;
 }
-const Hero = ({ image }: BgImage) => {
+const Hero = ({ image, title, poster, overview }: BgImage) => {
   return (
     <main className=" h-dvh  relative flex items-center justify-center  ">
-      <div className="absolute left-4  top-16 w-80 flex flex-col gap-1 font-serif text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 ">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl   font-bold">
-          WELCOME
-        </h1>
-        <p className="text-lg md:text-xl font-semibold ">
-          Millions of movies, TV shows and people to discover. Explore now.
-        </p>
+      <div className="relative z-10  flex md:items-center justify-center  gap-12 font-serif text-transparent bg-clip-text bg-gradient-to-r from-neutral-100 to-gray-200 ">
+        <div className="w-full md:w-[45%]  space-y-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-sans   font-bold">
+            {title}
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl font-semibold line-clamp-6">
+            {overview}
+          </p>
+
+          <button className="px-4 py-1.5 rounded-md bg-pink-600  text-gray-100 font-sans shadow cursor-pointer">
+            Watch Trailer
+          </button>
+        </div>
+        <div className="hidden md:block">
+          <div className="w-72  rounded-md  overflow-hidden object-cover">
+            <Image
+              src={`https://image.tmdb.org/t/p/original${poster}`}
+              width={400}
+              height={400}
+              alt="poster image"
+              className="bg-red-400"
+            />
+          </div>
+        </div>
       </div>
-      <h1 className="absolute right-4  bottom-4 text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400   font-bold font-serif text-shadow">
+
+      <h1 className="absolute right-4  bottom-4 text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-purple-400    font-bold font-serif text-shadow">
         RARE
       </h1>
-      {/* <div className="flex flex-col justify-center items-center gap-4  w-full px-4  md:w-[50vw]">
-          <SearchBox />
-        </div> */}
+
       <div className="absolute inset-0">
         <div className="relative w-full h-full -z-20">
           <Image
@@ -31,7 +50,7 @@ const Hero = ({ image }: BgImage) => {
             className="object-cover object-center bg-gray-800"
           />
         </div>
-        <div className="absolute inset-0 -z-10 bg-gray-800 bg-opacity-80"></div>
+        <div className="absolute inset-0 -z-10 bg-gray-700 bg-opacity-60"></div>
       </div>
     </main>
   );

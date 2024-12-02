@@ -3,6 +3,7 @@ import React from "react";
 import Person from "./Person";
 import Link from "next/link";
 import PeopleCard from "./PeopleCard";
+import { getCast } from "@/ApiConfig";
 
 export interface CreditProps {
   media: string;
@@ -14,7 +15,7 @@ const CastCredit = async ({ media, id }: CreditProps) => {
     `https://api.themoviedb.org/3/${media}/${id}/credits?api_key=${process.env.API_KEY}`,
     { next: { revalidate: 3600 } }
   );
-  const data = await res.json();
+  const data = await getCast(media, id);
 
   return (
     <section className="p-6 space-y-2">

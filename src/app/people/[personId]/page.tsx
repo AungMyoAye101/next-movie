@@ -1,3 +1,4 @@
+import { getPeopleDetail } from "@/ApiConfig";
 import Footer from "@/components/Footer";
 import PersonCredit from "@/components/PersonCredit";
 import Image from "next/image";
@@ -5,12 +6,9 @@ import React from "react";
 
 const page = async ({ params }: { params: { personId: number } }) => {
   const id: number = params.personId;
-  const res = await fetch(
-    `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.API_KEY}`,
-    { next: { revalidate: 3600 } }
-  );
-  const data = await res.json();
-  console.log(data);
+
+  const data = await getPeopleDetail(id);
+
   return (
     <main>
       <div className="flex gap-6 flex-wrap md:flex-nowrap py-4 px-6">

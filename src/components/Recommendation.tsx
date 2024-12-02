@@ -1,15 +1,13 @@
 import React from "react";
 import ImageCard from "./ImageCard";
+import { getRecommendations } from "@/ApiConfig";
 
 interface RecommedProps {
   media_type: string;
   id: number;
 }
 const Recommendation = async ({ media_type, id }: RecommedProps) => {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/${media_type}/${id}/recommendations?api_key=${process.env.API_KEY}`
-  );
-  const data = await res.json();
+  const data = await getRecommendations(media_type, id);
 
   return (
     <section className="px-6 py-4 space-y-2">

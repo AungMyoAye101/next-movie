@@ -1,3 +1,4 @@
+import { getTvDetails } from "@/ApiConfig";
 import CastCredit from "@/components/CastCredit";
 import Details from "@/components/Details";
 import Footer from "@/components/Footer";
@@ -6,11 +7,7 @@ import Recommendation from "@/components/Recommendation";
 import React from "react";
 
 const TvShow = async ({ params }: { params: { id: number } }) => {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/tv/${params.id}?api_key=${process.env.API_KEY}`,
-    { next: { revalidate: 3600 } }
-  );
-  const data = await res.json();
+  const data = await getTvDetails(params.id);
   return (
     <div className="px-4  ">
       <Details

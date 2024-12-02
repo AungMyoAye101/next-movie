@@ -17,11 +17,13 @@ export const getTv = (tv: string) => fetchFromTMDB(`/${tv}`);
 export const getMovieDetails = (movieId: number) =>
   fetchFromTMDB(`/movie/${movieId}`);
 export const getTvDetails = (tvId: number) => fetchFromTMDB(`/tv/${tvId}`);
-export const getCast = (movieId: number) =>
-  fetchFromTMDB(`/movie/${movieId}/credits`);
+export const getCast = (type: string, movieId: number) =>
+  fetchFromTMDB(`/${type}/${movieId}/credits`);
 export const getSimilarMovies = (movieId: number) =>
   fetchFromTMDB(`/movie/${movieId}/similar`);
-export const getRecommendations = (movieId: number) =>
-  fetchFromTMDB(`/movie/${movieId}/recommendations`);
+export const getRecommendations = (type: string, movieId: number) =>
+  fetchFromTMDB(`/${type}/${movieId}/recommendations`);
 export const getTrailer = (movieId: number) =>
   fetchFromTMDB(`/movie/${movieId}/videos`);
+export const getPeople = () => fetchFromTMDB(`/person/popular`);
+export const getPeopleDetail = (id: number) => fetchFromTMDB(`/person/${id}`);

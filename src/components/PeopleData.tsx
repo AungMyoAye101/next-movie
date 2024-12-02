@@ -1,12 +1,9 @@
 import React from "react";
 import Person from "./Person";
+import { getPeople } from "@/ApiConfig";
 
 const PeopleData = async () => {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/person/popular?api_key=${process.env.API_KEY}&page=1`,
-    { next: { revalidate: 3600 } }
-  );
-  const resData = await res.json();
+  const resData = await getPeople();
   const data = resData.results;
   return (
     <div>

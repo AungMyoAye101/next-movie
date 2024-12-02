@@ -5,7 +5,7 @@ import SearchNav from "@/components/SearchNav";
 import React from "react";
 
 const page = async () => {
-  const data = await getMovie("/trending/movie/day");
+  const data = await getMovie("trending/movie/day");
 
   return (
     <div className=" px-4">

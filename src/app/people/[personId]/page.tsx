@@ -11,38 +11,36 @@ const page = async ({ params }: { params: { personId: number } }) => {
 
   return (
     <main>
-      <div className="flex gap-6 flex-wrap md:flex-nowrap py-4 px-6">
-        <div className="min-w-80">
-          <Image
-            src={`https://image.tmdb.org/t/p/original${data.profile_path}`}
-            alt="profile "
-            width={400}
-            height={400}
-            objectFit="cover"
-            className="rounded shadow"
-          />
+      <div className="min-h-screen flex flex-col md:flex-row justify-center items-center py-16  gap-6 ">
+        <div className="w-full md:w-[30%] flex justify-center">
+          <div className=" w-80 aspect-square ">
+            <Image
+              src={`https://image.tmdb.org/t/p/original${data.profile_path}`}
+              alt="profile "
+              width={400}
+              height={400}
+              className="rounded-md shadow mx-auto"
+            />
+          </div>
         </div>
-        <div className="space-y-2">
-          <h1 className="text-2xl font-bold font-serif">{data.name}</h1>
+        <div className="flex flex-col items-center md:items-start gap-4 w-full md:w-[60%] px-4">
+          <h1 className="text-2xl font-bold font-serif">
+            {data.name} (<span className="font-sans">{data.birthday}</span>)
+          </h1>
           <div>
+            <span className="px-4 py-1.5 border border-pink-500 rounded-full ">
+              {data.known_for_department}
+            </span>
+          </div>
+          <div className="flex  items-center text-lg font-semibold">
+            <h3 className=" ">Bron in -</h3>
+            <p>({data.place_of_birth})</p>
+          </div>
+          <div className="text-center md:text-start">
             <h2 className="text-xl font-semibold">Biography</h2>
-            <p className="text-sm font-serif mt-2 text-pretty">
+            <p className="text-sm md:text-base line-clamp-[10] font-serif mt-2 text-pretty">
               {data.biography}
             </p>
-          </div>
-          <div className="flex justify-between p-4 flex-wrap">
-            <div>
-              <h3 className="text-lg font-semibold ">Birthday</h3>
-              <p>{data.birthday}</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold ">Role</h3>
-              <p>{data.known_for_department}</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold ">Place of birth</h3>
-              <p>{data.place_of_birth}</p>
-            </div>
           </div>
         </div>
       </div>

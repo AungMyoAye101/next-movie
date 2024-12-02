@@ -33,7 +33,7 @@ const ImageCard = ({
   return (
     <>
       <motion.div
-        className="shadow rounded-md min-w-60 hover:text-purple-400 hover:shadow-purple-900 overflow-hidden"
+        className="shadow rounded-md min-w-60 hover:text-purple-400 hover:shadow-purple-400 overflow-hidden"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 0.8 }}

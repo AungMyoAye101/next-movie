@@ -13,13 +13,13 @@ const page = async ({ params }: { params: { personId: number } }) => {
     <main>
       <div className="min-h-screen flex flex-col md:flex-row justify-center items-center py-16  gap-6 ">
         <div className="w-full md:w-[30%] flex justify-center">
-          <div className=" w-80 aspect-square ">
+          <div className="w-52 md:w-80 aspect-square ">
             <Image
               src={`https://image.tmdb.org/t/p/original${data.profile_path}`}
               alt="profile "
               width={400}
               height={400}
-              className="rounded-md shadow mx-auto"
+              className="rounded-md shadow-md shadow-purple-400 mx-auto"
             />
           </div>
         </div>

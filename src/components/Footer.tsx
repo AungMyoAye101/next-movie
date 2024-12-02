@@ -1,26 +1,37 @@
+"use client";
+
 import React from "react";
 import { FaFacebookF, FaGithub, FaInstagram } from "react-icons/fa6";
+import { navLinks } from "./Header";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-between bg-neutral-300 dark:bg-neutral-900 flex-wrap px-4 md:px-10 py-4 rounded-tl-md rounded-tr-lg shadow-lg">
-      <div className="text-xl font-bold text-orange-500">Rare-Movie</div>
+    <footer className="flex flex-col justify-center items-center gap-4 bg-gradient-to-br from-purple-100 to-purple-400 rounded-se-lg py-10">
       <div>
-        <ul className="flex flex-col gap-2 ">
-          <li>Home</li>
-          <li>Movies</li>
-          <li>TV Series</li>
-          <li>People</li>
-        </ul>
+        <h1 className="text-4xl font-bold  text-transparent bg-clip-text bg-gradient-to-br from-purple-400 to-pink-400">
+          RARE
+        </h1>
       </div>
-      <div className="flex flex-col gap-2 ">
-        <div className="rounded-full text-lg border border-gray-400 shadow-lg p-2">
+      <div className="flex items-center gap-1 justify-center">
+        {navLinks.map((l, i) => (
+          <Link
+            key={i}
+            href={l.link}
+            className="text-lg font-semibold px-4 py-0.5  bg-pink-400 rounded-full"
+          >
+            {l.name}
+          </Link>
+        ))}
+      </div>
+      <div className="flex items-center justify-center gap-4 ">
+        <div className="rounded-full text-2xl cursor-pointer bg-gray-100 hover:bg-pink-400  p-1.5">
           <FaFacebookF />
         </div>
-        <div className="rounded-full text-lg border border-gray-400 shadow-lg p-2">
+        <div className="rounded-full text-2xl cursor-pointer bg-gray-100 hover:bg-pink-400  p-1.5">
           <FaInstagram />
         </div>
-        <div className="rounded-full text-lg border border-gray-400 shadow-lg p-2">
+        <div className="rounded-full text-2xl cursor-pointer bg-gray-100 hover:bg-pink-400  p-1.5">
           <FaGithub />
         </div>
       </div>

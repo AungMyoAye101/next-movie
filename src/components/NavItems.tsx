@@ -13,8 +13,10 @@ const NavItems = ({ title, param }: SearchProps) => {
   return (
     <Link
       href={`/?genre=${param}`}
-      className={`link text-base-400 text-lg font-bold no-underline hover:text-warning ${
-        genre === param ? "link-primary underline-offset-4" : ""
+      className={`  text-2xl  font-semibold   ${
+        genre === param
+          ? "text-purple-600 underline underline-offset-8"
+          : "text-gray-800"
       }`}
     >
       {title}

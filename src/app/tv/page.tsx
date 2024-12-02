@@ -9,8 +9,8 @@ const page = async () => {
   const data = res.results;
 
   return (
-    <div className=" px-4">
-      <h1 className="text-xl font-bold mb-4">Tv Shows</h1>
+    <div className=" px-4 py-16">
+      <h1 className="text-xl font-bold font-serif mb-4">Tv Shows</h1>
       <Card data={data} />
     </div>
   );

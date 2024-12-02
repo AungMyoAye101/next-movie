@@ -33,22 +33,14 @@ export default async function Home({
 }) {
   const genre: string = searchParams.genre || "trending";
 
-  const res = await fetch(
-    `https://api.themoviedb.org/3${
-      genre === "top_rated" ? "/movie/top_rated" : "/trending/all/week"
-    }?api_key=${API_KEY}`,
-    { next: { revalidate: 3600 } }
-  );
-  if (!res.ok) {
-    throw new Error("Failed to load.");
-  }
-  const result: ApiResponse = await res.json();
+  const movieGenre =
+    genre === "top_rated" ? "movie/top_rated" : "trending/all/week";
+  const result: ApiResponse = await getMovie(movieGenre);
 
-  // const movie = await getMovie("/movie/top_rated");
-  // console.log(movie);
+  const movie = result.results;
 
   const index = Math.floor(Math.random() * result.results.length);
-  const data = result.results[index];
+  const data = movie[index];
 
   return (
     <section>
@@ -58,7 +50,7 @@ export default async function Home({
         poster={data.poster_path}
         overview={data.overview}
       />
-      <div className="py-6 px-4 md:px-4">
+      <div className="py-6 px-4 md:px-12">
         <NavLinkMenu />
         <Card data={result.results} />
       </div>

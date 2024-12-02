@@ -50,8 +50,20 @@ const Details = ({
   created_by,
 }: InfoDetail) => {
   return (
-    <div className="min-h-screen  flex flex-col md:flex-row items-center justify-center gap-4 ">
-      <div className="relative w-full sm:w-[90%] md:w-[30%] h-auto mx-auto aspect-square">
+    <div className="h-screen   flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12  ">
+      <div className="absolute inset-0 z-0 bg-gray-600 bg-opacity-60"></div>
+      <div className="absolute  inset-0 -z-10">
+        <div className="relative h-screen w-screen">
+          <Image
+            src={`https://image.tmdb.org/t/p/original${backdrop_path}  `}
+            fill
+            alt="posters"
+            className="rounded-lg shadow-md "
+          />
+        </div>
+      </div>
+
+      <div className="relative w-72 aspect-square">
         <Image
           src={`https://image.tmdb.org/t/p/original${
             poster_path || backdrop_path
@@ -67,7 +79,7 @@ const Details = ({
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 2 }}
-        className=" flex flex-col gap-4 w-full md:w-[45%] lg:w-[50%]"
+        className=" flex flex-col gap-4 w-full md:w-[45%] lg:w-[50%] relative z-10"
       >
         <h1 className=" text-2xl font-serif font-bold text-center lg:text-left">
           {name || original_name || original_title}{" "}
@@ -85,7 +97,18 @@ const Details = ({
             </span>
           ))}
         </p>
-        <Count rating={vote_average} />
+        <div className="flex items-center gap-4">
+          <Count rating={vote_average} />
+          {created_by && (
+            <div className="flex gap-2  font-serif">
+              {created_by.map((item) => (
+                <div key={item.id}>
+                  <h3 className="text-lg font-semibold">{item.name} </h3>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
 
         <div>
           <p className="text-base md:text-lg font-serif text-center  md:text-left">
@@ -95,24 +118,14 @@ const Details = ({
 
         {runtime && (
           <div className="flex  ">
-            <h3 className="text-lg font-mono min-w-40 ">Duration</h3>
+            <h3 className="text-lg font-mono  ">runtime</h3>
             <p className="font-sans  font-semibold">
               {Math.floor(runtime / 60)}h {runtime % 60} min
             </p>
           </div>
         )}
 
-        {created_by && (
-          <div className="flex gap-3 items-center font-serif">
-            <h2 className="text-md font-semibold">Creator-</h2>
-            {created_by.map((item) => (
-              <div key={item.id}>
-                <h3 className="text-lg font-semibold">{item.name} </h3>
-              </div>
-            ))}
-          </div>
-        )}
-        <button className="self-start px-4 py-1 rounded-full text-lg font-serif  bg-purple-500 shadow-md">
+        <button className="self-start px-6 py-1.5 rounded-full text-lg font-serif  bg-pink-400 shadow-md">
           Add to watch list
         </button>
       </motion.div>

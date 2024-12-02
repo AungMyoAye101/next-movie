@@ -31,7 +31,6 @@ const Hero = ({ image, title, poster, overview }: BgImage) => {
               width={400}
               height={400}
               alt="poster image"
-              className="bg-red-400"
             />
           </div>
         </div>

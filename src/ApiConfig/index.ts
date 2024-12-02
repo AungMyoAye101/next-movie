@@ -13,6 +13,7 @@ const fetchFromTMDB = async (endpoint: string) => {
 };
 
 export const getMovie = (movie: string) => fetchFromTMDB(`/${movie}`);
+export const getTv = (tv: string) => fetchFromTMDB(`/${tv}`);
 export const getMovieDetails = (movieId: number) =>
   fetchFromTMDB(`/movie/${movieId}`);
 export const getTvDetails = (tvId: number) => fetchFromTMDB(`/tv/${tvId}`);

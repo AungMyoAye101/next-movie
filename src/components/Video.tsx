@@ -13,7 +13,7 @@ const Video = async ({ movie_id }: { movie_id: number }) => {
   const trailer = trailerData.results.filter(
     (video: videoType) => video.type === "Trailer" || video.type === "Teaser"
   );
-  console.log(trailer);
+
   return (
     <section className="px-4 md:px-12 py-6 space-y-6">
       <h1 className="text-lg md:text-2xl font-semibold ">Trailer</h1>

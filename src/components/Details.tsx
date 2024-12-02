@@ -50,15 +50,15 @@ const Details = ({
   created_by,
 }: InfoDetail) => {
   return (
-    <div className="h-screen   flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12  ">
-      <div className="absolute inset-0 z-0 bg-gray-600 bg-opacity-60"></div>
-      <div className="absolute  inset-0 -z-10">
-        <div className="relative h-screen w-screen">
+    <div className="min-h-screen py-16   flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 md:text-gray-100  ">
+      <div className="absolute inset-0 z-0 bg-gray-600 bg-opacity-70 hidden md:block"></div>
+      <div className="absolute  inset-0 -z-10 hidden md:block">
+        <div className="relative w-full h-full ">
           <Image
             src={`https://image.tmdb.org/t/p/original${backdrop_path}  `}
             fill
             alt="posters"
-            className="rounded-lg shadow-md "
+            className="rounded-lg shadow-md  shadow-purple-400"
           />
         </div>
       </div>
@@ -87,17 +87,17 @@ const Details = ({
             ( {release_date || first_air_date} )
           </span>
         </h1>
-        <p className="flex flex-wrap gap-2">
+        <p className="flex flex-wrap gap-2 justify-center md:justify-start">
           {genres.map((item: { id: number; name: string }) => (
             <span
               key={item.id}
-              className="text-base    rounded-full shadow shadow-purple-300 px-3 py-0.5 "
+              className="text-base bg-pink-500    rounded-full  px-3 py-0.5 "
             >
               {item.name}
             </span>
           ))}
         </p>
-        <div className="flex items-center gap-4">
+        <div className="flex justify-center md:justify-start items-center gap-4">
           <Count rating={vote_average} />
           {created_by && (
             <div className="flex gap-2  font-serif">
@@ -108,6 +108,15 @@ const Details = ({
               ))}
             </div>
           )}
+          {runtime && (
+            <h3 className="text-lg   ">
+              ( runtime -{" "}
+              <span>
+                {Math.floor(runtime / 60)}h {runtime % 60} min
+              </span>
+              )
+            </h3>
+          )}
         </div>
 
         <div>
@@ -116,16 +125,7 @@ const Details = ({
           </p>
         </div>
 
-        {runtime && (
-          <div className="flex  ">
-            <h3 className="text-lg font-mono  ">runtime</h3>
-            <p className="font-sans  font-semibold">
-              {Math.floor(runtime / 60)}h {runtime % 60} min
-            </p>
-          </div>
-        )}
-
-        <button className="self-start px-6 py-1.5 rounded-full text-lg font-serif  bg-pink-400 shadow-md">
+        <button className="self-center md:self-start px-6 py-1.5 rounded-full  bg-pink-500 shadow-md hover:scale-110 transition-transform ease-out">
           Add to watch list
         </button>
       </motion.div>

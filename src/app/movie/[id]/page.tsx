@@ -3,7 +3,6 @@ import CastCredit from "@/components/CastCredit";
 import Details from "@/components/Details";
 import Footer from "@/components/Footer";
 import Recommendation from "@/components/Recommendation";
-import Review from "@/components/Review";
 import Video from "@/components/Video";
 import React from "react";
 
@@ -35,7 +34,6 @@ const MoviePage = async ({ params }: { params: { id: number } }) => {
       <div>
         <Video movie_id={data.id} />
         <CastCredit media="movie" id={params.id} />
-        <Review media="movie" id={params.id} />
       </div>
       <div>
         <Recommendation media_type="movie" id={params.id} />

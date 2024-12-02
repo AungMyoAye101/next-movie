@@ -22,7 +22,7 @@ const PeopleCard = ({ id, name, original_name, profile_path }: PersonData) => {
       transition={{ ease: "easeOut", duration: 0.8 }}
       exit={{ opacity: 0 }}
     >
-      <Link href={`/person/${id}`}>
+      <Link href={`/people/${id}`}>
         <div className="overflow-hidden ">
           <Image
             src={`https://image.tmdb.org/t/p/original/${profile_path}`}

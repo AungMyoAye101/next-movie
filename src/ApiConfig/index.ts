@@ -27,3 +27,5 @@ export const getTrailer = (movieId: number) =>
   fetchFromTMDB(`/movie/${movieId}/videos`);
 export const getPeople = () => fetchFromTMDB(`/person/popular`);
 export const getPeopleDetail = (id: number) => fetchFromTMDB(`/person/${id}`);
+export const getPersonCredit = (person_id: number) =>
+  fetchFromTMDB(`/person/${person_id}/combined_credits`);

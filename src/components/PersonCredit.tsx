@@ -2,19 +2,17 @@ import React from "react";
 import ImageCard from "./ImageCard";
 import Image from "next/image";
 import Link from "next/link";
+import { getPersonCredit } from "@/ApiConfig";
 
 interface PersonCreditProps {
   person_id: number;
 }
 const PersonCredit = async ({ person_id }: PersonCreditProps) => {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/person/${person_id}/combined_credits?api_key=${process.env.API_KEY}`
-  );
-  const data = await res.json();
+  const data = await getPersonCredit(person_id);
   const personalInfo = data.cast;
 
   return (
-    <section className="flex overflow-hidden overflow-x-scroll gap-4 scroll-bar">
+    <section className="py-4 flex overflow-hidden overflow-x-scroll gap-4 scroll-bar">
       {personalInfo.map((item: any) => (
         <div key={item.id}>
           <ImageCard

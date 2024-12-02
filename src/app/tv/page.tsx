@@ -5,7 +5,8 @@ import SearchNav from "@/components/SearchNav";
 import React from "react";
 
 const page = async () => {
-  const data = await getTv("trending/tv/day");
+  const res = await getTv("trending/tv/day");
+  const data = res.results;
 
   return (
     <div className=" px-4">

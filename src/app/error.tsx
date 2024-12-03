@@ -1,19 +1,27 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 const error = () => {
   return (
-    <div className="h-screen flex justify-center items-center">
-      <div className="flex flex-col gap-4">
-        <h1 className="text-lg text-yellow-400 font-sans">
-          Something went wrong!
-        </h1>
-        <Link href={"/"} className="px-4 py-2 rounded-full text-rose-400">
-          Go back to home page.
+    <section className="min-h-screen flex  justify-center py-16 bg-gradient-to-br from-purple-100 to-purple-400 ">
+      <div className="relative z-10 h-fit  font-semibold mt-16 flex flex-col items-center gap-4 ">
+        <h1 className="text-2xl  text-center">Opps; Something went worng!</h1>
+
+        <Link href={"/"} className="text-lg font-serif hover:text-purple-600">
+          Try again
         </Link>
       </div>
-    </div>
+      <div className="absolute bottom-0">
+        <Image
+          src={"/luffy-2.png"}
+          alt="luffy photo"
+          width={400}
+          height={400}
+        />
+      </div>
+    </section>
   );
 };
 

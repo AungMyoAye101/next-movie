@@ -50,9 +50,9 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center px-4 md:px-12 py-2 fixed top-0 left-0 right-0 z-50 dark:bg-neutral-800 bg-neutral-100 backdrop-blur  bg-opacity-60 shadow-md">
+    <nav className="flex justify-between items-center px-4 md:px-12 py-2 fixed top-0 left-0 right-0 z-50 dark:bg-neutral-800 bg-purple-200 backdrop-blur  bg-opacity-40 shadow-md">
       <div
-        className="size-8 md:hidden flex justify-center items-center shadow-lg rounded-full border border-gray-100 cursor-pointer"
+        className="size-8 md:hidden flex justify-center items-center shadow-lg rounded-full bg-purple-100 cursor-pointer"
         onClick={handleToggle}
       >
         <FaBars />
@@ -60,7 +60,7 @@ const Header = () => {
 
       {toggle && <SideBar handleToggle={handleToggle} />}
       <Link href="/">
-        <h1 className="text-xl md:text-2xl lg:text-3xl font-serif text-purple-600   font-bold">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-serif bg-clip-text text-transparent bg-gradient-to-br from-gray-100 to-purple-700   font-bold">
           RARE
         </h1>
       </Link>
@@ -70,7 +70,7 @@ const Header = () => {
             key={i}
             href={item.link}
             className={`text-lg lg:text-xl px-3 py-1 font-serif font-semibold hover:text-purple-400 rounded-full ${
-              item.link === path ? " text-purple-600" : ""
+              item.link === path ? " text-purple-400" : ""
             }`}
           >
             {item.name}
@@ -81,7 +81,7 @@ const Header = () => {
         <ThemeSwitcher />
 
         <div
-          className="size-8 flex justify-center items-center rounded-full shadow-md text-lg relative cursor-pointer "
+          className="size-8 flex justify-center items-center bg-purple-100 rounded-full shadow-md text-lg relative cursor-pointer "
           onClick={() => setShowSearch((pre) => !pre)}
         >
           <FaMagnifyingGlass />

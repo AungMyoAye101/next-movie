@@ -29,14 +29,14 @@ const Person = ({ data }: DataProp) => {
           exit={{ opacity: 0 }}
         >
           <Link href={`/people/${data.id}`}>
-            <div className="overflow-hidden">
+            <div className="overflow-hidden rounded-md">
               <Image
                 src={`https://image.tmdb.org/t/p/original/${data.profile_path}`}
                 alt="person "
                 width={300}
                 height={400}
                 objectFit="cover"
-                className="rounded hover:scale-110 transition-transform ease-in-out"
+                className=" hover:scale-110 transition-transform ease-in-out"
               />
             </div>
             <motion.div

@@ -18,18 +18,18 @@ const Footer = () => {
           RARE
         </h1>
       </div>
-      <div className="flex items-center gap-1 justify-center">
+      <div className="flex flex-wrap items-center  gap-1 justify-center">
         {navLinks.map((l, i) => (
           <Link
             key={i}
             href={l.link}
-            className="text-lg font-semibold px-4 py-0.5  bg-pink-400 rounded-full"
+            className="text-base md:text-lg font-semibold px-4 py-1  bg-pink-400 rounded-full"
           >
             {l.name}
           </Link>
         ))}
       </div>
-      <div className="flex items-center justify-center gap-4 ">
+      <div className="flex items-center justify-center gap-4 text-gray-800">
         <a
           href="https://www.facebook.com/profile.php?id=61556195843942"
           target="_blank"

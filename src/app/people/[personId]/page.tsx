@@ -32,7 +32,7 @@ const page = async ({ params }: { params: { personId: number } }) => {
               {data.known_for_department}
             </span>
           </div>
-          <div className="flex  items-center text-lg font-semibold">
+          <div className="flex flex-wrap  items-center text-lg font-semibold">
             <h3 className=" ">Bron in -</h3>
             <p>({data.place_of_birth})</p>
           </div>

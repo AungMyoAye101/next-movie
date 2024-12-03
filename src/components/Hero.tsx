@@ -36,7 +36,7 @@ const Hero = ({ image, title, poster, overview }: BgImage) => {
         </div>
       </div>
 
-      <h1 className="absolute right-4  bottom-4 text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-purple-400    font-bold font-serif text-shadow">
+      <h1 className="absolute right-4  bottom-4 text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-purple-400    font-bold font-serif">
         RARE
       </h1>
 
@@ -45,7 +45,7 @@ const Hero = ({ image, title, poster, overview }: BgImage) => {
           <Image
             src={`https://image.tmdb.org/t/p/original${image}`}
             fill
-            alt="cinima background"
+            alt="background"
             className="object-cover object-center bg-gray-800"
           />
         </div>

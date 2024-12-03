@@ -29,7 +29,7 @@ export function ThemeSwitcher() {
   return (
     <button
       onClick={handleClick}
-      className="size-8 flex justify-center items-center bg-purple-100 rounded-full shadow-md"
+      className="size-8 flex justify-center items-center text-gray-700 bg-purple-100 rounded-full shadow-md"
     >
       <span className={`text-lg font-semibold block ${dark && "hidden"}`}>
         <FaMoon />

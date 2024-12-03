@@ -81,7 +81,7 @@ const Header = () => {
         <ThemeSwitcher />
 
         <div
-          className="size-8 flex justify-center items-center bg-purple-100 rounded-full shadow-md text-lg relative cursor-pointer "
+          className="size-8 flex justify-center items-center text-gray-700 bg-purple-100 rounded-full shadow-md text-lg relative cursor-pointer "
           onClick={() => setShowSearch((pre) => !pre)}
         >
           <FaMagnifyingGlass />

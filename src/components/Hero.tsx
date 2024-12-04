@@ -25,7 +25,7 @@ const Hero = ({ image, title, poster, overview }: BgImage) => {
           </button>
         </div>
         <div className="hidden md:block">
-          <div className="w-72  rounded-md  overflow-hidden object-cover">
+          <div className="w-72  rounded-md  overflow-hidden object-cover shadow shadow-purple-400">
             <Image
               src={`https://image.tmdb.org/t/p/original${poster}`}
               width={400}

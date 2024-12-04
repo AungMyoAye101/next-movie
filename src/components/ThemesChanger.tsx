@@ -9,7 +9,7 @@ import { FaMoon } from "react-icons/fa6";
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {

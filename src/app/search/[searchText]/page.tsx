@@ -1,4 +1,4 @@
-import Card from "@/components/Card";
+import Card from "@/components/CardGridCon";
 import Footer from "@/components/Footer";
 import Results from "@/components/Results";
 import SearchBox from "@/components/SearchBox";

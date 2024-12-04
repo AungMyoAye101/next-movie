@@ -1,5 +1,5 @@
 import React from "react";
-import ImageCard from "./ImageCard";
+import ImageCard from "./Card";
 import Image from "next/image";
 import Link from "next/link";
 import { getPersonCredit } from "@/ApiConfig";

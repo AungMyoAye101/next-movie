@@ -12,7 +12,7 @@ const Hero = ({ image, title, poster, overview }: BgImage) => {
   return (
     <main className=" h-dvh  relative flex items-center justify-center  ">
       <div className="relative z-10  flex md:items-center justify-center  gap-12 font-serif text-transparent bg-clip-text bg-gradient-to-r from-neutral-100 to-gray-200 ">
-        <div className="w-full md:w-[45%]  space-y-6">
+        <div className="w-full md:w-[45%]  space-y-6 px-4">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-sans   font-bold">
             {title}
           </h1>

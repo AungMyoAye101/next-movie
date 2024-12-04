@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Hero from "../components/Hero";
 import NavLinkMenu from "@/components/NavLinkMenu";
-import Card from "../components/Card";
+import Card from "../components/CardGridCon";
 import Footer from "../components/Footer";
 import Results from "@/components/Results";
 import { getMovie } from "@/ApiConfig";

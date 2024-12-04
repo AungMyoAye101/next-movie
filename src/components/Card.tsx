@@ -1,47 +1,78 @@
 "use client";
 
-import React, { Suspense } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useState } from "react";
 import Count from "./Count";
-import { motion } from "framer-motion";
-import ImageCard from "./ImageCard";
 
-export interface CardData {
-  backdrop_path: string;
+interface CardDetailProps {
   id: number;
+  media_type: string;
+  backdrop_path: string;
+  poster_path: string;
+  vote_average: number;
+  name: string | null;
   title: string;
   original_name: string;
-  overview: string;
-  poster_path: string;
-  media_type: string;
-  release_date: string;
-  first_air_date: string;
-  vote_average: number;
-  vote_count: number;
 }
-export interface CardProps {
-  data: CardData[];
-}
+const Card = ({
+  id,
+  media_type,
+  backdrop_path,
+  poster_path,
+  vote_average,
+  name,
+  title,
+  original_name,
+}: CardDetailProps) => {
+  const [imgSrc, setimgSrc] = useState(
+    `https://image.tmdb.org/t/p/original${backdrop_path || poster_path}`
+  );
 
-const Card = ({ data }: CardProps) => {
   return (
-    <div className="py-2 grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto  gap-4 ">
-      {data.map((item) => (
-        <div key={item.id}>
-          <ImageCard
-            id={item.id}
-            media_type={item.media_type}
-            backdrop_path={item.backdrop_path}
-            poster_path={item.poster_path}
-            vote_average={item.vote_average}
-            name={null}
-            title={item.title}
-            original_name={item.original_name}
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <motion.div
+        className="shadow rounded-md min-w-72 hover:text-purple-400 hover:shadow-purple-400 overflow-hidden"
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ ease: "easeOut", duration: 0.8 }}
+        exit={{ opacity: 0 }}
+      >
+        <Link href={`/${media_type || "movie"}/${id} `} className="relative ">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 1 }}
+            className="overflow-hidden "
+          >
+            <Image
+              src={imgSrc}
+              width={400}
+              height={200}
+              alt="posters"
+              className=" aspect-video object-cover hover:scale-110 transition-all duration-150 ease-in-out"
+              onError={(e) => setimgSrc("/failedImg.jpg")}
+            />
+          </motion.div>
+
+          <div className="absolute -bottom-2 right-0">
+            <Count rating={vote_average} />
+          </div>
+        </Link>
+
+        <motion.div
+          className="card-body px-2 py-1"
+          initial={{ x: -40, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ ease: "easeOut", duration: 1.5 }}
+        >
+          <h2 className="font-bold font-serif text-lg line-clamp-1">
+            {name || title || original_name}
+          </h2>
+        </motion.div>
+      </motion.div>
+    </>
   );
 };
 

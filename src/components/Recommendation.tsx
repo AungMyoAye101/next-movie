@@ -1,5 +1,5 @@
 import React from "react";
-import ImageCard from "./ImageCard";
+import ImageCard from "./Card";
 import { getRecommendations } from "@/ApiConfig";
 
 interface RecommedProps {

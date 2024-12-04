@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card";
+import Card from "./CardGridCon";
 import Footer from "./Footer";
 import SearchBox from "./SearchBox";
 import Link from "next/link";

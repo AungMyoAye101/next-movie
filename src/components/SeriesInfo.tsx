@@ -4,7 +4,7 @@ import React from "react";
 import { SeriesType } from "./Series";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import ImageCard from "./ImageCard";
+import ImageCard from "./Card";
 
 interface Info {
   data: SeriesType;

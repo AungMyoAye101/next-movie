@@ -44,7 +44,7 @@ const Card = ({
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ ease: "easeOut", duration: 1 }}
-            className="overflow-hidden "
+            className="overflow-hidden relative "
           >
             <Image
               src={imgSrc}
@@ -54,11 +54,10 @@ const Card = ({
               className=" aspect-video object-cover hover:scale-110 transition-all duration-150 ease-in-out"
               onError={(e) => setimgSrc("/failedImg.jpg")}
             />
+            <div className="absolute bottom-1 right-1">
+              <Count rating={vote_average} />
+            </div>
           </motion.div>
-
-          <div className="absolute -bottom-2 right-0">
-            <Count rating={vote_average} />
-          </div>
         </Link>
 
         <motion.div

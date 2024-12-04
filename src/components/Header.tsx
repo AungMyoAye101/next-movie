@@ -41,12 +41,14 @@ interface ListProps {
 }
 
 const Header = () => {
-  const [searchText, setSearchText] = useState("");
   const [toggle, setToggle] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const path = usePathname();
   const handleToggle = () => {
     setToggle((pre) => !pre);
+  };
+  const searchToggle = () => {
+    setShowSearch((pre) => !pre);
   };
 
   return (
@@ -77,23 +79,16 @@ const Header = () => {
           </Link>
         ))}
       </div>
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-4 items-center">
         <ThemeSwitcher />
 
         <div
-          className="size-8 flex justify-center items-center text-gray-700 bg-purple-100 rounded-full shadow-md text-lg relative cursor-pointer "
-          onClick={() => setShowSearch((pre) => !pre)}
+          className="size-8 flex justify-center items-center bg-purple-100 text-gray-700 rounded-full shadow-md text-lg relative cursor-pointer "
+          onClick={() => searchToggle()}
         >
           <FaMagnifyingGlass />
         </div>
-        {showSearch && (
-          <div
-            className="absolute right-1 top-14 "
-            onClick={() => setShowSearch(false)}
-          >
-            <SearchBox />
-          </div>
-        )}
+        {showSearch && <SearchBox searchToggle={searchToggle} />}
       </div>
     </nav>
   );

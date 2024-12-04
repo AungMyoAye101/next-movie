@@ -58,7 +58,6 @@ const Details = ({
             src={`https://image.tmdb.org/t/p/original${backdrop_path}  `}
             fill
             alt="posters"
-            className="rounded-lg shadow-md  shadow-purple-400"
           />
         </div>
       </div>
@@ -71,7 +70,7 @@ const Details = ({
           width={400}
           height={400}
           alt="posters"
-          className="rounded-lg shadow-md "
+          className="rounded-lg shadow-md shadow-purple-400"
         />
       </div>
 

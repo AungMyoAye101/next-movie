@@ -6,7 +6,7 @@ import Link from "next/link";
 const error = () => {
   return (
     <section className="min-h-screen flex  justify-center py-16 bg-gradient-to-br from-purple-100 to-purple-400 ">
-      <div className="relative z-10 h-fit  font-semibold mt-16 flex flex-col items-center gap-4 ">
+      <div className="relative z-10 h-fit  font-semibold mt-16 flex flex-col items-center gap-4 text-gray-700 ">
         <h1 className="text-2xl  text-center">Opps; Something went worng!</h1>
 
         <Link href={"/"} className="text-lg font-serif hover:text-purple-600">

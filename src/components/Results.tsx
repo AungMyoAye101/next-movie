@@ -25,7 +25,7 @@ const Results = async ({ searchText }: SearchProps) => {
         </span>
       </h1>
       {data.length < 1 ? (
-        <div className="text-center mt-10">
+        <div className="h-screen flex justify-center items-center text-center ">
           <h1 className="text-lg  font-serif">No match search results .</h1>
           <Link href={"/"} className="font-mono hover:text-rose-600">
             Please try again!

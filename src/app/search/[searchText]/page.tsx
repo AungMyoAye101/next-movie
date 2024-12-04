@@ -2,7 +2,6 @@ import Card from "@/components/CardGridCon";
 import Footer from "@/components/Footer";
 import Results from "@/components/Results";
 import SearchBox from "@/components/SearchBox";
-import SearchNav from "@/components/SearchNav";
 import Link from "next/link";
 import { useRouter } from "next/router";
 

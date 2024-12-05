@@ -16,7 +16,7 @@ const PeopleCard = ({ id, name, original_name, profile_path }: PersonData) => {
   return (
     <motion.div
       key={id}
-      className=" hover:text-purple-500 rounded-md shadow-md border border-purple-100 hover:shadow-purple-400"
+      className=" hover:text-purple-500 rounded-md shadow-md order  hover:shadow-purple-400"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ ease: "easeOut", duration: 0.8 }}

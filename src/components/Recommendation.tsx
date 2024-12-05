@@ -11,7 +11,7 @@ const Recommendation = async ({ media_type, id }: RecommedProps) => {
 
   return (
     <>
-      {data.results && (
+      {data.results.length < 0 && (
         <section className="px-6 py-4 space-y-2">
           <h1 className="text-xl font-semibold font-serif ">Recommendations</h1>
           <main className="flex overflow-hidden overflow-x-scroll gap-4 py-4 scroll-bar">

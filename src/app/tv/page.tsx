@@ -1,7 +1,6 @@
 import { getTv } from "@/ApiConfig";
 import Card from "@/components/CardGridCon";
 import Footer from "@/components/Footer";
-import SearchNav from "@/components/SearchNav";
 import React from "react";
 
 const page = async () => {

@@ -29,20 +29,13 @@ const Hero = async ({ type, id, image, title, poster, overview }: BgImage) => {
           <p className="text-base sm:text-lg md:text-xl font-semibold line-clamp-6">
             {overview}
           </p>
-          <div className="flex gap-4">
-            <a
-              href={`https://www.youtube.com/embed/${watchTrailer.key}`}
-              className="px-4 py-1.5 rounded-md bg-pink-600  text-gray-100 font-sans shadow cursor-pointer"
-            >
-              Watch Trailer
-            </a>
-            <Link
-              href={`/${isTv}/${id} `}
-              className="px-4 py-1.5 rounded-md self-start bg-pink-600  text-gray-100 font-sans shadow cursor-pointer"
-            >
-              View details
-            </Link>
-          </div>
+
+          <a
+            href={`https://www.youtube.com/embed/${watchTrailer.key}`}
+            className="px-4 py-1.5 rounded-md bg-pink-600  text-gray-100 font-sans shadow cursor-pointer"
+          >
+            Watch Trailer
+          </a>
         </div>
         <div className="hidden md:block">
           <div className="w-72  rounded-md  overflow-hidden object-cover shadow shadow-purple-400">

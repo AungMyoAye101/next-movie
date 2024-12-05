@@ -12,6 +12,7 @@ const MoviePage = async ({ params }: { params: { id: number } }) => {
   return (
     <section className="  px-4">
       <Details
+        type="movie"
         backdrop_path={data.backdrop_path}
         id={data.id}
         title={data.title}
@@ -32,7 +33,7 @@ const MoviePage = async ({ params }: { params: { id: number } }) => {
       />
 
       <div>
-        <Video movie_id={data.id} />
+        <Video type="movie" id={data.id} />
         <CastCredit media="movie" id={params.id} />
       </div>
       <div>

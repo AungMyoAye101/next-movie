@@ -4,18 +4,20 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { getTrailer } from "@/ApiConfig";
 
 interface BgImage {
+  type: string;
   id: number;
   image: string;
   title: string;
   poster: string;
   overview: string;
 }
-const Hero = async ({ id, image, title, poster, overview }: BgImage) => {
-  const data = await getTrailer(id);
+const Hero = async ({ type, id, image, title, poster, overview }: BgImage) => {
+  const isTv = type ? "tv" : "movie";
+  const data = await getTrailer(isTv, id);
   const watchTrailer = data.results.find(
     (item: any) => item.type === "Trailer"
   );
-  console.log(watchTrailer);
+
   return (
     <main className=" h-dvh  relative flex items-center justify-center  ">
       <div className="relative z-10  flex md:items-center justify-center  gap-12 font-serif text-transparent bg-clip-text bg-gradient-to-r from-neutral-100 to-gray-200 ">
@@ -29,10 +31,9 @@ const Hero = async ({ id, image, title, poster, overview }: BgImage) => {
 
           <a
             href={`https://www.youtube.com/embed/${watchTrailer.key}`}
-            target="_blank"
             className="px-4 py-1.5 rounded-md self-start bg-pink-600  text-gray-100 font-sans shadow cursor-pointer"
           >
-            Watch
+            Watch Trailer
           </a>
         </div>
         <div className="hidden md:block">

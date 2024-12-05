@@ -23,8 +23,8 @@ export const getSimilarMovies = (movieId: number) =>
   fetchFromTMDB(`/movie/${movieId}/similar`);
 export const getRecommendations = (type: string, movieId: number) =>
   fetchFromTMDB(`/${type}/${movieId}/recommendations`);
-export const getTrailer = (movieId: number) =>
-  fetchFromTMDB(`/movie/${movieId}/videos`);
+export const getTrailer = (type: string, id: number) =>
+  fetchFromTMDB(`/${type}/${id}/videos`);
 export const getPeople = () => fetchFromTMDB(`/person/popular`);
 export const getPeopleDetail = (id: number) => fetchFromTMDB(`/person/${id}`);
 export const getPersonCredit = (person_id: number) =>

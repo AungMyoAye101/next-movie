@@ -7,8 +7,8 @@ interface videoType {
   id: string;
 }
 
-const Video = async ({ movie_id }: { movie_id: number }) => {
-  const trailerData = await getTrailer(movie_id);
+const Video = async ({ type, id }: { type: string; id: number }) => {
+  const trailerData = await getTrailer(type, id);
 
   const trailer = trailerData.results.filter(
     (video: videoType) => video.type === "Trailer" || video.type === "Teaser"

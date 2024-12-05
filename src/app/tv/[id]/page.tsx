@@ -11,6 +11,7 @@ const TvShow = async ({ params }: { params: { id: number } }) => {
   return (
     <div className="px-4  ">
       <Details
+        type="tv"
         backdrop_path={data.backdrop_path}
         id={data.id}
         title={data.title}

@@ -45,6 +45,7 @@ export default async function Home({
   return (
     <section>
       <Hero
+        type={data.first_air_date}
         id={data.id}
         image={data.backdrop_path || data.poster_path}
         title={data.title || data.original_name}

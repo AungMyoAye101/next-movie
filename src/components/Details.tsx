@@ -6,12 +6,14 @@ import Footer from "./Footer";
 import Series from "./Series";
 import { motion } from "framer-motion";
 import Count from "./Count";
+import { getTrailer } from "@/ApiConfig";
 
 interface ListProps {
   image: string;
   title: string;
 }
 export interface InfoDetail {
+  type: string;
   backdrop_path: string;
   id: number;
   title: string;
@@ -31,7 +33,8 @@ export interface InfoDetail {
   created_by: { id: number; name: string }[];
 }
 
-const Details = ({
+const Details = async ({
+  type,
   backdrop_path,
   id,
   original_name,
@@ -49,6 +52,10 @@ const Details = ({
   genres,
   created_by,
 }: InfoDetail) => {
+  const data = await getTrailer(type, id);
+  const watchTrailer = data.results.find(
+    (item: any) => item.type === "Trailer"
+  );
   return (
     <div className="min-h-screen py-16   flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 md:text-gray-100  ">
       <div className="absolute inset-0 z-0 bg-gray-600 bg-opacity-70 hidden md:block"></div>
@@ -124,9 +131,12 @@ const Details = ({
           </p>
         </div>
 
-        <button className="self-center md:self-start px-6 py-1.5 rounded-full  bg-pink-500 shadow-md hover:scale-110 transition-transform ease-out">
-          Add to watch list
-        </button>
+        <a
+          href={`https://www.youtube.com/embed/${watchTrailer.key}`}
+          className="px-4 py-1.5 rounded-md self-start bg-pink-600  text-gray-100 font-sans shadow cursor-pointer"
+        >
+          Watch Trailer
+        </a>
       </motion.div>
     </div>
   );

@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-interface PersonData {
+export interface PersonData {
   id: number;
   name: string;
   original_name: string;
   media_type: string;
-  know_for_department: string;
+  known_for_department: string;
   profile_path: string;
 }
 interface DataProp {

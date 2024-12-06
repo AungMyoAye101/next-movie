@@ -12,11 +12,11 @@ export function ThemeSwitcher() {
   const [dark, setDark] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
-  if (!mounted) return null;
+  // if (!mounted) return null;
   const handleClick = () => {
     setDark((pre) => !pre);
     if (dark) {
@@ -31,12 +31,7 @@ export function ThemeSwitcher() {
       onClick={handleClick}
       className="size-8 flex justify-center items-center text-gray-700 bg-purple-100 rounded-full shadow-md"
     >
-      <span className={`text-lg font-semibold block ${dark && "hidden"}`}>
-        <FaMoon />
-      </span>
-      <span className={`text-lg font-semibold block ${!dark && "hidden"}`}>
-        <FaLightbulb />
-      </span>
+      {dark ? <FaLightbulb /> : <FaMoon />}
     </button>
   );
 }

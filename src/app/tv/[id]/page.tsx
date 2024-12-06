@@ -3,6 +3,7 @@ import CastCredit from "@/components/CastCredit";
 import Details from "@/components/Details";
 import Footer from "@/components/Footer";
 import Recommendation from "@/components/Recommendation";
+import Video from "@/components/Video";
 
 import React from "react";
 
@@ -31,10 +32,11 @@ const TvShow = async ({ params }: { params: { id: number } }) => {
         created_by={data.created_by}
       />
       <div>
-        <CastCredit media="tv" id={params.id} />
+        <Video type="tv" id={data.id} />
+        <CastCredit media="tv" id={data.id} />
       </div>
       <div>
-        <Recommendation media_type="tv" id={params.id} />
+        <Recommendation media_type="tv" id={data.id} />
       </div>
     </div>
   );

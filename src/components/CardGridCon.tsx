@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Count from "./Count";
 import { motion } from "framer-motion";
-import ImageCard from "./Card";
+import Card from "./Card";
 
 export interface CardData {
   backdrop_path: string;
@@ -29,7 +29,7 @@ const CardGridCon = ({ data }: CardProps) => {
     <div className="py-2 grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto  gap-4 ">
       {data.map((item) => (
         <div key={item.id}>
-          <ImageCard
+          <Card
             id={item.id}
             media_type={item.media_type}
             backdrop_path={item.backdrop_path}

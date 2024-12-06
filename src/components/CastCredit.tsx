@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import Person from "./Person";
 import Link from "next/link";
 import PeopleCard from "./PeopleCard";
@@ -11,15 +11,12 @@ export interface CreditProps {
 }
 
 const CastCredit = async ({ media, id }: CreditProps) => {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/${media}/${id}/credits?api_key=${process.env.API_KEY}`,
-    { next: { revalidate: 3600 } }
-  );
   const data = await getCast(media, id);
 
   return (
     <section className="p-6 space-y-2">
       <h1 className="text-xl font-semibold font-serif">Cast List</h1>
+
       <main className="flex overflow-hidden overflow-x-scroll gap-4 scroll-bar ">
         {data.cast.map((data: any) => (
           <div key={data.id} className="min-w-48 py-4 ">

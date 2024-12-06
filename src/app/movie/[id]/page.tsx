@@ -1,4 +1,4 @@
-import { getMovieDetails } from "@/ApiConfig";
+import { getMovieDetails, getRecommendations } from "@/ApiConfig";
 import CastCredit from "@/components/CastCredit";
 import Details from "@/components/Details";
 import Footer from "@/components/Footer";
@@ -8,6 +8,7 @@ import React from "react";
 
 const MoviePage = async ({ params }: { params: { id: number } }) => {
   const data = await getMovieDetails(params.id);
+  const recommed = await getRecommendations("movie", data.id);
 
   return (
     <section className="  px-4">
@@ -37,7 +38,7 @@ const MoviePage = async ({ params }: { params: { id: number } }) => {
         <CastCredit media="movie" id={params.id} />
       </div>
       <div>
-        <Recommendation media_type="movie" id={params.id} />
+        <Recommendation data={recommed.results} />
       </div>
     </section>
   );

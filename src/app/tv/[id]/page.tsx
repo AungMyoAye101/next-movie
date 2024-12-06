@@ -1,4 +1,4 @@
-import { getTvDetails } from "@/ApiConfig";
+import { getRecommendations, getTvDetails } from "@/ApiConfig";
 import CastCredit from "@/components/CastCredit";
 import Details from "@/components/Details";
 import Footer from "@/components/Footer";
@@ -9,6 +9,7 @@ import React from "react";
 
 const TvShow = async ({ params }: { params: { id: number } }) => {
   const data = await getTvDetails(params.id);
+  const recommed = await getRecommendations("tv", data.id);
   return (
     <div className="px-4  ">
       <Details
@@ -36,7 +37,7 @@ const TvShow = async ({ params }: { params: { id: number } }) => {
         <CastCredit media="tv" id={data.id} />
       </div>
       <div>
-        <Recommendation media_type="tv" id={data.id} />
+        <Recommendation data={recommed.results} />
       </div>
     </div>
   );

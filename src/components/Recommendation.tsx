@@ -5,7 +5,7 @@ import { getRecommendations } from "@/ApiConfig";
 import { CardData, CardProps } from "./CardGridCon";
 import { FaGreaterThan, FaLessThan } from "react-icons/fa6";
 
-const Recommendation = async ({ data }: CardProps) => {
+const Recommendation = ({ data }: CardProps) => {
   const scrollContainer = useRef<HTMLDivElement>(null);
   const scrollBtn = (isRight: boolean) => {
     if (scrollContainer.current) {

@@ -6,7 +6,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Count from "./Count";
 
-interface CardDetailProps {
+export interface CardDetailProps {
   id: number;
   media_type: string;
   backdrop_path: string;

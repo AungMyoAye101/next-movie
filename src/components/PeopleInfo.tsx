@@ -15,7 +15,7 @@ const PeopleInfo = ({ data }: { data: Person }) => {
     <section>
       <div className="min-h-screen flex flex-col md:flex-row justify-center items-center py-16  gap-6 ">
         <div className="w-full md:w-[30%] flex justify-center">
-          <div className="w-52 md:w-80 aspect-square ">
+          <div className="w-52 md:w-80 aspect-square self-start ">
             <Image
               src={`https://image.tmdb.org/t/p/original${data.profile_path}`}
               alt="profile "

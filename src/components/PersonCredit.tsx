@@ -1,5 +1,5 @@
 import React from "react";
-import ImageCard from "./Card";
+import ImageCard, { CardDetailProps } from "./Card";
 import Image from "next/image";
 import Link from "next/link";
 import { getPersonCredit } from "@/ApiConfig";
@@ -9,11 +9,11 @@ interface PersonCreditProps {
 }
 const PersonCredit = async ({ person_id }: PersonCreditProps) => {
   const data = await getPersonCredit(person_id);
-  const personalInfo = data.cast;
+  const personalInfo: CardDetailProps[] = data.cast;
 
   return (
     <section className="py-4 flex overflow-hidden overflow-x-scroll gap-4 scroll-bar">
-      {personalInfo.map((item: any) => (
+      {personalInfo.map((item) => (
         <div key={item.id}>
           <ImageCard
             id={item.id}

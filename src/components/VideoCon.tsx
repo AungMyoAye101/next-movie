@@ -37,18 +37,23 @@ const VideoCon = ({ data }: { data: CardDetailProps[] }) => {
         style={{ scrollBehavior: "smooth" }}
       >
         {data.map((item) => (
-          <div key={item.id} className="flex-shrink-0 min-w-64  ">
-            <div className="relative w-64 overflow-hidden rounded-md">
-              <Image
-                src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
-                alt="video poster "
-                width={300}
-                height={400}
-                objectFit="cover"
-                className=" hover:scale-110 transition-transform ease-in-out"
-              />
-            </div>
-            <h1 className="font-semibold font-serif p-2">{item.title}</h1>
+          <div
+            key={item.id}
+            className="flex-shrink-0 w-64 hover:text-purple-400 "
+          >
+            <Link href={"/" + item.media_type + "/" + item.id}>
+              <div className="relative w-64 overflow-hidden rounded-md">
+                <Image
+                  src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
+                  alt="video poster "
+                  width={300}
+                  height={400}
+                  objectFit="cover"
+                  className=" hover:scale-110 transition-transform ease-in-out"
+                />
+              </div>
+              <h1 className="font-semibold  p-2 ">{item.title}</h1>
+            </Link>
           </div>
         ))}
       </main>

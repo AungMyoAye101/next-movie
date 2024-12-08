@@ -14,7 +14,7 @@ const CastCredit = async ({ media, id }: CreditProps) => {
   const data = await getCast(media, id);
 
   return (
-    <section className="p-6 space-y-2">
+    <section className="px-4 md:px-12 space-y-2">
       <h1 className="text-xl font-semibold font-serif">Cast List</h1>
 
       <main className="flex overflow-hidden overflow-x-scroll gap-4 scroll-bar ">

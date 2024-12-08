@@ -16,7 +16,7 @@ const NavItems = ({ title, param }: SearchProps) => {
       className={`  text-2xl  font-semibold   ${
         genre === param
           ? "text-purple-600 underline underline-offset-8"
-          : "text-gray-800"
+          : "text-gray-800 dark:text-gray-100"
       }`}
     >
       {title}
